@@ -36,7 +36,7 @@
             // 
             // buttSave
             // 
-            this.buttSave.Location = new System.Drawing.Point(51, 96);
+            this.buttSave.Location = new System.Drawing.Point(54, 63);
             this.buttSave.Name = "buttSave";
             this.buttSave.Size = new System.Drawing.Size(159, 23);
             this.buttSave.TabIndex = 16;
@@ -46,7 +46,7 @@
             // LValue
             // 
             this.LValue.AutoSize = true;
-            this.LValue.Location = new System.Drawing.Point(48, 42);
+            this.LValue.Location = new System.Drawing.Point(51, 25);
             this.LValue.Name = "LValue";
             this.LValue.Size = new System.Drawing.Size(36, 13);
             this.LValue.TabIndex = 17;
@@ -54,7 +54,7 @@
             // 
             // numValue
             // 
-            this.numValue.Location = new System.Drawing.Point(90, 40);
+            this.numValue.Location = new System.Drawing.Point(93, 23);
             this.numValue.Name = "numValue";
             this.numValue.Size = new System.Drawing.Size(120, 20);
             this.numValue.TabIndex = 18;
@@ -63,7 +63,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(264, 157);
+            this.ClientSize = new System.Drawing.Size(271, 109);
             this.Controls.Add(this.numValue);
             this.Controls.Add(this.LValue);
             this.Controls.Add(this.buttSave);

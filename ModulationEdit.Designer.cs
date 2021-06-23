@@ -29,312 +29,258 @@
         private void InitializeComponent()
         {
             this.buttSave = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
-            this.label8 = new System.Windows.Forms.Label();
-            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
-            this.label9 = new System.Windows.Forms.Label();
-            this.numericUpDown9 = new System.Windows.Forms.NumericUpDown();
-            this.label10 = new System.Windows.Forms.Label();
-            this.numericUpDown10 = new System.Windows.Forms.NumericUpDown();
-            this.label11 = new System.Windows.Forms.Label();
-            this.numericUpDown11 = new System.Windows.Forms.NumericUpDown();
-            this.label12 = new System.Windows.Forms.Label();
-            this.numericUpDown12 = new System.Windows.Forms.NumericUpDown();
-            this.label13 = new System.Windows.Forms.Label();
-            this.numericUpDown13 = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown13)).BeginInit();
+            this.LFxblock = new System.Windows.Forms.Label();
+            this.numFxblock = new System.Windows.Forms.NumericUpDown();
+            this.numType = new System.Windows.Forms.NumericUpDown();
+            this.numLevel = new System.Windows.Forms.NumericUpDown();
+            this.numChorusDelayTime = new System.Windows.Forms.NumericUpDown();
+            this.numChorusFeedback = new System.Windows.Forms.NumericUpDown();
+            this.LType = new System.Windows.Forms.Label();
+            this.LLevel = new System.Windows.Forms.Label();
+            this.LChorusDelayTime = new System.Windows.Forms.Label();
+            this.LChorusFeedback = new System.Windows.Forms.Label();
+            this.LChorusHpf = new System.Windows.Forms.Label();
+            this.numChorusHpf = new System.Windows.Forms.NumericUpDown();
+            this.LDelayFeedbackFilter = new System.Windows.Forms.Label();
+            this.numDelayFeedbackFilter = new System.Windows.Forms.NumericUpDown();
+            this.LRate = new System.Windows.Forms.Label();
+            this.numRate = new System.Windows.Forms.NumericUpDown();
+            this.LDepth = new System.Windows.Forms.Label();
+            this.numDepth = new System.Windows.Forms.NumericUpDown();
+            this.LTremolo = new System.Windows.Forms.Label();
+            this.numTremolo = new System.Windows.Forms.NumericUpDown();
+            this.chOn = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.numFxblock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numChorusDelayTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numChorusFeedback)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numChorusHpf)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDelayFeedbackFilter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDepth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTremolo)).BeginInit();
             this.SuspendLayout();
             // 
             // buttSave
             // 
-            this.buttSave.Location = new System.Drawing.Point(302, 209);
+            this.buttSave.Location = new System.Drawing.Point(191, 213);
             this.buttSave.Name = "buttSave";
             this.buttSave.Size = new System.Drawing.Size(191, 23);
             this.buttSave.TabIndex = 16;
             this.buttSave.Text = "Save d&ata...";
             this.buttSave.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // LFxblock
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "label1";
+            this.LFxblock.AutoSize = true;
+            this.LFxblock.Location = new System.Drawing.Point(29, 32);
+            this.LFxblock.Name = "LFxblock";
+            this.LFxblock.Size = new System.Drawing.Size(44, 13);
+            this.LFxblock.TabIndex = 17;
+            this.LFxblock.Text = "fxblock:";
             // 
-            // numericUpDown1
+            // numFxblock
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(134, 32);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 18;
+            this.numFxblock.Location = new System.Drawing.Point(134, 32);
+            this.numFxblock.Name = "numFxblock";
+            this.numFxblock.Size = new System.Drawing.Size(120, 20);
+            this.numFxblock.TabIndex = 18;
             // 
-            // label2
+            // numType
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "label2";
+            this.numType.Location = new System.Drawing.Point(134, 84);
+            this.numType.Name = "numType";
+            this.numType.Size = new System.Drawing.Size(120, 20);
+            this.numType.TabIndex = 21;
             // 
-            // numericUpDown2
+            // numLevel
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(134, 58);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown2.TabIndex = 20;
+            this.numLevel.Location = new System.Drawing.Point(134, 110);
+            this.numLevel.Name = "numLevel";
+            this.numLevel.Size = new System.Drawing.Size(120, 20);
+            this.numLevel.TabIndex = 22;
             // 
-            // numericUpDown3
+            // numChorusDelayTime
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(134, 84);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown3.TabIndex = 21;
+            this.numChorusDelayTime.Location = new System.Drawing.Point(134, 136);
+            this.numChorusDelayTime.Name = "numChorusDelayTime";
+            this.numChorusDelayTime.Size = new System.Drawing.Size(120, 20);
+            this.numChorusDelayTime.TabIndex = 23;
             // 
-            // numericUpDown4
+            // numChorusFeedback
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(134, 110);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown4.TabIndex = 22;
+            this.numChorusFeedback.Location = new System.Drawing.Point(134, 162);
+            this.numChorusFeedback.Name = "numChorusFeedback";
+            this.numChorusFeedback.Size = new System.Drawing.Size(120, 20);
+            this.numChorusFeedback.TabIndex = 24;
             // 
-            // numericUpDown5
+            // LType
             // 
-            this.numericUpDown5.Location = new System.Drawing.Point(134, 136);
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown5.TabIndex = 23;
+            this.LType.AutoSize = true;
+            this.LType.Location = new System.Drawing.Point(29, 86);
+            this.LType.Name = "LType";
+            this.LType.Size = new System.Drawing.Size(30, 13);
+            this.LType.TabIndex = 25;
+            this.LType.Text = "type:";
             // 
-            // numericUpDown6
+            // LLevel
             // 
-            this.numericUpDown6.Location = new System.Drawing.Point(134, 162);
-            this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown6.TabIndex = 24;
+            this.LLevel.AutoSize = true;
+            this.LLevel.Location = new System.Drawing.Point(29, 112);
+            this.LLevel.Name = "LLevel";
+            this.LLevel.Size = new System.Drawing.Size(32, 13);
+            this.LLevel.TabIndex = 26;
+            this.LLevel.Text = "level:";
             // 
-            // label3
+            // LChorusDelayTime
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 86);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "label3";
+            this.LChorusDelayTime.AutoSize = true;
+            this.LChorusDelayTime.Location = new System.Drawing.Point(29, 138);
+            this.LChorusDelayTime.Name = "LChorusDelayTime";
+            this.LChorusDelayTime.Size = new System.Drawing.Size(98, 13);
+            this.LChorusDelayTime.TabIndex = 27;
+            this.LChorusDelayTime.Text = "chorus_delay_time:";
             // 
-            // label4
+            // LChorusFeedback
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 112);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "label4";
+            this.LChorusFeedback.AutoSize = true;
+            this.LChorusFeedback.Location = new System.Drawing.Point(29, 164);
+            this.LChorusFeedback.Name = "LChorusFeedback";
+            this.LChorusFeedback.Size = new System.Drawing.Size(93, 13);
+            this.LChorusFeedback.TabIndex = 28;
+            this.LChorusFeedback.Text = "chorus_feedback:";
             // 
-            // label5
+            // LChorusHpf
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(29, 138);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "label5";
+            this.LChorusHpf.AutoSize = true;
+            this.LChorusHpf.Location = new System.Drawing.Point(299, 32);
+            this.LChorusHpf.Name = "LChorusHpf";
+            this.LChorusHpf.Size = new System.Drawing.Size(63, 13);
+            this.LChorusHpf.TabIndex = 29;
+            this.LChorusHpf.Text = "chorus_hpf:";
             // 
-            // label6
+            // numChorusHpf
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(29, 164);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "label6";
+            this.numChorusHpf.Location = new System.Drawing.Point(416, 30);
+            this.numChorusHpf.Name = "numChorusHpf";
+            this.numChorusHpf.Size = new System.Drawing.Size(120, 20);
+            this.numChorusHpf.TabIndex = 30;
             // 
-            // label7
+            // LDelayFeedbackFilter
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(299, 32);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 29;
-            this.label7.Text = "label7";
+            this.LDelayFeedbackFilter.AutoSize = true;
+            this.LDelayFeedbackFilter.Location = new System.Drawing.Point(299, 60);
+            this.LDelayFeedbackFilter.Name = "LDelayFeedbackFilter";
+            this.LDelayFeedbackFilter.Size = new System.Drawing.Size(111, 13);
+            this.LDelayFeedbackFilter.TabIndex = 31;
+            this.LDelayFeedbackFilter.Text = "delay_feedback_filter:";
             // 
-            // numericUpDown7
+            // numDelayFeedbackFilter
             // 
-            this.numericUpDown7.Location = new System.Drawing.Point(376, 30);
-            this.numericUpDown7.Name = "numericUpDown7";
-            this.numericUpDown7.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown7.TabIndex = 30;
+            this.numDelayFeedbackFilter.Location = new System.Drawing.Point(416, 56);
+            this.numDelayFeedbackFilter.Name = "numDelayFeedbackFilter";
+            this.numDelayFeedbackFilter.Size = new System.Drawing.Size(120, 20);
+            this.numDelayFeedbackFilter.TabIndex = 32;
             // 
-            // label8
+            // LRate
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(299, 60);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 31;
-            this.label8.Text = "label8";
+            this.LRate.AutoSize = true;
+            this.LRate.Location = new System.Drawing.Point(299, 86);
+            this.LRate.Name = "LRate";
+            this.LRate.Size = new System.Drawing.Size(28, 13);
+            this.LRate.TabIndex = 33;
+            this.LRate.Text = "rate:";
             // 
-            // numericUpDown8
+            // numRate
             // 
-            this.numericUpDown8.Location = new System.Drawing.Point(376, 56);
-            this.numericUpDown8.Name = "numericUpDown8";
-            this.numericUpDown8.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown8.TabIndex = 32;
+            this.numRate.Location = new System.Drawing.Point(416, 82);
+            this.numRate.Name = "numRate";
+            this.numRate.Size = new System.Drawing.Size(120, 20);
+            this.numRate.TabIndex = 34;
             // 
-            // label9
+            // LDepth
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(299, 86);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 33;
-            this.label9.Text = "label9";
+            this.LDepth.AutoSize = true;
+            this.LDepth.Location = new System.Drawing.Point(299, 112);
+            this.LDepth.Name = "LDepth";
+            this.LDepth.Size = new System.Drawing.Size(37, 13);
+            this.LDepth.TabIndex = 35;
+            this.LDepth.Text = "depth:";
             // 
-            // numericUpDown9
+            // numDepth
             // 
-            this.numericUpDown9.Location = new System.Drawing.Point(376, 82);
-            this.numericUpDown9.Name = "numericUpDown9";
-            this.numericUpDown9.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown9.TabIndex = 34;
+            this.numDepth.Location = new System.Drawing.Point(416, 108);
+            this.numDepth.Name = "numDepth";
+            this.numDepth.Size = new System.Drawing.Size(120, 20);
+            this.numDepth.TabIndex = 36;
             // 
-            // label10
+            // LTremolo
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(299, 112);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
-            this.label10.TabIndex = 35;
-            this.label10.Text = "label10";
+            this.LTremolo.AutoSize = true;
+            this.LTremolo.Location = new System.Drawing.Point(299, 136);
+            this.LTremolo.Name = "LTremolo";
+            this.LTremolo.Size = new System.Drawing.Size(44, 13);
+            this.LTremolo.TabIndex = 37;
+            this.LTremolo.Text = "tremolo:";
             // 
-            // numericUpDown10
+            // numTremolo
             // 
-            this.numericUpDown10.Location = new System.Drawing.Point(376, 108);
-            this.numericUpDown10.Name = "numericUpDown10";
-            this.numericUpDown10.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown10.TabIndex = 36;
+            this.numTremolo.Location = new System.Drawing.Point(416, 134);
+            this.numTremolo.Name = "numTremolo";
+            this.numTremolo.Size = new System.Drawing.Size(120, 20);
+            this.numTremolo.TabIndex = 38;
             // 
-            // label11
+            // chOn
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(299, 136);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
-            this.label11.TabIndex = 37;
-            this.label11.Text = "label11";
-            // 
-            // numericUpDown11
-            // 
-            this.numericUpDown11.Location = new System.Drawing.Point(376, 134);
-            this.numericUpDown11.Name = "numericUpDown11";
-            this.numericUpDown11.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown11.TabIndex = 38;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(299, 164);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 13);
-            this.label12.TabIndex = 39;
-            this.label12.Text = "label12";
-            // 
-            // numericUpDown12
-            // 
-            this.numericUpDown12.Location = new System.Drawing.Point(376, 160);
-            this.numericUpDown12.Name = "numericUpDown12";
-            this.numericUpDown12.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown12.TabIndex = 40;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(526, 32);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 13);
-            this.label13.TabIndex = 41;
-            this.label13.Text = "label13";
-            // 
-            // numericUpDown13
-            // 
-            this.numericUpDown13.Location = new System.Drawing.Point(585, 30);
-            this.numericUpDown13.Name = "numericUpDown13";
-            this.numericUpDown13.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown13.TabIndex = 42;
+            this.chOn.AutoSize = true;
+            this.chOn.Location = new System.Drawing.Point(32, 59);
+            this.chOn.Name = "chOn";
+            this.chOn.Size = new System.Drawing.Size(38, 17);
+            this.chOn.TabIndex = 43;
+            this.chOn.Text = "on";
+            this.chOn.UseVisualStyleBackColor = true;
             // 
             // ModulationEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 263);
-            this.Controls.Add(this.numericUpDown13);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.numericUpDown12);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.numericUpDown11);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.numericUpDown10);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.numericUpDown9);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.numericUpDown8);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.numericUpDown7);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.numericUpDown6);
-            this.Controls.Add(this.numericUpDown5);
-            this.Controls.Add(this.numericUpDown4);
-            this.Controls.Add(this.numericUpDown3);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(578, 263);
+            this.Controls.Add(this.chOn);
+            this.Controls.Add(this.numTremolo);
+            this.Controls.Add(this.LTremolo);
+            this.Controls.Add(this.numDepth);
+            this.Controls.Add(this.LDepth);
+            this.Controls.Add(this.numRate);
+            this.Controls.Add(this.LRate);
+            this.Controls.Add(this.numDelayFeedbackFilter);
+            this.Controls.Add(this.LDelayFeedbackFilter);
+            this.Controls.Add(this.numChorusHpf);
+            this.Controls.Add(this.LChorusHpf);
+            this.Controls.Add(this.LChorusFeedback);
+            this.Controls.Add(this.LChorusDelayTime);
+            this.Controls.Add(this.LLevel);
+            this.Controls.Add(this.LType);
+            this.Controls.Add(this.numChorusFeedback);
+            this.Controls.Add(this.numChorusDelayTime);
+            this.Controls.Add(this.numLevel);
+            this.Controls.Add(this.numType);
+            this.Controls.Add(this.numFxblock);
+            this.Controls.Add(this.LFxblock);
             this.Controls.Add(this.buttSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ModulationEdit";
             this.Text = "Modulation Edit...";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numFxblock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numChorusDelayTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numChorusFeedback)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numChorusHpf)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDelayFeedbackFilter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDepth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTremolo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,31 +289,26 @@
         #endregion
 
         private System.Windows.Forms.Button buttSave;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
-        private System.Windows.Forms.NumericUpDown numericUpDown6;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown numericUpDown7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.NumericUpDown numericUpDown8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.NumericUpDown numericUpDown9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.NumericUpDown numericUpDown10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.NumericUpDown numericUpDown11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.NumericUpDown numericUpDown12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.NumericUpDown numericUpDown13;
+        private System.Windows.Forms.Label LFxblock;
+        private System.Windows.Forms.NumericUpDown numFxblock;
+        private System.Windows.Forms.NumericUpDown numType;
+        private System.Windows.Forms.NumericUpDown numLevel;
+        private System.Windows.Forms.NumericUpDown numChorusDelayTime;
+        private System.Windows.Forms.NumericUpDown numChorusFeedback;
+        private System.Windows.Forms.Label LType;
+        private System.Windows.Forms.Label LLevel;
+        private System.Windows.Forms.Label LChorusDelayTime;
+        private System.Windows.Forms.Label LChorusFeedback;
+        private System.Windows.Forms.Label LChorusHpf;
+        private System.Windows.Forms.NumericUpDown numChorusHpf;
+        private System.Windows.Forms.Label LDelayFeedbackFilter;
+        private System.Windows.Forms.NumericUpDown numDelayFeedbackFilter;
+        private System.Windows.Forms.Label LRate;
+        private System.Windows.Forms.NumericUpDown numRate;
+        private System.Windows.Forms.Label LDepth;
+        private System.Windows.Forms.NumericUpDown numDepth;
+        private System.Windows.Forms.Label LTremolo;
+        private System.Windows.Forms.NumericUpDown numTremolo;
+        private System.Windows.Forms.CheckBox chOn;
     }
 }
