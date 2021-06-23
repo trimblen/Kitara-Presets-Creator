@@ -52,11 +52,71 @@
     <Compile Include="AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CompressionEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompressionEdit.Designer.cs">
+      <DependentUpon>CompressionEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlEdit.Designer.cs">
+      <DependentUpon>ControlEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DelayEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DelayEdit.Designer.cs">
+      <DependentUpon>DelayEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DistortionEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DistortionEdit.Designer.cs">
+      <DependentUpon>DistortionEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EqualizerEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EqualizerEdit.Designer.cs">
+      <DependentUpon>EqualizerEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EqualizerMainEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EqualizerMainEdit.Designer.cs">
+      <DependentUpon>EqualizerMainEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainFrm.Designer.cs">
       <DependentUpon>MainFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterVolumeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterVolumeEdit.Designer.cs">
+      <DependentUpon>MasterVolumeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MidiOutChannelEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MidiOutChannelEdit.Designer.cs">
+      <DependentUpon>MidiOutChannelEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MixerEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MixerEdit.Designer.cs">
+      <DependentUpon>MixerEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModulationEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulationEdit.Designer.cs">
+      <DependentUpon>ModulationEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="PresetForm.cs">
       <SubType>Form</SubType>
@@ -72,11 +132,53 @@
     <Compile Include="ReverberationEdit.Designer.cs">
       <DependentUpon>ReverberationEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="TuningEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TuningEdit.Designer.cs">
+      <DependentUpon>TuningEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VoiceEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VoiceEdit.Designer.cs">
+      <DependentUpon>VoiceEdit.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CompressionEdit.resx">
+      <DependentUpon>CompressionEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlEdit.resx">
+      <DependentUpon>ControlEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DelayEdit.resx">
+      <DependentUpon>DelayEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DistortionEdit.resx">
+      <DependentUpon>DistortionEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EqualizerEdit.resx">
+      <DependentUpon>EqualizerEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EqualizerMainEdit.resx">
+      <DependentUpon>EqualizerMainEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainFrm.resx">
       <DependentUpon>MainFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterVolumeEdit.resx">
+      <DependentUpon>MasterVolumeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MidiOutChannelEdit.resx">
+      <DependentUpon>MidiOutChannelEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MixerEdit.resx">
+      <DependentUpon>MixerEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModulationEdit.resx">
+      <DependentUpon>ModulationEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresetForm.resx">
       <DependentUpon>PresetForm.cs</DependentUpon>
@@ -93,6 +195,12 @@
     </Compile>
     <EmbeddedResource Include="ReverberationEdit.resx">
       <DependentUpon>ReverberationEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TuningEdit.resx">
+      <DependentUpon>TuningEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VoiceEdit.resx">
+      <DependentUpon>VoiceEdit.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

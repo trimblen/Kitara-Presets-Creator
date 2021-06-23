@@ -117,33 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="MainMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="ofd_OpenFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>153, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAIAICAQAAAAAADoAgAAJgAAABAQEAAAAAAAKAEAAA4DAAAoAAAAIAAAAEAAAAABAAQAAAAAAIAC
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAMDAwACAgIAAAAD/AAD/
-        AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAAAAAAAAAAAAAAAAAAAzMAAAAAAAAAADMwAAAAAzMzMwA
-        AAAAAADMzMzAAADMzMzMwAAAAAAMzMzMzAAAzMzMzMAAAAAADMzMzMwADMzMzMzMAAAAAMzMzMzMwAzM
-        zMzMzAAAAADMzMzMzMAMzMzMzMwAAAAAzMzMzMzAAMzMzMzAAAAAAAzMzMzMAADMzMzMwAAAAAAMzMzM
-        zAAADMzMzAAAAAAAAMzMzMAAAAAMzAAAAMzAAAAAzMAAAAAADMwAAMzMzMAAAMzAAAAAAAzMAAzMzMzM
-        AADMwAAAAAAMzAAMzMzMzAAAzMAAAAAADMwAzMzMzMzAAMzAAAAAAAzMAMzMzMzMwADMwAAAAAAMzADM
-        zMzMzMAAzMAAAAAADMwADMzMzMwAAMzAAAAAAAzMAAzMzMzMAADMwAAAAAAMzAAAzMzMwAAAzMAAAAAM
-        zMzMAADMwAAAzMzMwAAAzMzMzMAAAAAADMzMzMwAAMzMzMzAAAAAAAzMzMzMAAzMzMzMzAAAAADMzMzM
-        zMAMzMzMzMwAAAAAzMzMzMzADMzMzMzMAAAAAMzMzMzMwADMzMzMwAAAAAAMzMzMzAAAzMzMzMAAAAAA
-        DMzMzMwAAAzMzMwAAAAAAADMzMzAAAAADMwAAAAAAAAAAMzAAAAAAAAAAAAAAAAAAAAAAAAA//////j/
-        /x/gP/wHwB/4A8Af+AOAD/ABgA/wAYAP8AHAH/gDwB/4A+A//Af4/H8f+PAfH/jgDx/44A8f+MAHH/jA
-        Bx/4wAcf+OAPH/jgDx/48B8f4Dx8B8Af+APAH/gDgA/wAYAP8AGAD/ABwB/4A8Af+APgP/wH+P//H///
-        //8oAAAAEAAAACAAAAABAAQAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAA
-        AACAAIAAgIAAAMDAwACAgIAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAAAAADMzAAADM
-        zAAMzMAADMzMwMzMzAAMzMzAzMzMAAzMzMAMzMAAAMzMAADMAMzADMAAAMwMzMwMwAAAzAzMzAzAAADM
-        DMzMDMAAAMwAzMAMwAAMzMAAAMzMAMzMzAAMzMzAzMzMAAzMzMAMzMAAAMzMAADMAAAADMAA//8AAIfD
-        AACHgQAAA4EAAAOBAACHwwAAzGcAAMgnAADIJwAAyCcAAMxnAACHwwAAA4EAAAOBAACHwwAAz+cAAA==
-</value>
-  </data>
 </root>

@@ -27,6 +27,11 @@ namespace KitaraPresetsCreator
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            foreach (Form frm in this.MdiChildren)
+            {
+                frm.Close();
+            }
+
             Application.Exit();
         }
 
@@ -39,35 +44,74 @@ namespace KitaraPresetsCreator
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog   = new OpenFileDialog();
-            openFileDialog.DefaultExt       = "mz";
-            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            openFileDialog.Filter           = "Kitara Preset Files (*.mz)|*.mz";
-            openFileDialog.FilterIndex      = 1;
-            openFileDialog.FileName         = string.Empty;
+            ofd_OpenFile.Filter             = "Kitara Preset Files (*.mz)|*.mz";
+            ofd_OpenFile.DefaultExt         = "mz";
+            ofd_OpenFile.InitialDirectory   = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            ofd_OpenFile.Filter             = "Kitara Preset Files (*.mz)|*.mz";
+            ofd_OpenFile.FilterIndex        = 1;
+            ofd_OpenFile.FileName           = string.Empty;
 
-            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
+            if (ofd_OpenFile.ShowDialog() == DialogResult.OK)
             {
-
-                if (openFileDialog.FileName == "")
+                PresetForm loadPresetForm;
+                if (this.ActiveMdiChild != null)
                 {
-                    return;
+                    loadPresetForm = (PresetForm)this.ActiveMdiChild;
+                    loadPresetForm.file_Path = ofd_OpenFile.FileName;
+                    loadPresetForm.Load_File();
                 }
-                
-                PresetForm loadPresetForm   = new PresetForm(false, openFileDialog.FileName);
-                loadPresetForm.MdiParent    = this;
-
-                loadPresetForm.Show();
-
+                else
+                {
+                    loadPresetForm = new PresetForm();
+                    loadPresetForm.file_Path = ofd_OpenFile.FileName;
+                    loadPresetForm.MdiParent = this;
+                    loadPresetForm.Show();
+                }
             }
+        }
 
-            else
+        private void cascadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(System.Windows.Forms.MdiLayout.Cascade);
+        }
+
+        private void horizontallyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(System.Windows.Forms.MdiLayout.TileHorizontal);
+        }
+
+        private void verticallyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(System.Windows.Forms.MdiLayout.TileVertical);
+        }
+
+        private void closeToolStripCloseWindow_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild != null) ActiveMdiChild.Close();
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form frm in this.MdiChildren)
             {
-                MessageBox.Show("Open File request cancelled by user.",
-                "Cancelled");
+                frm.Close();
             }
+        }
+
+        private void saveToolStripMenuItemSave_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                PresetForm pForm = (PresetForm)this.ActiveMdiChild;
+
+                pForm.Save_File();
+            }
+        }
+
+        private void MainFrm_Load(object sender, EventArgs e)
+        {
 
         }
-    
     }
+
 }

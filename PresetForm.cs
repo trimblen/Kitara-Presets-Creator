@@ -16,37 +16,66 @@ namespace KitaraPresetsCreator
     public partial class PresetForm : Form
     {
         public DataRow drFind;
-        private bool pIsNew;
-        private string fPath;
 
-        public PresetForm(bool isNew, string filePath)
+        private bool IsChanged = false;
+        public string file_Path { get; set; }
+
+        public PresetForm()
         {
             InitializeComponent();
 
-            this.pIsNew = isNew;
-            this.fPath  = filePath;
+            if (file_Path != null)
+            { 
+            }
+            else 
+            {
+                this.Text = "NewPreset.mz";
+            }
         }
 
         private void PresetForm_Load(object sender, EventArgs e)
         {
             dataSetPresets.BeginInit();
 
-            Parse(this.pIsNew, this.fPath);
+            AddMasterVolumeData();
+
+            AddBasicEqualizerData();
+
+            AddEqualizerData("lowest");
+            AddEqualizerData("lower");
+            AddEqualizerData("higher");
+            AddEqualizerData("highest");
+
+            AddMidiOutChannel("ch0");
+            AddMidiOutChannel("ch1");
+            AddMidiOutChannel("ch2");
+            AddMidiOutChannel("ch3");
+            AddMidiOutChannel("ch4");
+            AddMidiOutChannel("ch5");
+
+            AddTuning("t0");
+            AddTuning("t1");
+            AddTuning("t2");
+            AddTuning("t3");
+            AddTuning("t4");
+            AddTuning("t5");
+
+           // Load_File();
+
+            BuildXMLTree();
+
+            Parse();
         }
 
         private void XMLTextBox_TextChanged(object sender, EventArgs e)
         {
             UpdateTextHighLight(XMLTextBox);
+
+            this.IsChanged = true;
         }
 
-        private void Parse(bool isnewPrst, string pPath)
+        private void Parse()
         {
-            if (isnewPrst) {
-
-                System.IO.StreamReader mzReader;
-
-                mzReader = new System.IO.StreamReader(pPath);
-            }
 
             String inputLanguage =
               "<?xml version=\"1.0\" ?><preset><master volume=\"127\"/></preset>";
@@ -61,6 +90,59 @@ namespace KitaraPresetsCreator
                 ParseLine(l, XMLTextBox);
             }
         }
+
+        public void Load_File()
+        {
+            if (file_Path != null)
+            {
+                DialogResult save = MessageBox.Show("Do you want to save the file?", "Warning", MessageBoxButtons.OKCancel);
+                if (save == DialogResult.OK)
+                {
+                    this.Save_File();
+                }
+            }
+
+            XMLTextBox.Clear();
+
+            if (file_Path != null)
+            {
+                System.IO.StreamReader mzReader;
+
+                mzReader = new System.IO.StreamReader(file_Path);
+            }
+
+            String[] fileName = file_Path.Split('\\');
+            this.Text = fileName[fileName.Length - 1];
+            XMLTextBox.LoadFile(file_Path, RichTextBoxStreamType.RichText);
+
+            this.IsChanged = false;
+        }
+        public void Save_File()
+        {
+            if (file_Path == null)
+            {
+                sfd_SaveFile.FileName = this.Text;
+            }
+            else 
+            {
+                sfd_SaveFile.FileName = file_Path;
+            };
+
+            GenerateXMLFilePreset(XMLTextBox, treeViewXML);
+
+            sfd_SaveFile.Filter = "Kitara Preset Files (.mz) | *.mz";
+
+            if (sfd_SaveFile.ShowDialog() == DialogResult.OK)
+            {
+                this.file_Path      = sfd_SaveFile.FileName;
+                String[] fileName   = file_Path.Split('\\');
+                this.Text           = fileName[fileName.Length - 1];
+
+                XMLTextBox.SaveFile(this.file_Path, RichTextBoxStreamType.RichText);
+            }
+
+            this.IsChanged = false;
+        }
         private void ParseLine(string line, RichTextBox m_rtb)
         {
             Regex r = new Regex("([ \\t{}():;])");
@@ -71,7 +153,7 @@ namespace KitaraPresetsCreator
                 m_rtb.SelectionColor = Color.Black;
                 m_rtb.SelectionFont = new Font("Courier New", 10, FontStyle.Regular);
                 // Check whether the token is a keyword.   
-                String[] keywords = { "public", "void", "using", "static", "class", "tuning", "preset" };
+                String[] keywords = {"tuning", "preset" };
                 for (int i = 0; i < keywords.Length; i++)
                 {
                     if (keywords[i] == token)
@@ -102,21 +184,29 @@ namespace KitaraPresetsCreator
                 // into the Form.
 
                 // Clear any previous content of the widget
-                treeViewXML.Nodes.Clear();
-                // Create the root tree node, on any XML file the container (first root)
-                // will be the DocumentElement name as any content must be wrapped in some node first.
-                treeViewXML.Nodes.Add(new TreeNode(dom.DocumentElement.Name));
+                ClearTreeNodes(treeViewXML);
 
-                // 4. Create an instance of the first node in the treeview (the one that contains the DocumentElement name)
-                TreeNode tNode = new TreeNode();
-                tNode = treeViewXML.Nodes[0];
+                // Get elements main settings
+                XmlNodeList tunings             = dom.GetElementsByTagName("tuning");
+                XmlNodeList master              = dom.GetElementsByTagName("master");
+                XmlNodeList midi_out_channels   = dom.GetElementsByTagName("midi_out_channel");
+                XmlNodeList gqualizer           = dom.GetElementsByTagName("equalizer");
+                XmlNodeList eq_bands            = dom.GetElementsByTagName("eq_band");
 
-                // 5. Populate the TreeView with the DOM nodes with the helper 'AddNode' function
-                this.AddNode(dom.DocumentElement, tNode);
+                // Get elements of presets
+                XmlNodeList reverbs              = dom.GetElementsByTagName("reverb");
+                XmlNodeList distortions          = dom.GetElementsByTagName("distortion");
+                XmlNodeList compressions         = dom.GetElementsByTagName("compression"); 
+                XmlNodeList modulations          = dom.GetElementsByTagName("modulation");
+                XmlNodeList delays               = dom.GetElementsByTagName("delay");
+                XmlNodeList mixers               = dom.GetElementsByTagName("mixer");
+                XmlNodeList voices               = dom.GetElementsByTagName("voice");
+                XmlNodeList controls             = dom.GetElementsByTagName("control");
+
             }
             catch (XmlException xmlEx)
             {
-                MessageBox.Show(xmlEx.Message);
+                MessageBox.Show("Incorrect or corrupted preset file! "+ xmlEx.Message.ToString());
             }
             catch (Exception ex)
             {
@@ -124,6 +214,29 @@ namespace KitaraPresetsCreator
             }
         }
 
+        private void GenerateXMLFilePreset(RichTextBox m_rtb, TreeView treeViewXML) {
+            var nodes = treeViewXML.Nodes;
+
+            foreach (TreeNode node in nodes)
+            {
+                WalkUpTreeViewRecursively(node);            
+            }
+        }
+
+        private void WalkUpTreeViewRecursively(TreeNode trNode) {
+            var nodes = trNode.Nodes;
+
+            foreach (var node in nodes)
+            {
+                WalkUpTreeViewRecursively(trNode);
+            }
+        }
+
+        private void ClearTreeNodes(TreeView trView) { 
+        
+        }
+
+        //adding node by xml node
         private void AddNode(XmlNode inXmlNode, TreeNode inTreeNode)
         {
             XmlNode xNode;
@@ -237,12 +350,13 @@ namespace KitaraPresetsCreator
         }
 
         private void AddReverb_Click(object sender, EventArgs e)
-        {            
-           this.AddNodeByType("nodeReverb", "Reverberation", "tReverberation");            
+        {                  
+           this.AddNodeByType("nodeReverb", "Reverberation", "tReverberation");    
+            
         }
 
+        //we need to add some node 
         private void AddNodeByType(string NodeType, string nodeParentName, string tableName) {
-
             TreeNode tns = treeViewXML.Nodes.Find(NodeType, true).FirstOrDefault();
 
             treeViewXML.SelectedNode = tns;
@@ -259,9 +373,9 @@ namespace KitaraPresetsCreator
             rNewRow["tag"] = NodeType + namePrefix;
 
             dataSetPresets.Tables[tableName].Rows.Add(rNewRow);
-
         }
 
+        //remove presets property
         private void RemoveCurrentProperty_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("This setting will be removed. Proceed?", "Really Remove?", MessageBoxButtons.YesNo);
@@ -280,7 +394,6 @@ namespace KitaraPresetsCreator
                     MessageBox.Show("Unable to remove predefined settings!", "Error!");
                 }
             }
-
         }
 
         private void setReverbDataInDataSetTemporarily(string revTab, SByte rType, SByte rPre_lpf, SByte rLevel, SByte rDelay_Feedback, SByte rPre_Delay_Time, string revTag) {
@@ -304,7 +417,6 @@ namespace KitaraPresetsCreator
         }
 
         private void EditReverbData(string rTag) {
-
             DataRow[] findRow = GetARowStringByTag(rTag, "tReverberation");
 
             this.drFind = findRow[0];
@@ -317,18 +429,70 @@ namespace KitaraPresetsCreator
             };
         }
 
-        
+        private void EditMasterVolumeData(string mTag)
+        {
+            DataRow[] findRow = GetARowStringByTag(mTag, "tMaster");
+
+            this.drFind = findRow[0];
+
+            MasterVolumeEdit mvForm = new MasterVolumeEdit(this);
+            DialogResult dResult = mvForm.ShowDialog();
+
+            if (dResult == DialogResult.OK)
+            {
+                MessageBox.Show("Your data has been changed!", "Ok");
+            };
+        }
+
+        private void AddMasterVolumeData(byte Volume=127)
+        {
+            DataRow rNewRow             = dataSetPresets.Tables["tMaster"].NewRow();
+            rNewRow["tag"]              = "Volume";
+            rNewRow["MasterVolume"]     = Volume;
+
+            dataSetPresets.Tables["tMaster"].Rows.Add(rNewRow);
+        }
+
+        private void AddBasicEqualizerData()
+        {
+            DataRow rNewRow = dataSetPresets.Tables["tMaster"].NewRow();
+            rNewRow["tag"] = "Volume";
+
+            dataSetPresets.Tables["tMaster"].Rows.Add(rNewRow);
+        }
+
+        private void AddEqualizerData(string equalizerVolume)
+        {
+            DataRow rNewRow = dataSetPresets.Tables["tMaster"].NewRow();
+            rNewRow["tag"] = "Volume";
+
+            dataSetPresets.Tables["tMaster"].Rows.Add(rNewRow);
+        }
+
+        private void AddMidiOutChannel(string midiChannel)
+        {
+            DataRow rNewRow = dataSetPresets.Tables["tMaster"].NewRow();
+            rNewRow["tag"] = "Volume";
+
+            dataSetPresets.Tables["tMaster"].Rows.Add(rNewRow);
+        }
+
+        private void AddTuning(string tuningChannel)
+        {
+            DataRow rNewRow = dataSetPresets.Tables["tMaster"].NewRow();
+            rNewRow["tag"] = "Volume";
+
+            dataSetPresets.Tables["tMaster"].Rows.Add(rNewRow);
+        }
+
 
         private DataRow[] GetARowStringByTag(string rowTag, string tableName) {
-
             DataRow[] foundRow = dataSetPresets.Tables[tableName].Select("tag = '"+rowTag+"'");
 
-            return foundRow;   
-       
+            return foundRow;          
         }
 
         private bool CheckTreeNode(TreeNode tNode) {
-
             bool chResult = true;
 
             switch (tNode.Tag)
@@ -401,14 +565,28 @@ namespace KitaraPresetsCreator
                     break;
                 case "MidiOutChannel":
                     chResult = false;
-                    break;                    
+                    break;
+                case "Equalizer":
+                    chResult = false;
+                    break;
+                case "Lowest":
+                    chResult = false;
+                    break;
+                case "Lower":
+                    chResult = false;
+                    break;
+                case "Higher":
+                    chResult = false;
+                    break;
+                case "Highest":
+                    chResult = false;
+                    break;
                 default:
                     chResult = true;
                     break;
             }
 
             return chResult;
-
         }
 
         private void DeleteDataSetFromNode(TreeNode tNode)
@@ -418,7 +596,7 @@ namespace KitaraPresetsCreator
                 case "Reverberation":
                     DataRow[] fRow = GetARowStringByTag(tNode.Tag.ToString(), "tReverberation");
                     dataSetPresets.Tables["tReverberation"].Rows.Remove(fRow[0]);
-                    break;
+                    break;                
                 case "Delay":         
                     break;
                 case "Mixer":           
@@ -440,7 +618,6 @@ namespace KitaraPresetsCreator
 
         private bool CheckTreeNodeForEditing(TreeNode tNode)
         {
-
             bool chResult;
 
             switch (tNode.Tag)
@@ -475,23 +652,37 @@ namespace KitaraPresetsCreator
                 case "MidiOutChannel":
                     chResult = true;
                     break;
+                case "Equalizer":
+                    chResult = false;
+                    break;
+                case "Lowest":
+                    chResult = false;
+                    break;
+                case "Lower":
+                    chResult = false;
+                    break;
+                case "Higher":
+                    chResult = false;
+                    break;
+                case "Highest":
+                    chResult = false;
+                    break;
                 default:
                     chResult = false;
                     break;
             }
 
             return chResult;
-
         }
 
         private void EditNodeInfo(TreeNode tNode, string tNodeParentTag)
         {
-
             switch (tNodeParentTag)
             {
                 case "Preset":           
                     break;
-                case "Master":         
+                case "Master":           
+                    EditMasterVolumeData(tNode.Tag.ToString());                
                     break;
                 case "Reverberation":
                     EditReverbData(tNode.Tag.ToString());
@@ -512,8 +703,7 @@ namespace KitaraPresetsCreator
                     break;
                 default:
                     break;
-            }
-
+            };
         }
 
         private void treeViewXML_BeforeLabelEdit(object sender, NodeLabelEditEventArgs e)
@@ -524,7 +714,6 @@ namespace KitaraPresetsCreator
             {
                 e.CancelEdit = true;
             }
-
         }
 
         private void EditCurrentProperty_Click(object sender, EventArgs e)
@@ -537,5 +726,20 @@ namespace KitaraPresetsCreator
             }
 
         }
+
+        private void PresetForm_FormClosed(object sender, FormClosedEventArgs e)
+        {            
+            if (this.IsChanged) { 
+
+                DialogResult save = MessageBox.Show("Do you want to save this preset?", "Warning", MessageBoxButtons.OKCancel);
+
+                if (save == DialogResult.OK)
+                {
+                    this.Save_File();
+                }
+
+            }
+        }
+
     }
 }
