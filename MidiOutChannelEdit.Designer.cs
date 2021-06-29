@@ -42,6 +42,7 @@
             this.buttSave.TabIndex = 16;
             this.buttSave.Text = "Save d&ata...";
             this.buttSave.UseVisualStyleBackColor = true;
+            this.buttSave.Click += new System.EventHandler(this.buttSave_Click);
             // 
             // lMidiOut
             // 
@@ -73,13 +74,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(393, 87);
+            this.ClientSize = new System.Drawing.Size(393, 82);
             this.Controls.Add(this.lValue);
             this.Controls.Add(this.lMidiOut);
             this.Controls.Add(this.buttSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MidiOutChannelEdit";
             this.Text = "MidiOutChannel Edit...";
+            this.Load += new System.EventHandler(this.MidiOutChannelEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lMidiOut)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -29,65 +29,65 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Volume");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Master", new System.Windows.Forms.TreeNode[] {
-            treeNode31});
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("String #0");
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("String #1");
-            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("String #2");
-            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("String #3");
-            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("String #4");
-            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("String #5");
-            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Tuning", new System.Windows.Forms.TreeNode[] {
-            treeNode33,
-            treeNode34,
-            treeNode35,
-            treeNode36,
-            treeNode37,
-            treeNode38});
-            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Channel #0");
-            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Channel #1");
-            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Channel #2");
-            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Channel #3");
-            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Channel #4");
-            System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("Channel #5");
-            System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("MidiOutChannel", new System.Windows.Forms.TreeNode[] {
-            treeNode40,
-            treeNode41,
-            treeNode42,
-            treeNode43,
-            treeNode44,
-            treeNode45});
-            System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("Lowest");
-            System.Windows.Forms.TreeNode treeNode48 = new System.Windows.Forms.TreeNode("Lower");
-            System.Windows.Forms.TreeNode treeNode49 = new System.Windows.Forms.TreeNode("Higher");
-            System.Windows.Forms.TreeNode treeNode50 = new System.Windows.Forms.TreeNode("Highest");
-            System.Windows.Forms.TreeNode treeNode51 = new System.Windows.Forms.TreeNode("Equalizer", new System.Windows.Forms.TreeNode[] {
-            treeNode47,
-            treeNode48,
-            treeNode49,
-            treeNode50});
-            System.Windows.Forms.TreeNode treeNode52 = new System.Windows.Forms.TreeNode("Reverberation");
-            System.Windows.Forms.TreeNode treeNode53 = new System.Windows.Forms.TreeNode("Distortion");
-            System.Windows.Forms.TreeNode treeNode54 = new System.Windows.Forms.TreeNode("Modulation");
-            System.Windows.Forms.TreeNode treeNode55 = new System.Windows.Forms.TreeNode("Compression");
-            System.Windows.Forms.TreeNode treeNode56 = new System.Windows.Forms.TreeNode("Delay");
-            System.Windows.Forms.TreeNode treeNode57 = new System.Windows.Forms.TreeNode("Mixer");
-            System.Windows.Forms.TreeNode treeNode58 = new System.Windows.Forms.TreeNode("Voice");
-            System.Windows.Forms.TreeNode treeNode59 = new System.Windows.Forms.TreeNode("Control");
-            System.Windows.Forms.TreeNode treeNode60 = new System.Windows.Forms.TreeNode("Preset", new System.Windows.Forms.TreeNode[] {
-            treeNode32,
-            treeNode39,
-            treeNode46,
-            treeNode51,
-            treeNode52,
-            treeNode53,
-            treeNode54,
-            treeNode55,
-            treeNode56,
-            treeNode57,
-            treeNode58,
-            treeNode59});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Volume");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Master", new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("String #0");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("String #1");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("String #2");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("String #3");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("String #4");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("String #5");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Tuning", new System.Windows.Forms.TreeNode[] {
+            treeNode3,
+            treeNode4,
+            treeNode5,
+            treeNode6,
+            treeNode7,
+            treeNode8});
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Channel #0");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Channel #1");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Channel #2");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Channel #3");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Channel #4");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Channel #5");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("MidiOutChannel", new System.Windows.Forms.TreeNode[] {
+            treeNode10,
+            treeNode11,
+            treeNode12,
+            treeNode13,
+            treeNode14,
+            treeNode15});
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Lowest");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Lower");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Higher");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Highest");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Equalizer", new System.Windows.Forms.TreeNode[] {
+            treeNode17,
+            treeNode18,
+            treeNode19,
+            treeNode20});
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Reverberation");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Distortion");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Modulation");
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Compression");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Delay");
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Mixer");
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Voice");
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Control");
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Preset", new System.Windows.Forms.TreeNode[] {
+            treeNode2,
+            treeNode9,
+            treeNode16,
+            treeNode21,
+            treeNode22,
+            treeNode23,
+            treeNode24,
+            treeNode25,
+            treeNode26,
+            treeNode27,
+            treeNode28,
+            treeNode29});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PresetForm));
             this.contextMenuPresets = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.EditCurrentProperty = new System.Windows.Forms.ToolStripMenuItem();
@@ -99,7 +99,7 @@
             this.AddControl = new System.Windows.Forms.ToolStripMenuItem();
             this.AddModulation = new System.Windows.Forms.ToolStripMenuItem();
             this.AddMixer = new System.Windows.Forms.ToolStripMenuItem();
-            this.addControlToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.addVoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RemoveCurrentProperty = new System.Windows.Forms.ToolStripMenuItem();
             this.dataSetPresets = new System.Data.DataSet();
             this.tEqualizer = new System.Data.DataTable();
@@ -251,13 +251,13 @@
             this.addToolStripMenuItem,
             this.RemoveCurrentProperty});
             this.contextMenuPresets.Name = "contextMenuPresets";
-            this.contextMenuPresets.Size = new System.Drawing.Size(215, 70);
+            this.contextMenuPresets.Size = new System.Drawing.Size(215, 92);
             // 
             // EditCurrentProperty
             // 
             this.EditCurrentProperty.Name = "EditCurrentProperty";
             this.EditCurrentProperty.Size = new System.Drawing.Size(214, 22);
-            this.EditCurrentProperty.Text = "Edit Current Property...";
+            this.EditCurrentProperty.Text = "Edit Cu&rrent Property...";
             this.EditCurrentProperty.Click += new System.EventHandler(this.EditCurrentProperty_Click);
             // 
             // addToolStripMenuItem
@@ -270,66 +270,72 @@
             this.AddControl,
             this.AddModulation,
             this.AddMixer,
-            this.addControlToolStripMenuItem2});
+            this.addVoiceToolStripMenuItem});
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-            this.addToolStripMenuItem.Text = "Add..";
+            this.addToolStripMenuItem.Text = "Ad&d..";
             // 
             // AddReverb
             // 
             this.AddReverb.Name = "AddReverb";
             this.AddReverb.Size = new System.Drawing.Size(181, 22);
-            this.AddReverb.Text = "Add Reverberation...";
+            this.AddReverb.Text = "Add Rev&erberation...";
             this.AddReverb.Click += new System.EventHandler(this.AddReverb_Click);
             // 
             // AddCompression
             // 
             this.AddCompression.Name = "AddCompression";
             this.AddCompression.Size = new System.Drawing.Size(181, 22);
-            this.AddCompression.Text = "Add Compression...";
+            this.AddCompression.Text = "Add Com&pression...";
             this.AddCompression.Click += new System.EventHandler(this.addCompressionToolStripMenuItem1_Click);
             // 
             // AddDistiortion
             // 
             this.AddDistiortion.Name = "AddDistiortion";
             this.AddDistiortion.Size = new System.Drawing.Size(181, 22);
-            this.AddDistiortion.Text = "Add Distortion...";
+            this.AddDistiortion.Text = "Add Disto&rtion...";
+            this.AddDistiortion.Click += new System.EventHandler(this.AddDistiortion_Click);
             // 
             // AddDelay
             // 
             this.AddDelay.Name = "AddDelay";
             this.AddDelay.Size = new System.Drawing.Size(181, 22);
-            this.AddDelay.Text = "Add Delay...";
+            this.AddDelay.Text = "Add De&lay...";
+            this.AddDelay.Click += new System.EventHandler(this.AddDelay_Click);
             // 
             // AddControl
             // 
             this.AddControl.Name = "AddControl";
             this.AddControl.Size = new System.Drawing.Size(181, 22);
-            this.AddControl.Text = "Add Control...";
+            this.AddControl.Text = "Add Co&ntrol...";
+            this.AddControl.Click += new System.EventHandler(this.AddControl_Click);
             // 
             // AddModulation
             // 
             this.AddModulation.Name = "AddModulation";
             this.AddModulation.Size = new System.Drawing.Size(181, 22);
-            this.AddModulation.Text = "Add Modulation...";
+            this.AddModulation.Text = "Add Mo&dulation...";
+            this.AddModulation.Click += new System.EventHandler(this.AddModulation_Click);
             // 
             // AddMixer
             // 
             this.AddMixer.Name = "AddMixer";
             this.AddMixer.Size = new System.Drawing.Size(181, 22);
-            this.AddMixer.Text = "Add Mixer...";
+            this.AddMixer.Text = "Add M&ixer...";
+            this.AddMixer.Click += new System.EventHandler(this.AddMixer_Click);
             // 
-            // addControlToolStripMenuItem2
+            // addVoiceToolStripMenuItem
             // 
-            this.addControlToolStripMenuItem2.Name = "addControlToolStripMenuItem2";
-            this.addControlToolStripMenuItem2.Size = new System.Drawing.Size(181, 22);
-            this.addControlToolStripMenuItem2.Text = "Add Control...";
+            this.addVoiceToolStripMenuItem.Name = "addVoiceToolStripMenuItem";
+            this.addVoiceToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.addVoiceToolStripMenuItem.Text = "Add V&oice...";
+            this.addVoiceToolStripMenuItem.Click += new System.EventHandler(this.addVoiceToolStripMenuItem_Click);
             // 
             // RemoveCurrentProperty
             // 
             this.RemoveCurrentProperty.Name = "RemoveCurrentProperty";
             this.RemoveCurrentProperty.Size = new System.Drawing.Size(214, 22);
-            this.RemoveCurrentProperty.Text = "Remove Current Property..";
+            this.RemoveCurrentProperty.Text = "Remove Curre&nt Property..";
             this.RemoveCurrentProperty.Click += new System.EventHandler(this.RemoveCurrentProperty_Click);
             // 
             // dataSetPresets
@@ -1704,98 +1710,98 @@
             this.treeViewXML.LabelEdit = true;
             this.treeViewXML.Location = new System.Drawing.Point(3, 0);
             this.treeViewXML.Name = "treeViewXML";
-            treeNode31.Name = "nodeMasterVolume";
-            treeNode31.Tag = "Volume";
-            treeNode31.Text = "Volume";
-            treeNode32.Name = "nodeMaster";
-            treeNode32.Tag = "Master";
-            treeNode32.Text = "Master";
-            treeNode33.Name = "nodeString0";
-            treeNode33.Tag = "t1";
-            treeNode33.Text = "String #0";
-            treeNode34.Name = "nodeString1";
-            treeNode34.Tag = "t2";
-            treeNode34.Text = "String #1";
-            treeNode35.Name = "nodeString2";
-            treeNode35.Tag = "t3";
-            treeNode35.Text = "String #2";
-            treeNode36.Name = "nodeString3";
-            treeNode36.Tag = "t4";
-            treeNode36.Text = "String #3";
-            treeNode37.Name = "nodeString4";
-            treeNode37.Tag = "t5";
-            treeNode37.Text = "String #4";
-            treeNode38.Name = "nodeString5";
-            treeNode38.Tag = "6";
-            treeNode38.Text = "String #5";
-            treeNode39.Name = "nodeTuning";
-            treeNode39.Tag = "Tuning";
-            treeNode39.Text = "Tuning";
-            treeNode40.Name = "nodeChannel0";
-            treeNode40.Tag = "ch1";
-            treeNode40.Text = "Channel #0";
-            treeNode41.Name = "nodeChannel1";
-            treeNode41.Tag = "ch2";
-            treeNode41.Text = "Channel #1";
-            treeNode42.Name = "nodeChannel2";
-            treeNode42.Tag = "ch3";
-            treeNode42.Text = "Channel #2";
-            treeNode43.Name = "nodeChannel3";
-            treeNode43.Tag = "ch4";
-            treeNode43.Text = "Channel #3";
-            treeNode44.Name = "nodeChannel4";
-            treeNode44.Tag = "ch5";
-            treeNode44.Text = "Channel #4";
-            treeNode45.Name = "nodeChannel5";
-            treeNode45.Tag = "ch6";
-            treeNode45.Text = "Channel #5";
-            treeNode46.Name = "nodeMidiOutChannel";
-            treeNode46.Tag = "MidiOutChannel";
-            treeNode46.Text = "MidiOutChannel";
-            treeNode47.Name = "Lowest";
-            treeNode47.Tag = "Lowest";
-            treeNode47.Text = "Lowest";
-            treeNode48.Name = "Lower";
-            treeNode48.Tag = "Lower";
-            treeNode48.Text = "Lower";
-            treeNode49.Name = "Higher";
-            treeNode49.Tag = "Higher";
-            treeNode49.Text = "Higher";
-            treeNode50.Name = "Highest";
-            treeNode50.Tag = "Highest";
-            treeNode50.Text = "Highest";
-            treeNode51.Name = "nodeEqualizer";
-            treeNode51.Tag = "Equalizer";
-            treeNode51.Text = "Equalizer";
-            treeNode52.Name = "nodeReverb";
-            treeNode52.Tag = "Reverberation";
-            treeNode52.Text = "Reverberation";
-            treeNode53.Name = "nodeDistortion";
-            treeNode53.Tag = "Distortion";
-            treeNode53.Text = "Distortion";
-            treeNode54.Name = "nodeModulation";
-            treeNode54.Tag = "Modulation";
-            treeNode54.Text = "Modulation";
-            treeNode55.Name = "nodeCompression";
-            treeNode55.Tag = "Compression";
-            treeNode55.Text = "Compression";
-            treeNode56.Name = "nodeDelay";
-            treeNode56.Tag = "Delay";
-            treeNode56.Text = "Delay";
-            treeNode57.Name = "nodeMixer";
-            treeNode57.Tag = "Mixer";
-            treeNode57.Text = "Mixer";
-            treeNode58.Name = "nodeVoice";
-            treeNode58.Tag = "Voice";
-            treeNode58.Text = "Voice";
-            treeNode59.Name = "nodeControl";
-            treeNode59.Tag = "Control";
-            treeNode59.Text = "Control";
-            treeNode60.Name = "rootPreset";
-            treeNode60.Tag = "Preset";
-            treeNode60.Text = "Preset";
+            treeNode1.Name = "nodeMasterVolume";
+            treeNode1.Tag = "Volume";
+            treeNode1.Text = "Volume";
+            treeNode2.Name = "nodeMaster";
+            treeNode2.Tag = "Master";
+            treeNode2.Text = "Master";
+            treeNode3.Name = "nodeString0";
+            treeNode3.Tag = "t1";
+            treeNode3.Text = "String #0";
+            treeNode4.Name = "nodeString1";
+            treeNode4.Tag = "t2";
+            treeNode4.Text = "String #1";
+            treeNode5.Name = "nodeString2";
+            treeNode5.Tag = "t3";
+            treeNode5.Text = "String #2";
+            treeNode6.Name = "nodeString3";
+            treeNode6.Tag = "t4";
+            treeNode6.Text = "String #3";
+            treeNode7.Name = "nodeString4";
+            treeNode7.Tag = "t5";
+            treeNode7.Text = "String #4";
+            treeNode8.Name = "nodeString5";
+            treeNode8.Tag = "6";
+            treeNode8.Text = "String #5";
+            treeNode9.Name = "nodeTuning";
+            treeNode9.Tag = "Tuning";
+            treeNode9.Text = "Tuning";
+            treeNode10.Name = "nodeChannel0";
+            treeNode10.Tag = "ch1";
+            treeNode10.Text = "Channel #0";
+            treeNode11.Name = "nodeChannel1";
+            treeNode11.Tag = "ch2";
+            treeNode11.Text = "Channel #1";
+            treeNode12.Name = "nodeChannel2";
+            treeNode12.Tag = "ch3";
+            treeNode12.Text = "Channel #2";
+            treeNode13.Name = "nodeChannel3";
+            treeNode13.Tag = "ch4";
+            treeNode13.Text = "Channel #3";
+            treeNode14.Name = "nodeChannel4";
+            treeNode14.Tag = "ch5";
+            treeNode14.Text = "Channel #4";
+            treeNode15.Name = "nodeChannel5";
+            treeNode15.Tag = "ch6";
+            treeNode15.Text = "Channel #5";
+            treeNode16.Name = "nodeMidiOutChannel";
+            treeNode16.Tag = "MidiOutChannel";
+            treeNode16.Text = "MidiOutChannel";
+            treeNode17.Name = "Lowest";
+            treeNode17.Tag = "Lowest";
+            treeNode17.Text = "Lowest";
+            treeNode18.Name = "Lower";
+            treeNode18.Tag = "Lower";
+            treeNode18.Text = "Lower";
+            treeNode19.Name = "Higher";
+            treeNode19.Tag = "Higher";
+            treeNode19.Text = "Higher";
+            treeNode20.Name = "Highest";
+            treeNode20.Tag = "Highest";
+            treeNode20.Text = "Highest";
+            treeNode21.Name = "nodeEqualizer";
+            treeNode21.Tag = "Equalizer";
+            treeNode21.Text = "Equalizer";
+            treeNode22.Name = "nodeReverb";
+            treeNode22.Tag = "Reverberation";
+            treeNode22.Text = "Reverberation";
+            treeNode23.Name = "nodeDistortion";
+            treeNode23.Tag = "Distortion";
+            treeNode23.Text = "Distortion";
+            treeNode24.Name = "nodeModulation";
+            treeNode24.Tag = "Modulation";
+            treeNode24.Text = "Modulation";
+            treeNode25.Name = "nodeCompression";
+            treeNode25.Tag = "Compression";
+            treeNode25.Text = "Compression";
+            treeNode26.Name = "nodeDelay";
+            treeNode26.Tag = "Delay";
+            treeNode26.Text = "Delay";
+            treeNode27.Name = "nodeMixer";
+            treeNode27.Tag = "Mixer";
+            treeNode27.Text = "Mixer";
+            treeNode28.Name = "nodeVoice";
+            treeNode28.Tag = "Voice";
+            treeNode28.Text = "Voice";
+            treeNode29.Name = "nodeControl";
+            treeNode29.Tag = "Control";
+            treeNode29.Text = "Control";
+            treeNode30.Name = "rootPreset";
+            treeNode30.Tag = "Preset";
+            treeNode30.Text = "Preset";
             this.treeViewXML.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode60});
+            treeNode30});
             this.treeViewXML.ShowNodeToolTips = true;
             this.treeViewXML.Size = new System.Drawing.Size(236, 425);
             this.treeViewXML.TabIndex = 0;
@@ -1856,7 +1862,6 @@
         private System.Windows.Forms.ToolStripMenuItem AddControl;
         private System.Windows.Forms.ToolStripMenuItem AddModulation;
         private System.Windows.Forms.ToolStripMenuItem AddMixer;
-        private System.Windows.Forms.ToolStripMenuItem addControlToolStripMenuItem2;
         private System.Data.DataSet dataSetPresets;
         private System.Data.DataTable tEqualizer;
         private System.Windows.Forms.ToolStripMenuItem RemoveCurrentProperty;
@@ -1982,5 +1987,6 @@
         private System.Data.DataColumn variation_end;
         private System.Data.DataColumn fxb;
         private System.Data.DataColumn drag_center;
+        private System.Windows.Forms.ToolStripMenuItem addVoiceToolStripMenuItem;
     }
 }

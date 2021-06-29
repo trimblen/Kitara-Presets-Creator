@@ -12,9 +12,23 @@ namespace KitaraPresetsCreator
 {
     public partial class DistortionEdit : Form
     {
-        public DistortionEdit()
+        private PresetForm _pFrm;
+
+        public DistortionEdit(PresetForm pFrm)
         {
             InitializeComponent();
+
+            this._pFrm = pFrm;
+        }
+
+        private void DistortionEdit_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttSave_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

@@ -12,10 +12,23 @@ namespace KitaraPresetsCreator
 {
     public partial class MixerEdit : Form
     {
-        public MixerEdit()
+        private PresetForm _pFrm;
+
+        public MixerEdit(PresetForm pFrm)
         {
             InitializeComponent();
+
+            this._pFrm = pFrm;
         }
 
+        private void MixerEdit_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttSave_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+        }
     }
 }

@@ -75,6 +75,7 @@
             this.buttSave.TabIndex = 16;
             this.buttSave.Text = "Save d&ata...";
             this.buttSave.UseVisualStyleBackColor = true;
+            this.buttSave.Click += new System.EventHandler(this.buttSave_Click);
             // 
             // numType
             // 
@@ -95,6 +96,11 @@
             // numName
             // 
             this.numName.Location = new System.Drawing.Point(130, 61);
+            this.numName.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numName.Name = "numName";
             this.numName.Size = new System.Drawing.Size(120, 20);
             this.numName.TabIndex = 19;
@@ -111,6 +117,11 @@
             // numString
             // 
             this.numString.Location = new System.Drawing.Point(130, 87);
+            this.numString.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.numString.Name = "numString";
             this.numString.Size = new System.Drawing.Size(120, 20);
             this.numString.TabIndex = 21;
@@ -127,6 +138,11 @@
             // numIndex
             // 
             this.numIndex.Location = new System.Drawing.Point(130, 113);
+            this.numIndex.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numIndex.Name = "numIndex";
             this.numIndex.Size = new System.Drawing.Size(120, 20);
             this.numIndex.TabIndex = 23;
@@ -143,6 +159,11 @@
             // numOutput
             // 
             this.numOutput.Location = new System.Drawing.Point(130, 139);
+            this.numOutput.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numOutput.Name = "numOutput";
             this.numOutput.Size = new System.Drawing.Size(120, 20);
             this.numOutput.TabIndex = 25;
@@ -159,6 +180,11 @@
             // numChannel
             // 
             this.numChannel.Location = new System.Drawing.Point(130, 165);
+            this.numChannel.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.numChannel.Name = "numChannel";
             this.numChannel.Size = new System.Drawing.Size(120, 20);
             this.numChannel.TabIndex = 27;
@@ -184,6 +210,11 @@
             // numCc
             // 
             this.numCc.Location = new System.Drawing.Point(388, 37);
+            this.numCc.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.numCc.Name = "numCc";
             this.numCc.Size = new System.Drawing.Size(120, 20);
             this.numCc.TabIndex = 29;
@@ -200,6 +231,11 @@
             // numInverse
             // 
             this.numInverse.Location = new System.Drawing.Point(388, 63);
+            this.numInverse.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numInverse.Name = "numInverse";
             this.numInverse.Size = new System.Drawing.Size(120, 20);
             this.numInverse.TabIndex = 31;
@@ -216,6 +252,11 @@
             // numVariation_start
             // 
             this.numVariation_start.Location = new System.Drawing.Point(388, 89);
+            this.numVariation_start.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numVariation_start.Name = "numVariation_start";
             this.numVariation_start.Size = new System.Drawing.Size(120, 20);
             this.numVariation_start.TabIndex = 33;
@@ -232,6 +273,11 @@
             // numVariation_end
             // 
             this.numVariation_end.Location = new System.Drawing.Point(388, 116);
+            this.numVariation_end.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numVariation_end.Name = "numVariation_end";
             this.numVariation_end.Size = new System.Drawing.Size(120, 20);
             this.numVariation_end.TabIndex = 35;
@@ -248,6 +294,11 @@
             // numFxb
             // 
             this.numFxb.Location = new System.Drawing.Point(388, 142);
+            this.numFxb.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numFxb.Name = "numFxb";
             this.numFxb.Size = new System.Drawing.Size(120, 20);
             this.numFxb.TabIndex = 37;
@@ -264,6 +315,11 @@
             // numDrag_center
             // 
             this.numDrag_center.Location = new System.Drawing.Point(388, 168);
+            this.numDrag_center.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numDrag_center.Name = "numDrag_center";
             this.numDrag_center.Size = new System.Drawing.Size(120, 20);
             this.numDrag_center.TabIndex = 39;
@@ -301,6 +357,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "ControlEdit";
             this.Text = "Control Edit...";
+            this.Load += new System.EventHandler(this.ControlEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numString)).EndInit();

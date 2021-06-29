@@ -29,157 +29,158 @@
         private void InitializeComponent()
         {
             this.buttSave = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
+            this.chOn = new System.Windows.Forms.CheckBox();
+            this.numFxblock = new System.Windows.Forms.NumericUpDown();
+            this.LFxblock = new System.Windows.Forms.Label();
+            this.LMode = new System.Windows.Forms.Label();
+            this.numMode = new System.Windows.Forms.NumericUpDown();
+            this.LPreLp = new System.Windows.Forms.Label();
+            this.numPreLp = new System.Windows.Forms.NumericUpDown();
+            this.LLevel = new System.Windows.Forms.Label();
+            this.numLevel = new System.Windows.Forms.NumericUpDown();
+            this.LTime = new System.Windows.Forms.Label();
+            this.numTime = new System.Windows.Forms.NumericUpDown();
+            this.LFeedback = new System.Windows.Forms.Label();
+            this.numFeedback = new System.Windows.Forms.NumericUpDown();
+            this.LFeedbackFilter = new System.Windows.Forms.Label();
             this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numFxblock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPreLp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numFeedback)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
             this.SuspendLayout();
             // 
             // buttSave
             // 
-            this.buttSave.Location = new System.Drawing.Point(178, 377);
+            this.buttSave.Location = new System.Drawing.Point(35, 272);
             this.buttSave.Name = "buttSave";
-            this.buttSave.Size = new System.Drawing.Size(191, 23);
+            this.buttSave.Size = new System.Drawing.Size(204, 23);
             this.buttSave.TabIndex = 16;
             this.buttSave.Text = "Save d&ata...";
             this.buttSave.UseVisualStyleBackColor = true;
+            this.buttSave.Click += new System.EventHandler(this.buttSave_Click);
             // 
-            // checkBox1
+            // chOn
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(-4, 105);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 17;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chOn.AutoSize = true;
+            this.chOn.Location = new System.Drawing.Point(35, 54);
+            this.chOn.Name = "chOn";
+            this.chOn.Size = new System.Drawing.Size(41, 17);
+            this.chOn.TabIndex = 17;
+            this.chOn.Text = "on:";
+            this.chOn.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
+            // numFxblock
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(131, 25);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 18;
+            this.numFxblock.Location = new System.Drawing.Point(119, 25);
+            this.numFxblock.Name = "numFxblock";
+            this.numFxblock.Size = new System.Drawing.Size(120, 20);
+            this.numFxblock.TabIndex = 18;
             // 
-            // label1
+            // LFxblock
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "label1";
+            this.LFxblock.AutoSize = true;
+            this.LFxblock.Location = new System.Drawing.Point(32, 27);
+            this.LFxblock.Name = "LFxblock";
+            this.LFxblock.Size = new System.Drawing.Size(44, 13);
+            this.LFxblock.TabIndex = 19;
+            this.LFxblock.Text = "fxblock:";
             // 
-            // label2
+            // LMode
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(82, 104);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "label2";
+            this.LMode.AutoSize = true;
+            this.LMode.Location = new System.Drawing.Point(32, 83);
+            this.LMode.Name = "LMode";
+            this.LMode.Size = new System.Drawing.Size(36, 13);
+            this.LMode.TabIndex = 21;
+            this.LMode.Text = "mode:";
             // 
-            // numericUpDown2
+            // numMode
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(164, 102);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown2.TabIndex = 20;
+            this.numMode.Location = new System.Drawing.Point(119, 81);
+            this.numMode.Name = "numMode";
+            this.numMode.Size = new System.Drawing.Size(120, 20);
+            this.numMode.TabIndex = 20;
             // 
-            // label3
+            // LPreLp
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(82, 148);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "label3";
+            this.LPreLp.AutoSize = true;
+            this.LPreLp.Location = new System.Drawing.Point(32, 109);
+            this.LPreLp.Name = "LPreLp";
+            this.LPreLp.Size = new System.Drawing.Size(39, 13);
+            this.LPreLp.TabIndex = 23;
+            this.LPreLp.Text = "pre_lp:";
             // 
-            // numericUpDown3
+            // numPreLp
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(164, 146);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown3.TabIndex = 22;
+            this.numPreLp.Location = new System.Drawing.Point(119, 107);
+            this.numPreLp.Name = "numPreLp";
+            this.numPreLp.Size = new System.Drawing.Size(120, 20);
+            this.numPreLp.TabIndex = 22;
             // 
-            // label4
+            // LLevel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(82, 191);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "label4";
+            this.LLevel.AutoSize = true;
+            this.LLevel.Location = new System.Drawing.Point(33, 135);
+            this.LLevel.Name = "LLevel";
+            this.LLevel.Size = new System.Drawing.Size(32, 13);
+            this.LLevel.TabIndex = 25;
+            this.LLevel.Text = "level:";
             // 
-            // numericUpDown4
+            // numLevel
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(164, 189);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown4.TabIndex = 24;
+            this.numLevel.Location = new System.Drawing.Point(119, 133);
+            this.numLevel.Name = "numLevel";
+            this.numLevel.Size = new System.Drawing.Size(120, 20);
+            this.numLevel.TabIndex = 24;
             // 
-            // label5
+            // LTime
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(82, 228);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "label5";
+            this.LTime.AutoSize = true;
+            this.LTime.Location = new System.Drawing.Point(33, 161);
+            this.LTime.Name = "LTime";
+            this.LTime.Size = new System.Drawing.Size(29, 13);
+            this.LTime.TabIndex = 27;
+            this.LTime.Text = "time:";
             // 
-            // numericUpDown5
+            // numTime
             // 
-            this.numericUpDown5.Location = new System.Drawing.Point(164, 226);
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown5.TabIndex = 26;
+            this.numTime.Location = new System.Drawing.Point(119, 159);
+            this.numTime.Name = "numTime";
+            this.numTime.Size = new System.Drawing.Size(120, 20);
+            this.numTime.TabIndex = 26;
             // 
-            // label6
+            // LFeedback
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(72, 276);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "label6";
+            this.LFeedback.AutoSize = true;
+            this.LFeedback.Location = new System.Drawing.Point(32, 187);
+            this.LFeedback.Name = "LFeedback";
+            this.LFeedback.Size = new System.Drawing.Size(55, 13);
+            this.LFeedback.TabIndex = 29;
+            this.LFeedback.Text = "feedback:";
             // 
-            // numericUpDown6
+            // numFeedback
             // 
-            this.numericUpDown6.Location = new System.Drawing.Point(154, 274);
-            this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown6.TabIndex = 28;
+            this.numFeedback.Location = new System.Drawing.Point(119, 185);
+            this.numFeedback.Name = "numFeedback";
+            this.numFeedback.Size = new System.Drawing.Size(120, 20);
+            this.numFeedback.TabIndex = 28;
             // 
-            // label7
+            // LFeedbackFilter
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(72, 319);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 31;
-            this.label7.Text = "label7";
+            this.LFeedbackFilter.AutoSize = true;
+            this.LFeedbackFilter.Location = new System.Drawing.Point(32, 213);
+            this.LFeedbackFilter.Name = "LFeedbackFilter";
+            this.LFeedbackFilter.Size = new System.Drawing.Size(80, 13);
+            this.LFeedbackFilter.TabIndex = 31;
+            this.LFeedbackFilter.Text = "feedback_filter:";
             // 
             // numericUpDown7
             // 
-            this.numericUpDown7.Location = new System.Drawing.Point(154, 317);
+            this.numericUpDown7.Location = new System.Drawing.Point(119, 211);
             this.numericUpDown7.Name = "numericUpDown7";
             this.numericUpDown7.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown7.TabIndex = 30;
@@ -188,32 +189,33 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(547, 450);
-            this.Controls.Add(this.label7);
+            this.ClientSize = new System.Drawing.Size(279, 320);
+            this.Controls.Add(this.LFeedbackFilter);
             this.Controls.Add(this.numericUpDown7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.numericUpDown6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.numericUpDown5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.numericUpDown4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.numericUpDown3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.LFeedback);
+            this.Controls.Add(this.numFeedback);
+            this.Controls.Add(this.LTime);
+            this.Controls.Add(this.numTime);
+            this.Controls.Add(this.LLevel);
+            this.Controls.Add(this.numLevel);
+            this.Controls.Add(this.LPreLp);
+            this.Controls.Add(this.numPreLp);
+            this.Controls.Add(this.LMode);
+            this.Controls.Add(this.numMode);
+            this.Controls.Add(this.LFxblock);
+            this.Controls.Add(this.numFxblock);
+            this.Controls.Add(this.chOn);
             this.Controls.Add(this.buttSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "DelayEdit";
             this.Text = "Delay Edit...";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
+            this.Load += new System.EventHandler(this.DelayEdit_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numFxblock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPreLp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numFeedback)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -223,20 +225,20 @@
         #endregion
 
         private System.Windows.Forms.Button buttSave;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numericUpDown6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox chOn;
+        private System.Windows.Forms.NumericUpDown numFxblock;
+        private System.Windows.Forms.Label LFxblock;
+        private System.Windows.Forms.Label LMode;
+        private System.Windows.Forms.NumericUpDown numMode;
+        private System.Windows.Forms.Label LPreLp;
+        private System.Windows.Forms.NumericUpDown numPreLp;
+        private System.Windows.Forms.Label LLevel;
+        private System.Windows.Forms.NumericUpDown numLevel;
+        private System.Windows.Forms.Label LTime;
+        private System.Windows.Forms.NumericUpDown numTime;
+        private System.Windows.Forms.Label LFeedback;
+        private System.Windows.Forms.NumericUpDown numFeedback;
+        private System.Windows.Forms.Label LFeedbackFilter;
         private System.Windows.Forms.NumericUpDown numericUpDown7;
     }
 }

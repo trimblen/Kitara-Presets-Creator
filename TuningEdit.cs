@@ -12,9 +12,23 @@ namespace KitaraPresetsCreator
 {
     public partial class TuningEdit : Form
     {
-        public TuningEdit()
+        private PresetForm _pFrm;
+
+        public TuningEdit(PresetForm pFrm)
         {
             InitializeComponent();
+
+            this._pFrm = pFrm;
+        }
+
+        private void TuningEdit_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttSave_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

@@ -42,6 +42,7 @@
             this.buttSave.TabIndex = 16;
             this.buttSave.Text = "Save d&ata...";
             this.buttSave.UseVisualStyleBackColor = true;
+            this.buttSave.Click += new System.EventHandler(this.buttSave_Click);
             // 
             // LValue
             // 
@@ -70,6 +71,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "TuningEdit";
             this.Text = "Tuning Edit...";
+            this.Load += new System.EventHandler(this.TuningEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numValue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

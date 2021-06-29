@@ -46,6 +46,7 @@
             this.buttSave.TabIndex = 16;
             this.buttSave.Text = "Save d&ata...";
             this.buttSave.UseVisualStyleBackColor = true;
+            this.buttSave.Click += new System.EventHandler(this.buttSave_Click);
             // 
             // chOn
             // 
@@ -103,6 +104,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "EqualizerMainEdit";
             this.Text = "Equalizer Main Edit...";
+            this.Load += new System.EventHandler(this.EqualizerMainEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numLowMidQ)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHighMidQ)).EndInit();
             this.ResumeLayout(false);

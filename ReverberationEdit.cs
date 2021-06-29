@@ -14,6 +14,7 @@ namespace KitaraPresetsCreator
     public partial class ReverberationEdit : Form
     {
         private PresetForm _pFrm;
+
         public ReverberationEdit(PresetForm pFrm)
         {           
            InitializeComponent();
@@ -23,12 +24,12 @@ namespace KitaraPresetsCreator
 
         private void ReverberationEdit_Load(object sender, EventArgs e)
         {
-            rTypeNumber.Value           = Convert.ToDecimal(this._pFrm.drFind.ItemArray[0]);
-            rPrelpf.Value               = Convert.ToDecimal(this._pFrm.drFind.ItemArray[1]);
-            rLev.Value                  = Convert.ToDecimal(this._pFrm.drFind.ItemArray[2]);
-            rTime.Value                 = Convert.ToDecimal(this._pFrm.drFind.ItemArray[3]);
-            rDelayFeedback.Value        = Convert.ToDecimal(this._pFrm.drFind.ItemArray[4]);
-            rDelTime.Value              = Convert.ToDecimal(this._pFrm.drFind.ItemArray[6]);
+            rTypeNumber.Value           = this._pFrm.drFind.Field<Decimal>("rType");                //Convert.ToDecimal(this._pFrm.drFind.ItemArray[0]);
+            rPrelpf.Value               = this._pFrm.drFind.Field<Decimal>("rPre_lpf");            //Convert.ToDecimal(this._pFrm.drFind.ItemArray[1]);
+            rLev.Value                  = this._pFrm.drFind.Field<Decimal>("rLevel");             //Convert.ToDecimal(this._pFrm.drFind.ItemArray[2]);
+            rTime.Value                 = this._pFrm.drFind.Field<Decimal>("rTime");             //Convert.ToDecimal(this._pFrm.drFind.ItemArray[3]);
+            rDelayFeedback.Value        = this._pFrm.drFind.Field<Decimal>("rDelayFeedback");   //Convert.ToDecimal(this._pFrm.drFind.ItemArray[4]);
+            rDelTime.Value              = this._pFrm.drFind.Field<Decimal>("pRreDelayTime");   //Convert.ToDecimal(this._pFrm.drFind.ItemArray[6]);
         }
 
         private void buttSave_Click(object sender, EventArgs e)

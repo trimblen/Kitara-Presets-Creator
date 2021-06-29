@@ -12,9 +12,23 @@ namespace KitaraPresetsCreator
 {
     public partial class EqualizerEdit : Form
     {
-        public EqualizerEdit()
+        private PresetForm _pFrm;
+
+        public EqualizerEdit(PresetForm pFrm)
         {
             InitializeComponent();
+
+            this._pFrm = pFrm;
+        }
+
+        private void EqualizerEdit_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttSave_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

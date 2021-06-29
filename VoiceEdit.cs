@@ -12,10 +12,23 @@ namespace KitaraPresetsCreator
 {
     public partial class VoiceEdit : Form
     {
-        public VoiceEdit()
+        private PresetForm _pFrm;
+
+        public VoiceEdit(PresetForm pFrm)
         {
             InitializeComponent();
+
+            this._pFrm = pFrm;
         }
 
+        private void VoiceEdit_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttSave_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+        }
     }
 }

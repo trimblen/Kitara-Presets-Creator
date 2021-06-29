@@ -12,9 +12,23 @@ namespace KitaraPresetsCreator
 {
     public partial class ModulationEdit : Form
     {
-        public ModulationEdit()
+        private PresetForm _pFrm;
+
+        public ModulationEdit(PresetForm pFrm)
         {
             InitializeComponent();
+
+            this._pFrm = pFrm;
+        }
+
+        private void ModulationEdit_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttSave_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

@@ -29,170 +29,172 @@
         private void InitializeComponent()
         {
             this.buttSave = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
+            this.chOn = new System.Windows.Forms.CheckBox();
+            this.numFxblock = new System.Windows.Forms.NumericUpDown();
+            this.LFxblock = new System.Windows.Forms.Label();
+            this.LType = new System.Windows.Forms.Label();
+            this.numType = new System.Windows.Forms.NumericUpDown();
+            this.LLevel = new System.Windows.Forms.Label();
+            this.numLevel = new System.Windows.Forms.NumericUpDown();
+            this.LDrive = new System.Windows.Forms.Label();
+            this.numDrive = new System.Windows.Forms.NumericUpDown();
+            this.LTone = new System.Windows.Forms.Label();
+            this.numTone = new System.Windows.Forms.NumericUpDown();
+            this.LBooster = new System.Windows.Forms.Label();
+            this.numBooster = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numFxblock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDrive)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBooster)).BeginInit();
             this.SuspendLayout();
             // 
             // buttSave
             // 
-            this.buttSave.Location = new System.Drawing.Point(46, 322);
+            this.buttSave.Location = new System.Drawing.Point(19, 217);
             this.buttSave.Name = "buttSave";
             this.buttSave.Size = new System.Drawing.Size(191, 23);
             this.buttSave.TabIndex = 16;
             this.buttSave.Text = "Save d&ata...";
             this.buttSave.UseVisualStyleBackColor = true;
+            this.buttSave.Click += new System.EventHandler(this.buttSave_Click);
             // 
-            // checkBox1
+            // chOn
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(37, 24);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 17;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chOn.AutoSize = true;
+            this.chOn.Location = new System.Drawing.Point(28, 49);
+            this.chOn.Name = "chOn";
+            this.chOn.Size = new System.Drawing.Size(41, 17);
+            this.chOn.TabIndex = 17;
+            this.chOn.Text = "on:";
+            this.chOn.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
+            // numFxblock
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(117, 59);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 18;
+            this.numFxblock.Location = new System.Drawing.Point(90, 19);
+            this.numFxblock.Name = "numFxblock";
+            this.numFxblock.Size = new System.Drawing.Size(120, 20);
+            this.numFxblock.TabIndex = 18;
             // 
-            // label1
+            // LFxblock
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 61);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "label1";
+            this.LFxblock.AutoSize = true;
+            this.LFxblock.Location = new System.Drawing.Point(25, 21);
+            this.LFxblock.Name = "LFxblock";
+            this.LFxblock.Size = new System.Drawing.Size(44, 13);
+            this.LFxblock.TabIndex = 19;
+            this.LFxblock.Text = "fxblock:";
             // 
-            // label2
+            // LType
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 105);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "label2";
+            this.LType.AutoSize = true;
+            this.LType.Location = new System.Drawing.Point(25, 77);
+            this.LType.Name = "LType";
+            this.LType.Size = new System.Drawing.Size(30, 13);
+            this.LType.TabIndex = 21;
+            this.LType.Text = "type:";
             // 
-            // numericUpDown2
+            // numType
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(117, 103);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown2.TabIndex = 20;
+            this.numType.Location = new System.Drawing.Point(90, 75);
+            this.numType.Name = "numType";
+            this.numType.Size = new System.Drawing.Size(120, 20);
+            this.numType.TabIndex = 20;
             // 
-            // label3
+            // LLevel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 151);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "label3";
+            this.LLevel.AutoSize = true;
+            this.LLevel.Location = new System.Drawing.Point(25, 103);
+            this.LLevel.Name = "LLevel";
+            this.LLevel.Size = new System.Drawing.Size(32, 13);
+            this.LLevel.TabIndex = 23;
+            this.LLevel.Text = "level:";
             // 
-            // numericUpDown3
+            // numLevel
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(117, 149);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown3.TabIndex = 22;
+            this.numLevel.Location = new System.Drawing.Point(90, 101);
+            this.numLevel.Name = "numLevel";
+            this.numLevel.Size = new System.Drawing.Size(120, 20);
+            this.numLevel.TabIndex = 22;
             // 
-            // label4
+            // LDrive
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 193);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "label4";
+            this.LDrive.AutoSize = true;
+            this.LDrive.Location = new System.Drawing.Point(25, 129);
+            this.LDrive.Name = "LDrive";
+            this.LDrive.Size = new System.Drawing.Size(33, 13);
+            this.LDrive.TabIndex = 25;
+            this.LDrive.Text = "drive:";
             // 
-            // numericUpDown4
+            // numDrive
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(117, 191);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown4.TabIndex = 24;
+            this.numDrive.Location = new System.Drawing.Point(90, 127);
+            this.numDrive.Name = "numDrive";
+            this.numDrive.Size = new System.Drawing.Size(120, 20);
+            this.numDrive.TabIndex = 24;
             // 
-            // label5
+            // LTone
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(37, 236);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "label5";
+            this.LTone.AutoSize = true;
+            this.LTone.Location = new System.Drawing.Point(25, 155);
+            this.LTone.Name = "LTone";
+            this.LTone.Size = new System.Drawing.Size(31, 13);
+            this.LTone.TabIndex = 27;
+            this.LTone.Text = "tone:";
             // 
-            // numericUpDown5
+            // numTone
             // 
-            this.numericUpDown5.Location = new System.Drawing.Point(117, 234);
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown5.TabIndex = 26;
+            this.numTone.Location = new System.Drawing.Point(90, 153);
+            this.numTone.Name = "numTone";
+            this.numTone.Size = new System.Drawing.Size(120, 20);
+            this.numTone.TabIndex = 26;
             // 
-            // label6
+            // LBooster
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(37, 279);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "label6";
+            this.LBooster.AutoSize = true;
+            this.LBooster.Location = new System.Drawing.Point(25, 181);
+            this.LBooster.Name = "LBooster";
+            this.LBooster.Size = new System.Drawing.Size(45, 13);
+            this.LBooster.TabIndex = 29;
+            this.LBooster.Text = "booster:";
             // 
-            // numericUpDown6
+            // numBooster
             // 
-            this.numericUpDown6.Location = new System.Drawing.Point(117, 277);
-            this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown6.TabIndex = 28;
+            this.numBooster.Location = new System.Drawing.Point(90, 179);
+            this.numBooster.Name = "numBooster";
+            this.numBooster.Size = new System.Drawing.Size(120, 20);
+            this.numBooster.TabIndex = 28;
             // 
             // DistortionEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(291, 377);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.numericUpDown6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.numericUpDown5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.numericUpDown4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.numericUpDown3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.checkBox1);
+            this.ClientSize = new System.Drawing.Size(240, 258);
+            this.Controls.Add(this.LBooster);
+            this.Controls.Add(this.numBooster);
+            this.Controls.Add(this.LTone);
+            this.Controls.Add(this.numTone);
+            this.Controls.Add(this.LDrive);
+            this.Controls.Add(this.numDrive);
+            this.Controls.Add(this.LLevel);
+            this.Controls.Add(this.numLevel);
+            this.Controls.Add(this.LType);
+            this.Controls.Add(this.numType);
+            this.Controls.Add(this.LFxblock);
+            this.Controls.Add(this.numFxblock);
+            this.Controls.Add(this.chOn);
             this.Controls.Add(this.buttSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "DistortionEdit";
             this.Text = "Distortion Edit...";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
+            this.Load += new System.EventHandler(this.DistortionEdit_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numFxblock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDrive)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBooster)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,18 +203,18 @@
         #endregion
 
         private System.Windows.Forms.Button buttSave;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numericUpDown6;
+        private System.Windows.Forms.CheckBox chOn;
+        private System.Windows.Forms.NumericUpDown numFxblock;
+        private System.Windows.Forms.Label LFxblock;
+        private System.Windows.Forms.Label LType;
+        private System.Windows.Forms.NumericUpDown numType;
+        private System.Windows.Forms.Label LLevel;
+        private System.Windows.Forms.NumericUpDown numLevel;
+        private System.Windows.Forms.Label LDrive;
+        private System.Windows.Forms.NumericUpDown numDrive;
+        private System.Windows.Forms.Label LTone;
+        private System.Windows.Forms.NumericUpDown numTone;
+        private System.Windows.Forms.Label LBooster;
+        private System.Windows.Forms.NumericUpDown numBooster;
     }
 }

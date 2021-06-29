@@ -42,7 +42,7 @@
             this.lRatio = new System.Windows.Forms.Label();
             this.numBoost = new System.Windows.Forms.NumericUpDown();
             this.lBoost = new System.Windows.Forms.Label();
-            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
+            this.numKnee = new System.Windows.Forms.NumericUpDown();
             this.LKnee = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numFxblock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAttack)).BeginInit();
@@ -50,7 +50,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numThreshold)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numRatio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBoost)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numKnee)).BeginInit();
             this.SuspendLayout();
             // 
             // buttSave
@@ -61,6 +61,7 @@
             this.buttSave.TabIndex = 16;
             this.buttSave.Text = "Save d&ata...";
             this.buttSave.UseVisualStyleBackColor = true;
+            this.buttSave.Click += new System.EventHandler(this.buttSave_Click);
             // 
             // lfxblock
             // 
@@ -74,6 +75,11 @@
             // numFxblock
             // 
             this.numFxblock.Location = new System.Drawing.Point(144, 46);
+            this.numFxblock.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numFxblock.Name = "numFxblock";
             this.numFxblock.Size = new System.Drawing.Size(120, 20);
             this.numFxblock.TabIndex = 18;
@@ -81,6 +87,11 @@
             // numAttack
             // 
             this.numAttack.Location = new System.Drawing.Point(144, 72);
+            this.numAttack.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numAttack.Name = "numAttack";
             this.numAttack.Size = new System.Drawing.Size(120, 20);
             this.numAttack.TabIndex = 19;
@@ -97,7 +108,7 @@
             // chOn
             // 
             this.chOn.AutoSize = true;
-            this.chOn.Location = new System.Drawing.Point(43, 90);
+            this.chOn.Location = new System.Drawing.Point(43, 95);
             this.chOn.Name = "chOn";
             this.chOn.Size = new System.Drawing.Size(38, 17);
             this.chOn.TabIndex = 21;
@@ -107,6 +118,11 @@
             // numRelease
             // 
             this.numRelease.Location = new System.Drawing.Point(144, 117);
+            this.numRelease.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numRelease.Name = "numRelease";
             this.numRelease.Size = new System.Drawing.Size(120, 20);
             this.numRelease.TabIndex = 22;
@@ -123,6 +139,11 @@
             // numThreshold
             // 
             this.numThreshold.Location = new System.Drawing.Point(144, 143);
+            this.numThreshold.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numThreshold.Name = "numThreshold";
             this.numThreshold.Size = new System.Drawing.Size(120, 20);
             this.numThreshold.TabIndex = 24;
@@ -139,10 +160,14 @@
             // numRatio
             // 
             this.numRatio.Location = new System.Drawing.Point(144, 169);
+            this.numRatio.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numRatio.Name = "numRatio";
             this.numRatio.Size = new System.Drawing.Size(120, 20);
             this.numRatio.TabIndex = 26;
-            this.numRatio.ValueChanged += new System.EventHandler(this.numericUpDown5_ValueChanged);
             // 
             // lRatio
             // 
@@ -156,6 +181,11 @@
             // numBoost
             // 
             this.numBoost.Location = new System.Drawing.Point(144, 195);
+            this.numBoost.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numBoost.Name = "numBoost";
             this.numBoost.Size = new System.Drawing.Size(120, 20);
             this.numBoost.TabIndex = 28;
@@ -169,12 +199,17 @@
             this.lBoost.TabIndex = 29;
             this.lBoost.Text = "boost:";
             // 
-            // numericUpDown7
+            // numKnee
             // 
-            this.numericUpDown7.Location = new System.Drawing.Point(144, 221);
-            this.numericUpDown7.Name = "numericUpDown7";
-            this.numericUpDown7.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown7.TabIndex = 30;
+            this.numKnee.Location = new System.Drawing.Point(144, 221);
+            this.numKnee.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
+            this.numKnee.Name = "numKnee";
+            this.numKnee.Size = new System.Drawing.Size(120, 20);
+            this.numKnee.TabIndex = 30;
             // 
             // LKnee
             // 
@@ -191,7 +226,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(313, 326);
             this.Controls.Add(this.LKnee);
-            this.Controls.Add(this.numericUpDown7);
+            this.Controls.Add(this.numKnee);
             this.Controls.Add(this.lBoost);
             this.Controls.Add(this.numBoost);
             this.Controls.Add(this.lRatio);
@@ -209,13 +244,14 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "CompressionEdit";
             this.Text = "Compression Edit...";
+            this.Load += new System.EventHandler(this.CompressionEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numFxblock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAttack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numRelease)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numThreshold)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numRatio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBoost)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numKnee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,7 +273,7 @@
         private System.Windows.Forms.Label lRatio;
         private System.Windows.Forms.NumericUpDown numBoost;
         private System.Windows.Forms.Label lBoost;
-        private System.Windows.Forms.NumericUpDown numericUpDown7;
+        private System.Windows.Forms.NumericUpDown numKnee;
         private System.Windows.Forms.Label LKnee;
     }
 }

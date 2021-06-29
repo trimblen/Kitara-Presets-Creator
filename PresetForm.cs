@@ -339,22 +339,6 @@ namespace KitaraPresetsCreator
             
         }
 
-        private void addCompressionToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            TreeNode newNode = new TreeNode();
-
-          //  TreeNode[] tParent = treeViewXML.Nodes.Find("Compression", false);
-            //tParent.
-            treeViewXML.SelectedNode.Nodes.Add(newNode);
-            newNode.EnsureVisible();
-        }
-
-        private void AddReverb_Click(object sender, EventArgs e)
-        {                  
-           this.AddNodeByType("nodeReverb", "Reverberation", "tReverberation");    
-            
-        }
-
         //we need to add some node 
         private void AddNodeByType(string NodeType, string nodeParentName, string tableName) {
             TreeNode tns = treeViewXML.Nodes.Find(NodeType, true).FirstOrDefault();
@@ -396,26 +380,7 @@ namespace KitaraPresetsCreator
             }
         }
 
-        private void setReverbDataInDataSetTemporarily(string revTab, SByte rType, SByte rPre_lpf, SByte rLevel, SByte rDelay_Feedback, SByte rPre_Delay_Time, string revTag) {
-
-            DataRow[] findRow = GetARowStringByTag(revTab, revTab);
-
-            if (findRow!=null) {
-            
-            
-            } else 
-            {
-
-                DataRow rNewRow = dataSetPresets.Tables["tReverberation"].NewRow();
-
-                rNewRow["revTab"] = revTab;
-
-                dataSetPresets.Tables["tReverberation"].Rows.Add(rNewRow);
-
-            }
-
-        }
-
+        //edit custom properties
         private void EditReverbData(string rTag) {
             DataRow[] findRow = GetARowStringByTag(rTag, "tReverberation");
 
@@ -429,6 +394,142 @@ namespace KitaraPresetsCreator
             };
         }
 
+        private void EditDelayData(string rTag)
+        {
+            DataRow[] findRow = GetARowStringByTag(rTag, "tDelay");
+
+            this.drFind = findRow[0];
+
+            DelayEdit dlForm        = new DelayEdit(this);
+            DialogResult dResult    = dlForm.ShowDialog();
+
+            if (dResult == DialogResult.OK)
+            {
+                MessageBox.Show("Your data has been changed!", "Ok");
+            };
+        }
+
+        private void EditMixerData(string rTag)
+        {
+            DataRow[] findRow = GetARowStringByTag(rTag, "tMixer");
+
+            this.drFind = findRow[0];
+
+            MixerEdit mxForm        = new MixerEdit(this);
+            DialogResult dResult    = mxForm.ShowDialog();
+
+            if (dResult == DialogResult.OK)
+            {
+                MessageBox.Show("Your data has been changed!", "Ok");
+            };
+        }
+
+        private void EditEqualizerData(string rTag)
+        {
+            DataRow[] findRow = GetARowStringByTag(rTag, "tEqualizer");
+
+            this.drFind = findRow[0];
+
+            EqualizerEdit revForm = new EqualizerEdit(this);
+            DialogResult dResult = revForm.ShowDialog();
+
+            if (dResult == DialogResult.OK)
+            {
+                MessageBox.Show("Your data has been changed!", "Ok");
+            };
+        }
+
+        private void EditEqualizerMainData(string rTag)
+        {
+            DataRow[] findRow = GetARowStringByTag(rTag, "tEqualizerMain");
+
+            this.drFind = findRow[0];
+
+            EqualizerMainEdit emForm    = new EqualizerMainEdit(this);
+            DialogResult dResult        = emForm.ShowDialog();
+
+            if (dResult == DialogResult.OK)
+            {
+                MessageBox.Show("Your data has been changed!", "Ok");
+            };
+        }
+
+
+        private void EditModulationData(string rTag)
+        {
+            DataRow[] findRow = GetARowStringByTag(rTag, "tModulation");
+
+            this.drFind = findRow[0];
+
+            ModulationEdit mForm    = new ModulationEdit(this);
+            DialogResult dResult    = mForm.ShowDialog();
+
+            if (dResult == DialogResult.OK)
+            {
+                MessageBox.Show("Your data has been changed!", "Ok");
+            };
+        }
+
+        private void EditControlData(string rTag)
+        {
+            DataRow[] findRow = GetARowStringByTag(rTag, "tControl");
+
+            this.drFind = findRow[0];
+
+            ControlEdit cForm       = new ControlEdit(this);
+            DialogResult dResult    = cForm.ShowDialog();
+
+            if (dResult == DialogResult.OK)
+            {
+                MessageBox.Show("Your data has been changed!", "Ok");
+            };
+        }
+
+        private void EditCompressionData(string rTag)
+        {
+            DataRow[] findRow = GetARowStringByTag(rTag, "tCompression");
+
+            this.drFind = findRow[0];
+
+            CompressionEdit cmpForm = new CompressionEdit(this);
+            DialogResult dResult    = cmpForm.ShowDialog();
+
+            if (dResult == DialogResult.OK)
+            {
+                MessageBox.Show("Your data has been changed!", "Ok");
+            };
+        }
+
+        private void EditVoiceData(string rTag)
+        {
+            DataRow[] findRow = GetARowStringByTag(rTag, "tVoice");
+
+            this.drFind = findRow[0];
+
+            VoiceEdit vForm         = new VoiceEdit(this);
+            DialogResult dResult    = vForm.ShowDialog();
+
+            if (dResult == DialogResult.OK)
+            {
+                MessageBox.Show("Your data has been changed!", "Ok");
+            };
+        }
+
+        private void EditMidiOutChannelData(string rTag)
+        {
+            DataRow[] findRow = GetARowStringByTag(rTag, "tMidiOutChannel");
+
+            this.drFind = findRow[0];
+
+            MidiOutChannelEdit mcForm   = new MidiOutChannelEdit(this);
+            DialogResult dResult        = mcForm.ShowDialog();
+
+            if (dResult == DialogResult.OK)
+            {
+                MessageBox.Show("Your data has been changed!", "Ok");
+            };
+        }
+
         private void EditMasterVolumeData(string mTag)
         {
             DataRow[] findRow = GetARowStringByTag(mTag, "tMaster");
@@ -436,7 +537,7 @@ namespace KitaraPresetsCreator
             this.drFind = findRow[0];
 
             MasterVolumeEdit mvForm = new MasterVolumeEdit(this);
-            DialogResult dResult = mvForm.ShowDialog();
+            DialogResult dResult    = mvForm.ShowDialog();
 
             if (dResult == DialogResult.OK)
             {
@@ -456,7 +557,7 @@ namespace KitaraPresetsCreator
         private void AddBasicEqualizerData()
         {
             DataRow rNewRow = dataSetPresets.Tables["tMaster"].NewRow();
-            rNewRow["tag"] = "Volume";
+            rNewRow["tag"]  = "Volume";
 
             dataSetPresets.Tables["tMaster"].Rows.Add(rNewRow);
         }
@@ -597,19 +698,29 @@ namespace KitaraPresetsCreator
                     DataRow[] fRow = GetARowStringByTag(tNode.Tag.ToString(), "tReverberation");
                     dataSetPresets.Tables["tReverberation"].Rows.Remove(fRow[0]);
                     break;                
-                case "Delay":         
+                case "Delay":
+                    DataRow[] dRow = GetARowStringByTag(tNode.Tag.ToString(), "tDelay");
+                    dataSetPresets.Tables["tDelay"].Rows.Remove(dRow[0]);
                     break;
-                case "Mixer":           
+                case "Mixer":
+                    DataRow[] mRow = GetARowStringByTag(tNode.Tag.ToString(), "tMixer");
+                    dataSetPresets.Tables["tMixer"].Rows.Remove(mRow[0]);
                     break;
-                case "Control":        
+                case "Control":
+                    DataRow[] сRow = GetARowStringByTag(tNode.Tag.ToString(), "tControl");
+                    dataSetPresets.Tables["tControl"].Rows.Remove(сRow[0]);
                     break;
-                case "Voice":    
+                case "Voice":
+                    DataRow[] vRow = GetARowStringByTag(tNode.Tag.ToString(), "tVoice");
+                    dataSetPresets.Tables["tVoice"].Rows.Remove(vRow[0]);
                     break;
-                case "Modulation":            
+                case "Modulation":
+                    DataRow[] mdRow = GetARowStringByTag(tNode.Tag.ToString(), "tModulation");
+                    dataSetPresets.Tables["tModulation"].Rows.Remove(mdRow[0]);
                     break;
-                case "Compression":       
-                    break;
-                case "MidiOutChannel":            
+                case "Compression":
+                    DataRow[] cmpRow = GetARowStringByTag(tNode.Tag.ToString(), "tCompression");
+                    dataSetPresets.Tables["tCompression"].Rows.Remove(cmpRow[0]);
                     break;
                 default:            
                     break;
@@ -679,7 +790,10 @@ namespace KitaraPresetsCreator
         {
             switch (tNodeParentTag)
             {
-                case "Preset":           
+                case "Preset":
+                    if (tNode.Tag.ToString() == "Equalizer") {
+                        EditEqualizerMainData(tNode.Tag.ToString());
+                    }
                     break;
                 case "Master":           
                     EditMasterVolumeData(tNode.Tag.ToString());                
@@ -687,19 +801,29 @@ namespace KitaraPresetsCreator
                 case "Reverberation":
                     EditReverbData(tNode.Tag.ToString());
                     break;
-                case "Delay":      
+                case "Delay":
+                    EditDelayData(tNode.Tag.ToString());
                     break;
-                case "Mixer":    
+                case "Equalizer":
+                    EditEqualizerData(tNode.Tag.ToString());
+                    break;
+                case "Mixer":
+                    EditMixerData(tNode.Tag.ToString());
                     break;
                 case "Control":
+                    EditControlData(tNode.Tag.ToString());
                     break;
-                case "Voice":     
+                case "Voice":
+                    EditVoiceData(tNode.Tag.ToString());
                     break;
-                case "Modulation": 
+                case "Modulation":
+                    EditModulationData(tNode.Tag.ToString());
                     break;
-                case "Compression":       
+                case "Compression":
+                    EditCompressionData(tNode.Tag.ToString());
                     break;
-                case "MidiOutChannel":   
+                case "MidiOutChannel":
+                    EditMidiOutChannelData(tNode.Tag.ToString());
                     break;
                 default:
                     break;
@@ -741,5 +865,45 @@ namespace KitaraPresetsCreator
             }
         }
 
+        private void addCompressionToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.AddNodeByType("nodeCompression", "Compression", "tCompression");
+        }
+
+        private void AddReverb_Click(object sender, EventArgs e)
+        {
+            this.AddNodeByType("nodeReverb", "Reverberation", "tReverberation");
+
+        }
+
+        private void AddDistiortion_Click(object sender, EventArgs e)
+        {
+            this.AddNodeByType("nodeDistortion", "Distortion", "tDistrortion");
+        }
+
+        private void AddDelay_Click(object sender, EventArgs e)
+        {
+            this.AddNodeByType("nodeDelay", "Delay", "tDelay");
+        }
+
+        private void AddControl_Click(object sender, EventArgs e)
+        {
+            this.AddNodeByType("nodeControl", "Control", "tControl");
+        }
+
+        private void AddModulation_Click(object sender, EventArgs e)
+        {
+            this.AddNodeByType("nodeModulation", "Modulation", "tModulation");
+        }
+
+        private void AddMixer_Click(object sender, EventArgs e)
+        {
+            this.AddNodeByType("nodeMixer", "Mixer", "tMixer");
+        }
+
+        private void addVoiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AddNodeByType("nodeVoice", "Voice", "tVoice");
+        }
     }
 }

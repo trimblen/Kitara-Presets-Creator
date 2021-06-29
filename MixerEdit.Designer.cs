@@ -60,6 +60,7 @@
             this.buttSave.TabIndex = 16;
             this.buttSave.Text = "Save d&ata...";
             this.buttSave.UseVisualStyleBackColor = true;
+            this.buttSave.Click += new System.EventHandler(this.buttSave_Click);
             // 
             // numfxblock
             // 
@@ -201,6 +202,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MixerEdit";
             this.Text = "Mixer Edit...";
+            this.Load += new System.EventHandler(this.MixerEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numfxblock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLowCutFilterLrequency)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHighCutFilterFrequency)).EndInit();

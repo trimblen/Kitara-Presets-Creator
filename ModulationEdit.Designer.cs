@@ -70,6 +70,7 @@
             this.buttSave.TabIndex = 16;
             this.buttSave.Text = "Save d&ata...";
             this.buttSave.UseVisualStyleBackColor = true;
+            this.buttSave.Click += new System.EventHandler(this.buttSave_Click);
             // 
             // LFxblock
             // 
@@ -271,6 +272,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ModulationEdit";
             this.Text = "Modulation Edit...";
+            this.Load += new System.EventHandler(this.ModulationEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numFxblock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLevel)).EndInit();

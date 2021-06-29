@@ -12,9 +12,23 @@ namespace KitaraPresetsCreator
 {
     public partial class DelayEdit : Form
     {
-        public DelayEdit()
+        private PresetForm _pFrm;
+
+        public DelayEdit(PresetForm pFrm)
         {
             InitializeComponent();
+
+            this._pFrm = pFrm;
+        }
+
+        private void DelayEdit_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttSave_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
     }
 }
