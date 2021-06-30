@@ -84,6 +84,11 @@
             // numFxblock
             // 
             this.numFxblock.Location = new System.Drawing.Point(134, 32);
+            this.numFxblock.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numFxblock.Name = "numFxblock";
             this.numFxblock.Size = new System.Drawing.Size(120, 20);
             this.numFxblock.TabIndex = 18;
@@ -91,6 +96,11 @@
             // numType
             // 
             this.numType.Location = new System.Drawing.Point(134, 84);
+            this.numType.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numType.Name = "numType";
             this.numType.Size = new System.Drawing.Size(120, 20);
             this.numType.TabIndex = 21;
@@ -98,6 +108,11 @@
             // numLevel
             // 
             this.numLevel.Location = new System.Drawing.Point(134, 110);
+            this.numLevel.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numLevel.Name = "numLevel";
             this.numLevel.Size = new System.Drawing.Size(120, 20);
             this.numLevel.TabIndex = 22;
@@ -105,6 +120,11 @@
             // numChorusDelayTime
             // 
             this.numChorusDelayTime.Location = new System.Drawing.Point(134, 136);
+            this.numChorusDelayTime.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numChorusDelayTime.Name = "numChorusDelayTime";
             this.numChorusDelayTime.Size = new System.Drawing.Size(120, 20);
             this.numChorusDelayTime.TabIndex = 23;
@@ -112,6 +132,11 @@
             // numChorusFeedback
             // 
             this.numChorusFeedback.Location = new System.Drawing.Point(134, 162);
+            this.numChorusFeedback.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numChorusFeedback.Name = "numChorusFeedback";
             this.numChorusFeedback.Size = new System.Drawing.Size(120, 20);
             this.numChorusFeedback.TabIndex = 24;
@@ -164,6 +189,11 @@
             // numChorusHpf
             // 
             this.numChorusHpf.Location = new System.Drawing.Point(416, 30);
+            this.numChorusHpf.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numChorusHpf.Name = "numChorusHpf";
             this.numChorusHpf.Size = new System.Drawing.Size(120, 20);
             this.numChorusHpf.TabIndex = 30;
@@ -180,6 +210,11 @@
             // numDelayFeedbackFilter
             // 
             this.numDelayFeedbackFilter.Location = new System.Drawing.Point(416, 56);
+            this.numDelayFeedbackFilter.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numDelayFeedbackFilter.Name = "numDelayFeedbackFilter";
             this.numDelayFeedbackFilter.Size = new System.Drawing.Size(120, 20);
             this.numDelayFeedbackFilter.TabIndex = 32;
@@ -196,6 +231,11 @@
             // numRate
             // 
             this.numRate.Location = new System.Drawing.Point(416, 82);
+            this.numRate.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numRate.Name = "numRate";
             this.numRate.Size = new System.Drawing.Size(120, 20);
             this.numRate.TabIndex = 34;
@@ -212,6 +252,11 @@
             // numDepth
             // 
             this.numDepth.Location = new System.Drawing.Point(416, 108);
+            this.numDepth.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numDepth.Name = "numDepth";
             this.numDepth.Size = new System.Drawing.Size(120, 20);
             this.numDepth.TabIndex = 36;
@@ -228,6 +273,11 @@
             // numTremolo
             // 
             this.numTremolo.Location = new System.Drawing.Point(416, 134);
+            this.numTremolo.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numTremolo.Name = "numTremolo";
             this.numTremolo.Size = new System.Drawing.Size(120, 20);
             this.numTremolo.TabIndex = 38;

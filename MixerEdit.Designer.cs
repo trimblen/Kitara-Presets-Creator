@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.buttSave = new System.Windows.Forms.Button();
-            this.numfxblock = new System.Windows.Forms.NumericUpDown();
+            this.numFxblock = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.llowCutFilterFrequency = new System.Windows.Forms.Label();
             this.numLowCutFilterLrequency = new System.Windows.Forms.NumericUpDown();
@@ -43,7 +43,7 @@
             this.Loutput_level = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.LReverb_send = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numfxblock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numFxblock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLowCutFilterLrequency)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHighCutFilterFrequency)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numInputGain)).BeginInit();
@@ -62,17 +62,17 @@
             this.buttSave.UseVisualStyleBackColor = true;
             this.buttSave.Click += new System.EventHandler(this.buttSave_Click);
             // 
-            // numfxblock
+            // numFxblock
             // 
-            this.numfxblock.Location = new System.Drawing.Point(190, 24);
-            this.numfxblock.Maximum = new decimal(new int[] {
+            this.numFxblock.Location = new System.Drawing.Point(190, 24);
+            this.numFxblock.Maximum = new decimal(new int[] {
             127,
             0,
             0,
             0});
-            this.numfxblock.Name = "numfxblock";
-            this.numfxblock.Size = new System.Drawing.Size(120, 20);
-            this.numfxblock.TabIndex = 17;
+            this.numFxblock.Name = "numFxblock";
+            this.numFxblock.Size = new System.Drawing.Size(120, 20);
+            this.numFxblock.TabIndex = 17;
             // 
             // label1
             // 
@@ -95,6 +95,11 @@
             // numLowCutFilterLrequency
             // 
             this.numLowCutFilterLrequency.Location = new System.Drawing.Point(190, 50);
+            this.numLowCutFilterLrequency.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numLowCutFilterLrequency.Name = "numLowCutFilterLrequency";
             this.numLowCutFilterLrequency.Size = new System.Drawing.Size(120, 20);
             this.numLowCutFilterLrequency.TabIndex = 20;
@@ -102,6 +107,11 @@
             // numHighCutFilterFrequency
             // 
             this.numHighCutFilterFrequency.Location = new System.Drawing.Point(190, 76);
+            this.numHighCutFilterFrequency.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numHighCutFilterFrequency.Name = "numHighCutFilterFrequency";
             this.numHighCutFilterFrequency.Size = new System.Drawing.Size(120, 20);
             this.numHighCutFilterFrequency.TabIndex = 21;
@@ -118,6 +128,11 @@
             // numInputGain
             // 
             this.numInputGain.Location = new System.Drawing.Point(190, 102);
+            this.numInputGain.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numInputGain.Name = "numInputGain";
             this.numInputGain.Size = new System.Drawing.Size(120, 20);
             this.numInputGain.TabIndex = 23;
@@ -134,6 +149,11 @@
             // numOutputLevel
             // 
             this.numOutputLevel.Location = new System.Drawing.Point(190, 128);
+            this.numOutputLevel.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numOutputLevel.Name = "numOutputLevel";
             this.numOutputLevel.Size = new System.Drawing.Size(120, 20);
             this.numOutputLevel.TabIndex = 25;
@@ -141,6 +161,11 @@
             // numPan
             // 
             this.numPan.Location = new System.Drawing.Point(190, 154);
+            this.numPan.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numPan.Name = "numPan";
             this.numPan.Size = new System.Drawing.Size(120, 20);
             this.numPan.TabIndex = 26;
@@ -148,6 +173,11 @@
             // numReverbSend
             // 
             this.numReverbSend.Location = new System.Drawing.Point(190, 180);
+            this.numReverbSend.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numReverbSend.Name = "numReverbSend";
             this.numReverbSend.Size = new System.Drawing.Size(120, 20);
             this.numReverbSend.TabIndex = 27;
@@ -197,13 +227,13 @@
             this.Controls.Add(this.numLowCutFilterLrequency);
             this.Controls.Add(this.llowCutFilterFrequency);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.numfxblock);
+            this.Controls.Add(this.numFxblock);
             this.Controls.Add(this.buttSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MixerEdit";
             this.Text = "Mixer Edit...";
             this.Load += new System.EventHandler(this.MixerEdit_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numfxblock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numFxblock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLowCutFilterLrequency)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHighCutFilterFrequency)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numInputGain)).EndInit();
@@ -218,7 +248,7 @@
         #endregion
 
         private System.Windows.Forms.Button buttSave;
-        private System.Windows.Forms.NumericUpDown numfxblock;
+        private System.Windows.Forms.NumericUpDown numFxblock;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label llowCutFilterFrequency;
         private System.Windows.Forms.NumericUpDown numLowCutFilterLrequency;

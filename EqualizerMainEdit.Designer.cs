@@ -70,6 +70,11 @@
             // numLowMidQ
             // 
             this.numLowMidQ.Location = new System.Drawing.Point(119, 53);
+            this.numLowMidQ.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numLowMidQ.Name = "numLowMidQ";
             this.numLowMidQ.Size = new System.Drawing.Size(120, 20);
             this.numLowMidQ.TabIndex = 19;
@@ -77,6 +82,11 @@
             // numHighMidQ
             // 
             this.numHighMidQ.Location = new System.Drawing.Point(119, 79);
+            this.numHighMidQ.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numHighMidQ.Name = "numHighMidQ";
             this.numHighMidQ.Size = new System.Drawing.Size(120, 20);
             this.numHighMidQ.TabIndex = 21;

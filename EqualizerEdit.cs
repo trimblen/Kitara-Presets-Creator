@@ -23,12 +23,16 @@ namespace KitaraPresetsCreator
 
         private void EqualizerEdit_Load(object sender, EventArgs e)
         {
-
+            numGain.Value       = this._pFrm.drFind.Field<Decimal>("gain");
+            numFrequency.Value  = this._pFrm.drFind.Field<Decimal>("frequency");
         }
 
         private void buttSave_Click(object sender, EventArgs e)
         {
+            this._pFrm.drFind.SetField(1, numGain.Value);
+            this._pFrm.drFind.SetField(2, numFrequency.Value);
+
             this.DialogResult = DialogResult.OK;
-        }
+        }   
     }
 }

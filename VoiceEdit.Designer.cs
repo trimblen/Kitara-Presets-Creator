@@ -30,14 +30,14 @@
         {
             this.buttSave = new System.Windows.Forms.Button();
             this.LString = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.numString = new System.Windows.Forms.NumericUpDown();
+            this.textWaveId = new System.Windows.Forms.TextBox();
             this.LWave_id = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numAmplitudeAttack = new System.Windows.Forms.NumericUpDown();
             this.LAmplitude_attack = new System.Windows.Forms.Label();
             this.numAmplitudeDecay = new System.Windows.Forms.NumericUpDown();
             this.LAmplitudeDecay = new System.Windows.Forms.Label();
-            this.numAmplitude_release = new System.Windows.Forms.NumericUpDown();
+            this.numAmplitudeRelease = new System.Windows.Forms.NumericUpDown();
             this.LAmplitude_release = new System.Windows.Forms.Label();
             this.numDetuneCourse = new System.Windows.Forms.NumericUpDown();
             this.LDetuneCourse = new System.Windows.Forms.Label();
@@ -77,10 +77,10 @@
             this.LFilterFrequency = new System.Windows.Forms.Label();
             this.chFxb0_on = new System.Windows.Forms.CheckBox();
             this.chFxb1_on = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numString)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAmplitudeAttack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAmplitudeDecay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numAmplitude_release)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAmplitudeRelease)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDetuneCourse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDetuneFine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numChannelVolume)).BeginInit();
@@ -120,19 +120,24 @@
             this.LString.TabIndex = 17;
             this.LString.Text = "string:";
             // 
-            // numericUpDown1
+            // numString
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(141, 27);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 18;
+            this.numString.Location = new System.Drawing.Point(141, 27);
+            this.numString.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numString.Name = "numString";
+            this.numString.Size = new System.Drawing.Size(120, 20);
+            this.numString.TabIndex = 18;
             // 
-            // textBox1
+            // textWaveId
             // 
-            this.textBox1.Location = new System.Drawing.Point(141, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 20);
-            this.textBox1.TabIndex = 19;
+            this.textWaveId.Location = new System.Drawing.Point(141, 52);
+            this.textWaveId.Name = "textWaveId";
+            this.textWaveId.Size = new System.Drawing.Size(120, 20);
+            this.textWaveId.TabIndex = 19;
             // 
             // LWave_id
             // 
@@ -143,12 +148,17 @@
             this.LWave_id.TabIndex = 20;
             this.LWave_id.Text = "wave_id:";
             // 
-            // numericUpDown2
+            // numAmplitudeAttack
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(141, 77);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown2.TabIndex = 22;
+            this.numAmplitudeAttack.Location = new System.Drawing.Point(141, 77);
+            this.numAmplitudeAttack.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
+            this.numAmplitudeAttack.Name = "numAmplitudeAttack";
+            this.numAmplitudeAttack.Size = new System.Drawing.Size(120, 20);
+            this.numAmplitudeAttack.TabIndex = 22;
             // 
             // LAmplitude_attack
             // 
@@ -162,6 +172,11 @@
             // numAmplitudeDecay
             // 
             this.numAmplitudeDecay.Location = new System.Drawing.Point(141, 103);
+            this.numAmplitudeDecay.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numAmplitudeDecay.Name = "numAmplitudeDecay";
             this.numAmplitudeDecay.Size = new System.Drawing.Size(120, 20);
             this.numAmplitudeDecay.TabIndex = 24;
@@ -175,12 +190,17 @@
             this.LAmplitudeDecay.TabIndex = 23;
             this.LAmplitudeDecay.Text = "amplitude_decay:";
             // 
-            // numAmplitude_release
+            // numAmplitudeRelease
             // 
-            this.numAmplitude_release.Location = new System.Drawing.Point(141, 129);
-            this.numAmplitude_release.Name = "numAmplitude_release";
-            this.numAmplitude_release.Size = new System.Drawing.Size(120, 20);
-            this.numAmplitude_release.TabIndex = 26;
+            this.numAmplitudeRelease.Location = new System.Drawing.Point(141, 129);
+            this.numAmplitudeRelease.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
+            this.numAmplitudeRelease.Name = "numAmplitudeRelease";
+            this.numAmplitudeRelease.Size = new System.Drawing.Size(120, 20);
+            this.numAmplitudeRelease.TabIndex = 26;
             // 
             // LAmplitude_release
             // 
@@ -194,6 +214,11 @@
             // numDetuneCourse
             // 
             this.numDetuneCourse.Location = new System.Drawing.Point(141, 155);
+            this.numDetuneCourse.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numDetuneCourse.Name = "numDetuneCourse";
             this.numDetuneCourse.Size = new System.Drawing.Size(120, 20);
             this.numDetuneCourse.TabIndex = 28;
@@ -210,6 +235,11 @@
             // numDetuneFine
             // 
             this.numDetuneFine.Location = new System.Drawing.Point(141, 181);
+            this.numDetuneFine.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numDetuneFine.Name = "numDetuneFine";
             this.numDetuneFine.Size = new System.Drawing.Size(120, 20);
             this.numDetuneFine.TabIndex = 30;
@@ -226,6 +256,11 @@
             // numChannelVolume
             // 
             this.numChannelVolume.Location = new System.Drawing.Point(419, 27);
+            this.numChannelVolume.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numChannelVolume.Name = "numChannelVolume";
             this.numChannelVolume.Size = new System.Drawing.Size(120, 20);
             this.numChannelVolume.TabIndex = 34;
@@ -242,6 +277,11 @@
             // numPortamentoTime
             // 
             this.numPortamentoTime.Location = new System.Drawing.Point(419, 53);
+            this.numPortamentoTime.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numPortamentoTime.Name = "numPortamentoTime";
             this.numPortamentoTime.Size = new System.Drawing.Size(120, 20);
             this.numPortamentoTime.TabIndex = 36;
@@ -258,6 +298,11 @@
             // numPan
             // 
             this.numPan.Location = new System.Drawing.Point(419, 79);
+            this.numPan.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numPan.Name = "numPan";
             this.numPan.Size = new System.Drawing.Size(120, 20);
             this.numPan.TabIndex = 38;
@@ -274,6 +319,11 @@
             // numPitchBendSemitones
             // 
             this.numPitchBendSemitones.Location = new System.Drawing.Point(419, 105);
+            this.numPitchBendSemitones.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numPitchBendSemitones.Name = "numPitchBendSemitones";
             this.numPitchBendSemitones.Size = new System.Drawing.Size(120, 20);
             this.numPitchBendSemitones.TabIndex = 40;
@@ -290,6 +340,11 @@
             // numpPitchWheel
             // 
             this.numpPitchWheel.Location = new System.Drawing.Point(419, 131);
+            this.numpPitchWheel.Maximum = new decimal(new int[] {
+            16384,
+            0,
+            0,
+            0});
             this.numpPitchWheel.Name = "numpPitchWheel";
             this.numpPitchWheel.Size = new System.Drawing.Size(120, 20);
             this.numpPitchWheel.TabIndex = 42;
@@ -306,6 +361,11 @@
             // numVelocity
             // 
             this.numVelocity.Location = new System.Drawing.Point(419, 156);
+            this.numVelocity.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numVelocity.Name = "numVelocity";
             this.numVelocity.Size = new System.Drawing.Size(120, 20);
             this.numVelocity.TabIndex = 44;
@@ -322,6 +382,11 @@
             // numFilterResonance
             // 
             this.numFilterResonance.Location = new System.Drawing.Point(668, 27);
+            this.numFilterResonance.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numFilterResonance.Name = "numFilterResonance";
             this.numFilterResonance.Size = new System.Drawing.Size(120, 20);
             this.numFilterResonance.TabIndex = 46;
@@ -338,6 +403,11 @@
             // numFilterType
             // 
             this.numFilterType.Location = new System.Drawing.Point(668, 53);
+            this.numFilterType.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numFilterType.Name = "numFilterType";
             this.numFilterType.Size = new System.Drawing.Size(120, 20);
             this.numFilterType.TabIndex = 48;
@@ -354,6 +424,11 @@
             // numFilterAttack
             // 
             this.numFilterAttack.Location = new System.Drawing.Point(668, 79);
+            this.numFilterAttack.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numFilterAttack.Name = "numFilterAttack";
             this.numFilterAttack.Size = new System.Drawing.Size(120, 20);
             this.numFilterAttack.TabIndex = 50;
@@ -370,6 +445,11 @@
             // numFilterDecay
             // 
             this.numFilterDecay.Location = new System.Drawing.Point(668, 105);
+            this.numFilterDecay.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numFilterDecay.Name = "numFilterDecay";
             this.numFilterDecay.Size = new System.Drawing.Size(120, 20);
             this.numFilterDecay.TabIndex = 52;
@@ -386,6 +466,11 @@
             // numFilterRelease
             // 
             this.numFilterRelease.Location = new System.Drawing.Point(668, 131);
+            this.numFilterRelease.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numFilterRelease.Name = "numFilterRelease";
             this.numFilterRelease.Size = new System.Drawing.Size(120, 20);
             this.numFilterRelease.TabIndex = 54;
@@ -402,6 +487,11 @@
             // numVibrateRate
             // 
             this.numVibrateRate.Location = new System.Drawing.Point(141, 207);
+            this.numVibrateRate.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numVibrateRate.Name = "numVibrateRate";
             this.numVibrateRate.Size = new System.Drawing.Size(120, 20);
             this.numVibrateRate.TabIndex = 64;
@@ -418,6 +508,11 @@
             // numReverbSend
             // 
             this.numReverbSend.Location = new System.Drawing.Point(419, 234);
+            this.numReverbSend.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numReverbSend.Name = "numReverbSend";
             this.numReverbSend.Size = new System.Drawing.Size(120, 20);
             this.numReverbSend.TabIndex = 68;
@@ -434,6 +529,11 @@
             // numVibrateDepth
             // 
             this.numVibrateDepth.Location = new System.Drawing.Point(141, 233);
+            this.numVibrateDepth.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numVibrateDepth.Name = "numVibrateDepth";
             this.numVibrateDepth.Size = new System.Drawing.Size(120, 20);
             this.numVibrateDepth.TabIndex = 70;
@@ -450,6 +550,11 @@
             // numVibrateDelay
             // 
             this.numVibrateDelay.Location = new System.Drawing.Point(141, 259);
+            this.numVibrateDelay.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numVibrateDelay.Name = "numVibrateDelay";
             this.numVibrateDelay.Size = new System.Drawing.Size(120, 20);
             this.numVibrateDelay.TabIndex = 72;
@@ -466,6 +571,11 @@
             // numFilterFrequency
             // 
             this.numFilterFrequency.Location = new System.Drawing.Point(419, 260);
+            this.numFilterFrequency.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numFilterFrequency.Name = "numFilterFrequency";
             this.numFilterFrequency.Size = new System.Drawing.Size(120, 20);
             this.numFilterFrequency.TabIndex = 74;
@@ -503,7 +613,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 354);
+            this.ClientSize = new System.Drawing.Size(839, 354);
             this.Controls.Add(this.chFxb1_on);
             this.Controls.Add(this.chFxb0_on);
             this.Controls.Add(this.numFilterFrequency);
@@ -542,25 +652,25 @@
             this.Controls.Add(this.LDetuneFine);
             this.Controls.Add(this.numDetuneCourse);
             this.Controls.Add(this.LDetuneCourse);
-            this.Controls.Add(this.numAmplitude_release);
+            this.Controls.Add(this.numAmplitudeRelease);
             this.Controls.Add(this.LAmplitude_release);
             this.Controls.Add(this.numAmplitudeDecay);
             this.Controls.Add(this.LAmplitudeDecay);
-            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.numAmplitudeAttack);
             this.Controls.Add(this.LAmplitude_attack);
             this.Controls.Add(this.LWave_id);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.textWaveId);
+            this.Controls.Add(this.numString);
             this.Controls.Add(this.LString);
             this.Controls.Add(this.buttSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "VoiceEdit";
             this.Text = "Voice Edit...";
             this.Load += new System.EventHandler(this.VoiceEdit_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numString)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAmplitudeAttack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAmplitudeDecay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numAmplitude_release)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAmplitudeRelease)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDetuneCourse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDetuneFine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numChannelVolume)).EndInit();
@@ -588,14 +698,14 @@
 
         private System.Windows.Forms.Button buttSave;
         private System.Windows.Forms.Label LString;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.NumericUpDown numString;
+        private System.Windows.Forms.TextBox textWaveId;
         private System.Windows.Forms.Label LWave_id;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numAmplitudeAttack;
         private System.Windows.Forms.Label LAmplitude_attack;
         private System.Windows.Forms.NumericUpDown numAmplitudeDecay;
         private System.Windows.Forms.Label LAmplitudeDecay;
-        private System.Windows.Forms.NumericUpDown numAmplitude_release;
+        private System.Windows.Forms.NumericUpDown numAmplitudeRelease;
         private System.Windows.Forms.Label LAmplitude_release;
         private System.Windows.Forms.NumericUpDown numDetuneCourse;
         private System.Windows.Forms.Label LDetuneCourse;

@@ -30,7 +30,7 @@ namespace KitaraPresetsCreator
 
         private void MasterVolumeEdit_Load(object sender, EventArgs e)
         {
-            numericMasterVolume.Value = Convert.ToDecimal(this._pFrm.drFind.ItemArray[1]);       
+            numericMasterVolume.Value = this._pFrm.drFind.Field<Decimal>("MasterVolume");
         }
     }
 }

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.buttSave = new System.Windows.Forms.Button();
-            this.lMidiOut = new System.Windows.Forms.NumericUpDown();
+            this.numMidiOut = new System.Windows.Forms.NumericUpDown();
             this.lValue = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.lMidiOut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMidiOut)).BeginInit();
             this.SuspendLayout();
             // 
             // buttSave
@@ -44,22 +44,22 @@
             this.buttSave.UseVisualStyleBackColor = true;
             this.buttSave.Click += new System.EventHandler(this.buttSave_Click);
             // 
-            // lMidiOut
+            // numMidiOut
             // 
-            this.lMidiOut.Location = new System.Drawing.Point(188, 12);
-            this.lMidiOut.Maximum = new decimal(new int[] {
+            this.numMidiOut.Location = new System.Drawing.Point(188, 12);
+            this.numMidiOut.Maximum = new decimal(new int[] {
             127,
             0,
             0,
             0});
-            this.lMidiOut.Minimum = new decimal(new int[] {
+            this.numMidiOut.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             -2147483648});
-            this.lMidiOut.Name = "lMidiOut";
-            this.lMidiOut.Size = new System.Drawing.Size(120, 20);
-            this.lMidiOut.TabIndex = 17;
+            this.numMidiOut.Name = "numMidiOut";
+            this.numMidiOut.Size = new System.Drawing.Size(120, 20);
+            this.numMidiOut.TabIndex = 17;
             // 
             // lValue
             // 
@@ -76,13 +76,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(393, 82);
             this.Controls.Add(this.lValue);
-            this.Controls.Add(this.lMidiOut);
+            this.Controls.Add(this.numMidiOut);
             this.Controls.Add(this.buttSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MidiOutChannelEdit";
             this.Text = "MidiOutChannel Edit...";
             this.Load += new System.EventHandler(this.MidiOutChannelEdit_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.lMidiOut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMidiOut)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -91,7 +91,7 @@
         #endregion
 
         private System.Windows.Forms.Button buttSave;
-        private System.Windows.Forms.NumericUpDown lMidiOut;
+        private System.Windows.Forms.NumericUpDown numMidiOut;
         private System.Windows.Forms.Label lValue;
     }
 }

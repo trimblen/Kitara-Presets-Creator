@@ -23,11 +23,13 @@ namespace KitaraPresetsCreator
 
         private void MidiOutChannelEdit_Load(object sender, EventArgs e)
         {
-
+            numMidiOut.Value = this._pFrm.drFind.Field<Decimal>("value");
         }
 
         private void buttSave_Click(object sender, EventArgs e)
         {
+            this._pFrm.drFind.SetField(1, numMidiOut.Value);
+
             this.DialogResult = DialogResult.OK;
         }
     }

@@ -409,6 +409,21 @@ namespace KitaraPresetsCreator
             };
         }
 
+        private void EditDistortionData(string rTag)
+        {
+            DataRow[] findRow = GetARowStringByTag(rTag, "tDistortion");
+
+            this.drFind = findRow[0];
+
+            DistortionEdit dsrForm       = new DistortionEdit(this);
+            DialogResult dResult         = dsrForm.ShowDialog();
+
+            if (dResult == DialogResult.OK)
+            {
+                MessageBox.Show("Your data has been changed!", "Ok");
+            };
+        }
+
         private void EditMixerData(string rTag)
         {
             DataRow[] findRow = GetARowStringByTag(rTag, "tMixer");
@@ -718,6 +733,10 @@ namespace KitaraPresetsCreator
                     DataRow[] mdRow = GetARowStringByTag(tNode.Tag.ToString(), "tModulation");
                     dataSetPresets.Tables["tModulation"].Rows.Remove(mdRow[0]);
                     break;
+                case "Distortion":
+                    DataRow[] dsRow = GetARowStringByTag(tNode.Tag.ToString(), "tDistortion");
+                    dataSetPresets.Tables["tDistortion"].Rows.Remove(dsRow[0]);
+                    break;
                 case "Compression":
                     DataRow[] cmpRow = GetARowStringByTag(tNode.Tag.ToString(), "tCompression");
                     dataSetPresets.Tables["tCompression"].Rows.Remove(cmpRow[0]);
@@ -749,6 +768,9 @@ namespace KitaraPresetsCreator
                     chResult = true;
                     break;
                 case "Control":
+                    chResult = true;
+                    break;
+                case "Distortion":
                     chResult = true;
                     break;
                 case "Voice":
@@ -812,6 +834,9 @@ namespace KitaraPresetsCreator
                     break;
                 case "Control":
                     EditControlData(tNode.Tag.ToString());
+                    break;
+                case "Distortion":
+                    EditDistortionData(tNode.Tag.ToString());
                     break;
                 case "Voice":
                     EditVoiceData(tNode.Tag.ToString());
@@ -878,7 +903,7 @@ namespace KitaraPresetsCreator
 
         private void AddDistiortion_Click(object sender, EventArgs e)
         {
-            this.AddNodeByType("nodeDistortion", "Distortion", "tDistrortion");
+            this.AddNodeByType("nodeDistortion", "Distortion", "tDistortion");
         }
 
         private void AddDelay_Click(object sender, EventArgs e)

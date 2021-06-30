@@ -43,14 +43,14 @@
             this.LFeedback = new System.Windows.Forms.Label();
             this.numFeedback = new System.Windows.Forms.NumericUpDown();
             this.LFeedbackFilter = new System.Windows.Forms.Label();
-            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
+            this.numFeedbackFilter = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numFxblock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPreLp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numFeedback)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numFeedbackFilter)).BeginInit();
             this.SuspendLayout();
             // 
             // buttSave
@@ -76,6 +76,11 @@
             // numFxblock
             // 
             this.numFxblock.Location = new System.Drawing.Point(119, 25);
+            this.numFxblock.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numFxblock.Name = "numFxblock";
             this.numFxblock.Size = new System.Drawing.Size(120, 20);
             this.numFxblock.TabIndex = 18;
@@ -101,6 +106,11 @@
             // numMode
             // 
             this.numMode.Location = new System.Drawing.Point(119, 81);
+            this.numMode.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numMode.Name = "numMode";
             this.numMode.Size = new System.Drawing.Size(120, 20);
             this.numMode.TabIndex = 20;
@@ -117,6 +127,11 @@
             // numPreLp
             // 
             this.numPreLp.Location = new System.Drawing.Point(119, 107);
+            this.numPreLp.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numPreLp.Name = "numPreLp";
             this.numPreLp.Size = new System.Drawing.Size(120, 20);
             this.numPreLp.TabIndex = 22;
@@ -133,6 +148,11 @@
             // numLevel
             // 
             this.numLevel.Location = new System.Drawing.Point(119, 133);
+            this.numLevel.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numLevel.Name = "numLevel";
             this.numLevel.Size = new System.Drawing.Size(120, 20);
             this.numLevel.TabIndex = 24;
@@ -149,6 +169,11 @@
             // numTime
             // 
             this.numTime.Location = new System.Drawing.Point(119, 159);
+            this.numTime.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numTime.Name = "numTime";
             this.numTime.Size = new System.Drawing.Size(120, 20);
             this.numTime.TabIndex = 26;
@@ -165,6 +190,11 @@
             // numFeedback
             // 
             this.numFeedback.Location = new System.Drawing.Point(119, 185);
+            this.numFeedback.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numFeedback.Name = "numFeedback";
             this.numFeedback.Size = new System.Drawing.Size(120, 20);
             this.numFeedback.TabIndex = 28;
@@ -178,12 +208,17 @@
             this.LFeedbackFilter.TabIndex = 31;
             this.LFeedbackFilter.Text = "feedback_filter:";
             // 
-            // numericUpDown7
+            // numFeedbackFilter
             // 
-            this.numericUpDown7.Location = new System.Drawing.Point(119, 211);
-            this.numericUpDown7.Name = "numericUpDown7";
-            this.numericUpDown7.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown7.TabIndex = 30;
+            this.numFeedbackFilter.Location = new System.Drawing.Point(119, 211);
+            this.numFeedbackFilter.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
+            this.numFeedbackFilter.Name = "numFeedbackFilter";
+            this.numFeedbackFilter.Size = new System.Drawing.Size(120, 20);
+            this.numFeedbackFilter.TabIndex = 30;
             // 
             // DelayEdit
             // 
@@ -191,7 +226,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(279, 320);
             this.Controls.Add(this.LFeedbackFilter);
-            this.Controls.Add(this.numericUpDown7);
+            this.Controls.Add(this.numFeedbackFilter);
             this.Controls.Add(this.LFeedback);
             this.Controls.Add(this.numFeedback);
             this.Controls.Add(this.LTime);
@@ -216,7 +251,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numFeedback)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numFeedbackFilter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,6 +274,6 @@
         private System.Windows.Forms.Label LFeedback;
         private System.Windows.Forms.NumericUpDown numFeedback;
         private System.Windows.Forms.Label LFeedbackFilter;
-        private System.Windows.Forms.NumericUpDown numericUpDown7;
+        private System.Windows.Forms.NumericUpDown numFeedbackFilter;
     }
 }

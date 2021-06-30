@@ -32,9 +32,9 @@
             this.numGain = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.LFrequency = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numFrequency = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numGain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numFrequency)).BeginInit();
             this.SuspendLayout();
             // 
             // buttSave
@@ -50,6 +50,11 @@
             // numGain
             // 
             this.numGain.Location = new System.Drawing.Point(132, 35);
+            this.numGain.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numGain.Name = "numGain";
             this.numGain.Size = new System.Drawing.Size(120, 20);
             this.numGain.TabIndex = 17;
@@ -72,12 +77,17 @@
             this.LFrequency.TabIndex = 20;
             this.LFrequency.Text = "frequency:";
             // 
-            // numericUpDown2
+            // numFrequency
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(132, 61);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown2.TabIndex = 19;
+            this.numFrequency.Location = new System.Drawing.Point(132, 61);
+            this.numFrequency.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
+            this.numFrequency.Name = "numFrequency";
+            this.numFrequency.Size = new System.Drawing.Size(120, 20);
+            this.numFrequency.TabIndex = 19;
             // 
             // EqualizerEdit
             // 
@@ -85,7 +95,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(291, 143);
             this.Controls.Add(this.LFrequency);
-            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.numFrequency);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numGain);
             this.Controls.Add(this.buttSave);
@@ -94,7 +104,7 @@
             this.Text = "Equalizer Edit...";
             this.Load += new System.EventHandler(this.EqualizerEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numGain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numFrequency)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,6 +116,6 @@
         private System.Windows.Forms.NumericUpDown numGain;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label LFrequency;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numFrequency;
     }
 }

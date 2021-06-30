@@ -23,11 +23,13 @@ namespace KitaraPresetsCreator
 
         private void TuningEdit_Load(object sender, EventArgs e)
         {
-
+            numValue.Value = this._pFrm.drFind.Field<Decimal>("value");
         }
 
         private void buttSave_Click(object sender, EventArgs e)
         {
+            this._pFrm.drFind.SetField(1, numValue.Value);
+
             this.DialogResult = DialogResult.OK;
         }
     }
