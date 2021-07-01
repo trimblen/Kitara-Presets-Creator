@@ -324,41 +324,164 @@ namespace KitaraPresetsCreator
 
             foreach (TreeNode trn in tRev.Nodes)
             {
-                XMLString += "  <reverb type=" +"/>\n";
+                DataRow[] revRow = GetARowStringByTag(trn.Tag.ToString(), "tReverberation");
+
+                XMLString += "  <reverb type="+ "\""+ revRow[0].Field<Decimal>("rType").ToString() + "\""
+                    + " prid=" + "\"" + trn.Text + "\""
+                    + " pre_lpf="+ "\"" + revRow[0].Field<Decimal>("rPre_lpf").ToString() + "\""+ " level="+ "\""
+                    + revRow[0].Field<Decimal>("rLevel").ToString() + "\"" 
+                    +"  time="+ "\"" + revRow[0].Field<Decimal>("rTime").ToString() + "\"" 
+                    + " delay_feedback ="+ "\"" + revRow[0].Field<Decimal>("rDelayFeedback").ToString() + "\"" 
+                    + " pre_delay_time=" + "\"" + revRow[0].Field<Decimal>("pRreDelayTime").ToString()  + "\""+ "/>\n";
             }
 
             foreach (TreeNode tcm in tCom.Nodes)
             {
-                XMLString += "  <compression fxblock = " + "/>\n";
+                DataRow[] tcmRow = GetARowStringByTag(tcm.Tag.ToString(), "tCompression");
+
+                string tOn;
+
+                if (tcmRow[0].Field<Boolean>("on") == true)
+                {
+                    tOn = "1";
+                }
+                else
+                {
+
+                    tOn = "0";
+                };
+
+                XMLString += "  <compression fxblock=" + "\"" + tcmRow[0].Field<Decimal>("fxblock").ToString() + "\""
+                    + " prid=" + "\"" + tcm.Text + "\""
+                    + " on=" + "\"" + tOn + "\""
+                    + " attack=" + "\"" + tcmRow[0].Field<Decimal>("attack").ToString() + "\""
+                    + " release=" + "\"" + tcmRow[0].Field<Decimal>("release").ToString() + "\""
+                    + " threshold=" + "\"" + tcmRow[0].Field<Decimal>("threshold").ToString() + "\""
+                    + " ratio=" + "\"" + tcmRow[0].Field<Decimal>("ratio").ToString() + "\""
+                    + " boost=" + "\"" + tcmRow[0].Field<Decimal>("boost").ToString() + "\""
+                    + " knee=" + "\"" + tcmRow[0].Field<Decimal>("knee").ToString() + "\"" + "/>\n";
             }
 
             foreach (TreeNode tctr in tContr.Nodes)
             {
-                XMLString += "  <control type=" + "/>\n";
+                DataRow[] tctrRow = GetARowStringByTag(tctr.Tag.ToString(), "tControl");
+
+                XMLString += "  <control type="  +"\"" + tctrRow[0].Field<Decimal>("type").ToString() + "\""
+                            + " prid="+ "\"" + tctr.Text + "\""
+                            + " name=" + "\"" + tctrRow[0].Field<Decimal>("name").ToString() + "\""
+                            + " string=" + "\"" + tctrRow[0].Field<Decimal>("string").ToString() + "\""
+                            + " index=" + "\"" + tctrRow[0].Field<Decimal>("index").ToString() + "\""
+                            + " output=" + "\"" + tctrRow[0].Field<Decimal>("output").ToString() + "\""
+                            + " channel=" + "\"" + tctrRow[0].Field<Decimal>("channel").ToString() + "\""
+                            + " cc=" + "\"" + tctrRow[0].Field<Decimal>("cc").ToString() + "\""
+                            + " inverse=" + "\"" + tctrRow[0].Field<Decimal>("inverse").ToString() + "\""
+                            + " variation_start=" + "\"" + tctrRow[0].Field<Decimal>("variation_start").ToString() + "\""
+                            + " variation_end=" + "\"" + tctrRow[0].Field<Decimal>("variation_end").ToString() + "\""
+                            + " fxb=" + "\"" + tctrRow[0].Field<Decimal>("fxb").ToString() + "\""
+                            + " drag_center=" + "\"" + tctrRow[0].Field<Decimal>("drag_center").ToString() + "\"" + "/>\n";
             }
 
             foreach (TreeNode tdl in tDel.Nodes)
             {
-                XMLString += "  <delay fxblock=" + "/>\n";
+                DataRow[] tdlRow = GetARowStringByTag(tdl.Tag.ToString(), "tDelay");
+
+                string dOn;
+
+                if (tdlRow[0].Field<Boolean>("on") == true)
+                {
+                    dOn = "1";
+                }
+                else
+                {
+
+                    dOn = "0";
+                };
+
+                XMLString += "  <delay fxblock=" + "\"" + tdlRow[0].Field<Decimal>("fxblock").ToString() + "\""
+                    + "  prid=" + "\"" + tdl.Text + "\""
+                    + "  on=" + "\"" + dOn + "\""
+                    + "  mode=" + "\"" + tdlRow[0].Field<Decimal>("mode").ToString() + "\""
+                    + "  pre_lp=" + "\"" + tdlRow[0].Field<Decimal>("pre_lp").ToString() + "\""
+                    + "  level=" + "\"" + tdlRow[0].Field<Decimal>("level").ToString() + "\""
+                    + "  time=" + "\"" + tdlRow[0].Field<Decimal>("time").ToString() + "\""
+                    + "  feedback=" + "\"" + tdlRow[0].Field<Decimal>("feedback").ToString() + "\""
+                    + "  feedback_filter=" + "\"" + tdlRow[0].Field<Decimal>("feedback_filter").ToString() + "\"" + "/>\n";
             }
 
             foreach (TreeNode tds in tDistr.Nodes)
             {
-                XMLString += "  <distortion fxblock=" + "/>\n";
+                DataRow[] tctrRow = GetARowStringByTag(tds.Tag.ToString(), "tDistortion");
+
+                string dsOn;
+
+                if (tctrRow[0].Field<Boolean>("on") == true)
+                {
+                    dsOn = "1";
+                }
+                else
+                {
+
+                    dsOn = "0";
+                };
+
+                XMLString += "  <distortion fxblock=" + "\"" + tctrRow[0].Field<Decimal>("fxblock").ToString() + "\"" 
+                                                      +"    prid=" + "\"" + tds.Text + "\""
+                                                      +"    on=" + "\"" + dsOn + "\""
+                                                      +"    type=" + "\"" + tctrRow[0].Field<Decimal>("type").ToString() + "\""
+                                                      +"    level=" + "\"" + tctrRow[0].Field<Decimal>("level").ToString() + "\""
+                                                      +"    drive=" + "\"" + tctrRow[0].Field<Decimal>("drive").ToString() + "\""
+                                                      +"    tone=" + "\"" + tctrRow[0].Field<Decimal>("tone").ToString() + "\""
+                                                      +"    booster=" + "\"" + tctrRow[0].Field<Decimal>("booster").ToString() + "\"" + "/>\n";
             }
 
             foreach (TreeNode txmr in tMixr.Nodes)
             {
-                XMLString += "  <mixer fxblock=" + "/>\n";
+                DataRow[] txmrRow = GetARowStringByTag(txmr.Tag.ToString(), "tMixer");
+
+                XMLString += "  <mixer fxblock=" +"\"" + txmrRow[0].Field<Decimal>("fxblock").ToString() + "\""
+                                +"  prid="+ "\"" + txmr.Text + "\""
+                                +"  low_cut_filter_frequency=" + "\"" + txmrRow[0].Field<Decimal>("low_cut_filter_frequency").ToString() + "\""
+                                +"  high_cut_filter_frequency=" + "\"" + txmrRow[0].Field<Decimal>("low_cut_filter_frequency").ToString() + "\""
+                                +"  input_gain=" + "\"" + txmrRow[0].Field<Decimal>("input_gain").ToString() + "\""
+                                +"  output_level=" + "\"" + txmrRow[0].Field<Decimal>("output_level").ToString() + "\""
+                                +"  pan=" + "\"" + txmrRow[0].Field<Decimal>("pan").ToString() + "\""
+                                +"  reverb_send=" + "\"" + txmrRow[0].Field<Decimal>("reverb_send").ToString() + "\"" + "/>\n";
             }
 
             foreach (TreeNode tm in tMod.Nodes)
             {
-                XMLString += "  <modulation fxblock=" + "/>\n";
+                DataRow[] tmRow = GetARowStringByTag(tm.Tag.ToString(), "tModulation");
+
+                string tmOn;
+
+                if (tmRow[0].Field<Boolean>("on") == true)
+                {
+                    tmOn = "1";
+                }
+                else
+                {
+
+                    tmOn = "0";
+                };
+
+                XMLString += "  <modulation fxblock=" + "\"" + tmRow[0].Field<Decimal>("fxblock").ToString() + "\""
+                                 + "  prid=" + "\"" + tm.Text + "\""
+                                 + "  on=" + "\"" + tmOn + "\""
+                                 + "  type=" + "\"" + tmRow[0].Field<Decimal>("type").ToString() + "\""
+                                 + "  level=" + "\"" + tmRow[0].Field<Decimal>("level").ToString() + "\""
+                                 + "  chorus_delay_time=" + "\"" + tmRow[0].Field<Decimal>("chorus_delay_time").ToString() + "\""
+                                 + "  chorus_feedback=" + "\"" + tmRow[0].Field<Decimal>("chorus_feedback").ToString() + "\""
+                                 + "  chorus_hpf=" + "\"" + tmRow[0].Field<Decimal>("chorus_hpf").ToString() + "\""
+                                 + "  delay_feedback_filter=" + "\"" + tmRow[0].Field<Decimal>("delay_feedback_filter").ToString() + "\""
+                                 + "  rate=" + "\"" + tmRow[0].Field<Decimal>("rate").ToString() + "\""
+                                 + "  depth=" + "\"" + tmRow[0].Field<Decimal>("depth").ToString() + "\""
+                                 + "  tremolo=" + "\"" + tmRow[0].Field<Decimal>("tremolo").ToString() + "\"" + "/>\n";
             }
 
             foreach (TreeNode tv in tVo.Nodes)
             {
+                DataRow[] tvRow = GetARowStringByTag(tv.Tag.ToString(), "tVoice");
+
                 XMLString += "  <voice string=" + "/>\n";
             }
 
