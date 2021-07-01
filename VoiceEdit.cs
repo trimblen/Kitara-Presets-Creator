@@ -69,18 +69,19 @@ namespace KitaraPresetsCreator
 
             this._pFrm.drFind.SetField(13, numPitchBendSemitones.Value);
             this._pFrm.drFind.SetField(14, numpPitchWheel.Value);
-            this._pFrm.drFind.SetField(15, chFxb0_on.Checked);
-            this._pFrm.drFind.SetField(16, chFxb1_on.Checked);
+            this._pFrm.drFind.SetField(15, numVelocity.Value);
+            this._pFrm.drFind.SetField(16, chFxb0_on.Checked);
+            this._pFrm.drFind.SetField(17, chFxb1_on.Checked);
 
-            this._pFrm.drFind.SetField(17, numReverbSend.Value);
-            this._pFrm.drFind.SetField(18, numFilterFrequency.Value);
-            this._pFrm.drFind.SetField(19, numFilterResonance.Value);
-            this._pFrm.drFind.SetField(20, numFilterType.Value);
+            this._pFrm.drFind.SetField(18, numReverbSend.Value);
+            this._pFrm.drFind.SetField(19, numFilterFrequency.Value);
+            this._pFrm.drFind.SetField(20, numFilterResonance.Value);
+            this._pFrm.drFind.SetField(21, numFilterType.Value);
 
-            this._pFrm.drFind.SetField(21, numFilterAttack.Value);
-            this._pFrm.drFind.SetField(22, numFilterDecay.Value);
-            this._pFrm.drFind.SetField(23, numFilterRelease.Value);
-            this._pFrm.drFind.SetField(24, numString.Value);
+            this._pFrm.drFind.SetField(22, numFilterAttack.Value);
+            this._pFrm.drFind.SetField(23, numFilterDecay.Value);
+            this._pFrm.drFind.SetField(24, numFilterRelease.Value);
+            this._pFrm.drFind.SetField(25, numString.Value);
                         
             this.DialogResult = DialogResult.OK;
         }

@@ -45,6 +45,7 @@
             this.verticallyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ofd_OpenFile = new System.Windows.Forms.OpenFileDialog();
+            this.saveAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +68,7 @@
             this.openToolStripMenuItem,
             this.saveToolStripMenuItemSave,
             this.saveAsToolStripMenuItem,
+            this.saveAllToolStripMenuItem,
             this.closeToolStripCloseWindow,
             this.closeToolStripMenuItem,
             this.exitToolStripMenuItem});
@@ -168,6 +170,13 @@
             this.aboutToolStripMenuItem.Text = "Ab&out";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // saveAllToolStripMenuItem
+            // 
+            this.saveAllToolStripMenuItem.Name = "saveAllToolStripMenuItem";
+            this.saveAllToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.saveAllToolStripMenuItem.Text = "Save Al&l...";
+            this.saveAllToolStripMenuItem.Click += new System.EventHandler(this.saveAllToolStripMenuItem_Click);
+            // 
             // MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,6 +213,7 @@
         private System.Windows.Forms.ToolStripMenuItem verticallyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripCloseWindow;
         private System.Windows.Forms.OpenFileDialog ofd_OpenFile;
+        private System.Windows.Forms.ToolStripMenuItem saveAllToolStripMenuItem;
     }
 }
 

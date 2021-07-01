@@ -112,6 +112,13 @@ namespace KitaraPresetsCreator
         {
 
         }
-    }
 
+        private void saveAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (PresetForm frm in this.MdiChildren)
+            {
+                frm.Save_File();
+            }
+        }
+    }
 }
