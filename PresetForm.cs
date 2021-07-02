@@ -482,7 +482,56 @@ namespace KitaraPresetsCreator
             {
                 DataRow[] tvRow = GetARowStringByTag(tv.Tag.ToString(), "tVoice");
 
-                XMLString += "  <voice string=" + "/>\n";
+                string t1vOn;
+
+                if (tvRow[0].Field<Boolean>("fxb0_on") == true)
+                {
+                    t1vOn = "1";
+                }
+                else
+                {
+
+                    t1vOn = "0";
+                };
+
+                string t2vOn;
+
+                if (tvRow[0].Field<Boolean>("fxb1_on") == true)
+                {
+                    t2vOn = "1";
+                }
+                else
+                {
+
+                    t2vOn = "0";
+                };
+
+                XMLString += "  <voice string=" + "\""+ tvRow[0].Field<Decimal>("string").ToString() + "\""
+                                                +"  prid="+"\"" + tv.Text + "\""
+                                                +"  wave_id=" + "\"" + tvRow[0].Field<String>("wave_id").ToString() + "\""
+                                                +"  amplitude_attack=" + "\"" + tvRow[0].Field<Decimal>("amplitude_attack").ToString() + "\""
+                                                +"  amplitude_decay=" + "\"" + tvRow[0].Field<Decimal>("amplitude_decay").ToString() + "\""
+                                                +"  amplitude_release=" + "\"" + tvRow[0].Field<Decimal>("amplitude_release").ToString() + "\""
+                                                +"  detune_course=" + "\"" + tvRow[0].Field<Decimal>("detune_course").ToString() + "\""
+                                                +"  detune_fine=" + "\"" + tvRow[0].Field<Decimal>("detune_fine").ToString() + "\""
+                                                +"  vibrate_rate=" + "\"" + tvRow[0].Field<Decimal>("vibrate_rate").ToString() + "\""
+                                                +"  vibrate_depth=" + "\"" + tvRow[0].Field<Decimal>("vibrate_depth").ToString() + "\""
+                                                +"  vibrate_delay=" + "\"" + tvRow[0].Field<Decimal>("vibrate_delay").ToString() + "\""
+                                                +"  channel_volume=" + "\"" + tvRow[0].Field<Decimal>("channel_volume").ToString() + "\""
+                                                +"  portamento_time=" + "\"" + tvRow[0].Field<Decimal>("portamento_time").ToString() + "\""
+                                                +"  pan=" + "\"" + tvRow[0].Field<Decimal>("pan").ToString() + "\""
+                                                +"  pitch_bend_semitones=" + "\"" + tvRow[0].Field<Decimal>("pitch_bend_semitones").ToString() + "\""
+                                                +"  pitch_wheel=" + "\"" + tvRow[0].Field<Decimal>("pitch_wheel").ToString() + "\""
+                                                +"  velocity=" + "\"" + tvRow[0].Field<Decimal>("velocity").ToString() + "\""
+                                                +"  fxb0_on=" + "\"" + t1vOn + "\""
+                                                +"  fxb1_on=" + "\"" + t2vOn + "\""
+                                                +"  reverb_send=" + "\"" + tvRow[0].Field<Decimal>("reverb_send").ToString() + "\""
+                                                +"  filter_frequency=" + "\"" + tvRow[0].Field<Decimal>("filter_frequency").ToString() + "\""
+                                                +"  filter_resonance=" + "\"" + tvRow[0].Field<Decimal>("filter_resonance").ToString() + "\""
+                                                +"  filter_type=" + "\"" + tvRow[0].Field<Decimal>("filter_type").ToString() + "\""
+                                                +"  filter_attack=" + "\"" + tvRow[0].Field<Decimal>("filter_attack").ToString() + "\""
+                                                +"  filter_decay=" + "\"" + tvRow[0].Field<Decimal>("filter_decay").ToString() + "\""
+                                                +"  filter_release=" + "\"" + tvRow[0].Field<Decimal>("filter_release").ToString() + "\"" + "/>\n";
             }
 
             XMLString += "</preset>";
