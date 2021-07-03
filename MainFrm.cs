@@ -120,5 +120,15 @@ namespace KitaraPresetsCreator
                 frm.Save_File();
             }
         }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                PresetForm pForm = (PresetForm)this.ActiveMdiChild;
+
+                pForm.Save_File_As();
+            };
+        }
     }
 }

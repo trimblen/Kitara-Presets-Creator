@@ -142,28 +142,61 @@ namespace KitaraPresetsCreator
         {
             if (this.file_Path == null)
             {
-                sfd_SaveFile.FileName = this.Text;
+                sfd_SaveFile.FileName   = this.Text;
+                sfd_SaveFile.Filter     = "Kitara Preset Files (.mz) | *.mz";
+
+                if (sfd_SaveFile.ShowDialog() == DialogResult.OK)
+                {
+                    this.file_Path      = sfd_SaveFile.FileName;
+                    String[] fileName   = file_Path.Split('\\');
+                    this.Text           = fileName[fileName.Length - 1];
+
+                    GenerateXMLFilePreset(XMLTextBox, treeViewXML);
+
+                    XMLTextBox.SaveFile(this.file_Path, RichTextBoxStreamType.PlainText);
+
+                    this.IsChanged = false;
+                };
             }
             else 
             {
                 sfd_SaveFile.FileName = this.file_Path;
-            };            
-
-            sfd_SaveFile.Filter = "Kitara Preset Files (.mz) | *.mz";
-
-            if (sfd_SaveFile.ShowDialog() == DialogResult.OK)
-            {
-                this.file_Path      = sfd_SaveFile.FileName;
-                String[] fileName   = file_Path.Split('\\');
-                this.Text           = fileName[fileName.Length - 1];
 
                 GenerateXMLFilePreset(XMLTextBox, treeViewXML);
 
                 XMLTextBox.SaveFile(this.file_Path, RichTextBoxStreamType.PlainText);
 
                 this.IsChanged = false;
-            }          
+            };              
         }
+
+        public void Save_File_As()
+        {
+            if (this.file_Path == null)
+            {
+                sfd_SaveFile.FileName = this.Text;
+            }
+            else
+            {
+                sfd_SaveFile.FileName = this.file_Path;
+            };
+
+            sfd_SaveFile.Filter = "Kitara Preset Files (.mz) | *.mz";
+
+            if (sfd_SaveFile.ShowDialog() == DialogResult.OK)
+            {
+                this.file_Path = sfd_SaveFile.FileName;
+                String[] fileName = file_Path.Split('\\');
+                this.Text = fileName[fileName.Length - 1];
+
+                GenerateXMLFilePreset(XMLTextBox, treeViewXML);
+
+                XMLTextBox.SaveFile(this.file_Path, RichTextBoxStreamType.PlainText);
+
+                this.IsChanged = false;
+            }
+        }
+
         private void ParseLine(string line, RichTextBox m_rtb)
         {
             Regex r = new Regex("([ \\t{}():;])");
@@ -306,7 +339,7 @@ namespace KitaraPresetsCreator
             //getting and parsing base parameters
             String XMLString = "";
 
-            XMLString += "<? xml version =\"1.0\" ?>\n<preset>\n";
+            XMLString += "<?xml version =\"1.0\" ?>\n<preset>\n";
             XMLString += "  <kitara_id ap=\"v1.0\" />\n";
 
             DataRow[] maRow = GetARowStringByTag("Volume", "tMaster");
@@ -359,12 +392,12 @@ namespace KitaraPresetsCreator
                 eqOn = "\"" + "0" + "\"";
             }
             
-            XMLString += "  <equalizer on=" + eqOn + " low_mid_q=" + "\""+ beqRow[0].Field<Decimal>("low_mid_q").ToString() + "\"" + " high_mid_q=" + "\"" + beqRow[0].Field<Decimal>("high_mid_q") + "\"" + "/>\n";
+            XMLString += "  <equalizer on=" + eqOn + " low_mid_q=" + "\""+ beqRow[0].Field<Decimal>("low_mid_q").ToString() + "\"" + " high_mid_q=" + "\"" + beqRow[0].Field<Decimal>("high_mid_q") + "\"" + ">\n";
             XMLString += "      <eq_band type=" + "\"lowest\" gain=" + "\"" + lowerRow[0].Field<Decimal>("gain").ToString() + "\"" + " frequency=" + "\"" + lowerRow[0].Field<Decimal>("frequency").ToString() + "\"" + "/>\n";
             XMLString += "      <eq_band type=" + "\"lower\" gain=" + "\"" + lowRow[0].Field<Decimal>("gain").ToString() + "\"" + " frequency=" + "\"" + lowRow[0].Field<Decimal>("frequency").ToString() + "\"" + "/>\n";
             XMLString += "      <eq_band type=" + "\"higher\" gain=" + "\"" + highRow[0].Field<Decimal>("gain").ToString() + "\"" + " frequency=" + "\"" + highRow[0].Field<Decimal>("frequency").ToString() + "\"" + "/>\n";
             XMLString += "      <eq_band type=" + "\"highest\" gain=" + "\"" + highestRow[0].Field<Decimal>("gain").ToString() + "\"" + " frequency="+ "\""+ highestRow[0].Field<Decimal>("frequency").ToString() + "\"" + "/>\n";
-            XMLString += "  </equalizer>\n";
+            XMLString += " </equalizer>\n";
 
             //getting and setting presets parameters
             TreeNode tRev   = GetParentNode("nodeReverb");
@@ -650,20 +683,23 @@ namespace KitaraPresetsCreator
             dataSetPresets.Tables["tEqualizer"].Rows.Remove(highestRow[0]);
 
             //getting and setting presets parameters
-            TreeNode tRev = GetParentNode("nodeReverb");
-            TreeNode tCom = GetParentNode("nodeCompression");
+            TreeNode tRev   = GetParentNode("nodeReverb");
+            TreeNode tCom   = GetParentNode("nodeCompression");
             TreeNode tContr = GetParentNode("nodeControl");
-            TreeNode tDel = GetParentNode("nodeDelay");
+            TreeNode tDel   = GetParentNode("nodeDelay");
             TreeNode tDistr = GetParentNode("nodeDistortion");
-            TreeNode tMixr = GetParentNode("nodeMixer");
-            TreeNode tMod = GetParentNode("nodeModulation");
-            TreeNode tVo = GetParentNode("nodeVoice");
+            TreeNode tMixr  = GetParentNode("nodeMixer");
+            TreeNode tMod   = GetParentNode("nodeModulation");
+            TreeNode tVo    = GetParentNode("nodeVoice");
 
             foreach (TreeNode trn in tRev.Nodes)
             {
                 DataRow[] revRow = GetARowStringByTag(trn.Tag.ToString(), "tReverberation");
 
-                dataSetPresets.Tables["tReverberation"].Rows.Remove(revRow[0]);
+                if (revRow.Count() > 0)
+                {
+                    dataSetPresets.Tables["tReverberation"].Rows.Remove(revRow[0]);
+                };                               
 
                 trView.Nodes.Remove(trn);
             }
@@ -672,7 +708,10 @@ namespace KitaraPresetsCreator
             {
                 DataRow[] tcmRow = GetARowStringByTag(tcm.Tag.ToString(), "tCompression");
 
-                dataSetPresets.Tables["tCompression"].Rows.Remove(tcmRow[0]);
+                if (tcmRow.Count() > 0)
+                {
+                    dataSetPresets.Tables["tCompression"].Rows.Remove(tcmRow[0]);
+                };
 
                 trView.Nodes.Remove(tcm);
             }
@@ -681,7 +720,10 @@ namespace KitaraPresetsCreator
             {
                 DataRow[] tctrRow = GetARowStringByTag(tctr.Tag.ToString(), "tControl");
 
-                dataSetPresets.Tables["tCompression"].Rows.Remove(tctrRow[0]);
+                if (tctrRow.Count() > 0)
+                {
+                    dataSetPresets.Tables["tControl"].Rows.Remove(tctrRow[0]);
+                };
 
                 trView.Nodes.Remove(tctr);
             }
@@ -689,6 +731,11 @@ namespace KitaraPresetsCreator
             foreach (TreeNode tdl in tDel.Nodes)
             {
                 DataRow[] tdlRow = GetARowStringByTag(tdl.Tag.ToString(), "tDelay");
+
+                if (tdlRow.Count() > 0)
+                {
+                    dataSetPresets.Tables["tDelay"].Rows.Remove(tdlRow[0]);
+                };
 
                 dataSetPresets.Tables["tDelay"].Rows.Remove(tdlRow[0]);
 
@@ -699,7 +746,10 @@ namespace KitaraPresetsCreator
             {
                 DataRow[] tctrRow = GetARowStringByTag(tds.Tag.ToString(), "tDistortion");
 
-                dataSetPresets.Tables["tDistortion"].Rows.Remove(tctrRow[0]);
+                if (tctrRow.Count() > 0)
+                {
+                    dataSetPresets.Tables["tDistortion"].Rows.Remove(tctrRow[0]);
+                };
 
                 trView.Nodes.Remove(tds);
             }
@@ -708,7 +758,10 @@ namespace KitaraPresetsCreator
             {
                 DataRow[] txmrRow = GetARowStringByTag(txmr.Tag.ToString(), "tMixer");
 
-                dataSetPresets.Tables["tMixer"].Rows.Remove(txmrRow[0]);
+                if (txmrRow.Count() > 0)
+                {
+                    dataSetPresets.Tables["tMixer"].Rows.Remove(txmrRow[0]);
+                };
 
                 trView.Nodes.Remove(txmr);
             }
@@ -717,7 +770,10 @@ namespace KitaraPresetsCreator
             {
                 DataRow[] tmRow = GetARowStringByTag(tm.Tag.ToString(), "tModulation");
 
-                dataSetPresets.Tables["tModulation"].Rows.Remove(tmRow[0]);
+                if (tmRow.Count() > 0)
+                {
+                    dataSetPresets.Tables["tModulation"].Rows.Remove(tmRow[0]);
+                };
 
                 trView.Nodes.Remove(tm);
             }
@@ -726,7 +782,10 @@ namespace KitaraPresetsCreator
             {
                 DataRow[] tvRow = GetARowStringByTag(tv.Tag.ToString(), "tVoice");
 
-                dataSetPresets.Tables["tVoice"].Rows.Remove(tvRow[0]);
+                if (tvRow.Count() > 0)
+                {
+                    dataSetPresets.Tables["tVoice"].Rows.Remove(tvRow[0]);
+                };
 
                 trView.Nodes.Remove(tv);
             }
