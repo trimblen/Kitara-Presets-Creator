@@ -110,7 +110,7 @@ namespace KitaraPresetsCreator
 
         public void Load_File()
         {
-            if (file_Path != null)
+            //if (file_Path != null)
             {
                 DialogResult save = MessageBox.Show("Do you want to save the file?", "Warning", MessageBoxButtons.OKCancel);
                 if (save == DialogResult.OK)
@@ -263,11 +263,11 @@ namespace KitaraPresetsCreator
                 AddEqualizerData("higher"   , equaBands[2]);
                 AddEqualizerData("highest"  , equaBands[3]);
 
-                for (var i = 0; i<=5 ; i++) {
+                for (var i = 0; i<= midi_out_channels.Count-1; i++) {
                     AddMidiOutChannel("ch"+i.ToString(), midi_out_channels[i]);
                 };
 
-                for (var i = 0; i <= 5; i++)
+                for (var i = 0; i <=tunings.Count-1; i++)
                 {
                     AddTuning("t" + i.ToString(), tunings[i]);
                 };
@@ -918,6 +918,9 @@ namespace KitaraPresetsCreator
 
             switch (pType)
             {      
+                case "t0":
+                    rNewRow["value"] = Convert.ToDecimal(xmlParam.Attributes["value"].Value);
+                    break;
                 case "t1":
                     rNewRow["value"] = Convert.ToDecimal(xmlParam.Attributes["value"].Value);
                     break;
@@ -933,7 +936,7 @@ namespace KitaraPresetsCreator
                 case "t5":
                     rNewRow["value"] = Convert.ToDecimal(xmlParam.Attributes["value"].Value);
                     break;
-                case "t6":
+                case "ch0":
                     rNewRow["value"] = Convert.ToDecimal(xmlParam.Attributes["value"].Value);
                     break;
                 case "ch1":
@@ -950,9 +953,6 @@ namespace KitaraPresetsCreator
                     break;
                 case "ch5":
                     rNewRow["value"] = Convert.ToDecimal(xmlParam.Attributes["value"].Value);
-                    break;
-                case "ch6":
-                    //rNewRow["value"] = Convert.ToDecimal(xmlParam.Attributes["value"].Value);
                     break;
                 case "Master":
                     break;

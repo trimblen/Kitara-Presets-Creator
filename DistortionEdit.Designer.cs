@@ -73,6 +73,11 @@
             // numFxblock
             // 
             this.numFxblock.Location = new System.Drawing.Point(90, 19);
+            this.numFxblock.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numFxblock.Name = "numFxblock";
             this.numFxblock.Size = new System.Drawing.Size(120, 20);
             this.numFxblock.TabIndex = 18;
@@ -98,6 +103,11 @@
             // numType
             // 
             this.numType.Location = new System.Drawing.Point(90, 75);
+            this.numType.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numType.Name = "numType";
             this.numType.Size = new System.Drawing.Size(120, 20);
             this.numType.TabIndex = 20;
@@ -114,6 +124,11 @@
             // numLevel
             // 
             this.numLevel.Location = new System.Drawing.Point(90, 101);
+            this.numLevel.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numLevel.Name = "numLevel";
             this.numLevel.Size = new System.Drawing.Size(120, 20);
             this.numLevel.TabIndex = 22;
@@ -130,6 +145,11 @@
             // numDrive
             // 
             this.numDrive.Location = new System.Drawing.Point(90, 127);
+            this.numDrive.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numDrive.Name = "numDrive";
             this.numDrive.Size = new System.Drawing.Size(120, 20);
             this.numDrive.TabIndex = 24;
@@ -146,6 +166,11 @@
             // numTone
             // 
             this.numTone.Location = new System.Drawing.Point(90, 153);
+            this.numTone.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numTone.Name = "numTone";
             this.numTone.Size = new System.Drawing.Size(120, 20);
             this.numTone.TabIndex = 26;
@@ -162,6 +187,11 @@
             // numBooster
             // 
             this.numBooster.Location = new System.Drawing.Point(90, 179);
+            this.numBooster.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             this.numBooster.Name = "numBooster";
             this.numBooster.Size = new System.Drawing.Size(120, 20);
             this.numBooster.TabIndex = 28;

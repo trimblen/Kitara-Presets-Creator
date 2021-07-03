@@ -85,7 +85,7 @@
             // 
             this.numFxblock.Location = new System.Drawing.Point(134, 32);
             this.numFxblock.Maximum = new decimal(new int[] {
-            127,
+            1,
             0,
             0,
             0});

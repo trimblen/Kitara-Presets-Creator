@@ -295,7 +295,7 @@
             // 
             this.numFxb.Location = new System.Drawing.Point(388, 142);
             this.numFxb.Maximum = new decimal(new int[] {
-            127,
+            2,
             0,
             0,
             0});
