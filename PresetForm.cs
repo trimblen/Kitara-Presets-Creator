@@ -692,136 +692,128 @@ namespace KitaraPresetsCreator
             TreeNode tMod   = GetParentNode("nodeModulation");
             TreeNode tVo    = GetParentNode("nodeVoice");
 
-            foreach (TreeNode trn in tRev.Nodes)
+            if(tRev.Nodes.Count > 1)
             {
-                DataRow[] revRow = GetARowStringByTag(trn.Tag.ToString(), "tReverberation");
-
-                if (revRow.Count() > 0)
+                for (int i = 0; i < tRev.Nodes.Count; i++)
                 {
-                    dataSetPresets.Tables["tReverberation"].Rows.Remove(revRow[0]);
-                };                               
+                    DataRow[] revRow = GetARowStringByTag(tRev.Nodes[i].Tag.ToString(), "tReverberation");
 
-                trView.Nodes.Remove(trn);
+                    if (revRow.Count() > 0)
+                    {
+                        dataSetPresets.Tables["tReverberation"].Rows.Remove(revRow[0]);
+                    };
+
+                    tRev.Nodes.Remove(tRev.Nodes[i]);
+                };
+            };
+
+            if (tCom.Nodes.Count > 1)
+            {
+                for (int i = 0; i < tCom.Nodes.Count; i++)
+                {
+                    DataRow[] tcmRow = GetARowStringByTag(tCom.Nodes[i].Tag.ToString(), "tCompression");
+
+                    if (tcmRow.Count() > 0)
+                    {
+                        dataSetPresets.Tables["tCompression"].Rows.Remove(tcmRow[0]);
+                    };
+
+                    tCom.Nodes.Remove(tCom.Nodes[i]);
+                };
             }
 
-            foreach (TreeNode tcm in tCom.Nodes)
+            if (tContr.Nodes.Count > 1)
             {
-                DataRow[] tcmRow = GetARowStringByTag(tcm.Tag.ToString(), "tCompression");
-
-                if (tcmRow.Count() > 0)
+                 for (int i = 0; i < tContr.Nodes.Count; i++)
                 {
-                    dataSetPresets.Tables["tCompression"].Rows.Remove(tcmRow[0]);
+                    DataRow[] tctrRow = GetARowStringByTag(tContr.Nodes[i].Tag.ToString(), "tControl");
+
+                    if (tctrRow.Count() > 0)
+                    {
+                        dataSetPresets.Tables["tControl"].Rows.Remove(tctrRow[0]);
+                    };
+
+                    tContr.Nodes.Remove(tContr.Nodes[i]);
+                };
+            };
+
+            if (tDel.Nodes.Count > 1)
+            {
+                for (int i = 0; i < tDel.Nodes.Count; i++) 
+                {
+                    DataRow[] tdlRow = GetARowStringByTag(tDel.Nodes[i].Tag.ToString(), "tDelay");
+
+                    if (tdlRow.Count() > 0)
+                    {
+                        dataSetPresets.Tables["tDelay"].Rows.Remove(tdlRow[0]);
+                    };
+
+                    tDel.Nodes.Remove(tDel.Nodes[i]);
+                };
+            };
+
+            if (tDistr.Nodes.Count > 1)
+            {
+                for (int i = 0; i < tDistr.Nodes.Count; i++)
+                {
+                    DataRow[] tctrRow = GetARowStringByTag(tDistr.Nodes[i].Tag.ToString(), "tDistortion");
+
+                    if (tctrRow.Count() > 0)
+                    {
+                        dataSetPresets.Tables["tDistortion"].Rows.Remove(tctrRow[0]);
+                    };
+
+                    tDistr.Nodes.Remove(tDistr.Nodes[i]);
                 };
 
-                trView.Nodes.Remove(tcm);
-            }
+            };
 
-            foreach (TreeNode tctr in tContr.Nodes)
+            if (tMixr.Nodes.Count > 1)
             {
-                DataRow[] tctrRow = GetARowStringByTag(tctr.Tag.ToString(), "tControl");
-
-                if (tctrRow.Count() > 0)
+                for (int i = 0; i < tMixr.Nodes.Count; i++)
                 {
-                    dataSetPresets.Tables["tControl"].Rows.Remove(tctrRow[0]);
+                    DataRow[] txmrRow = GetARowStringByTag(tMixr.Nodes[i].Tag.ToString(), "tMixer");
+
+                    if (txmrRow.Count() > 0)
+                    {
+                        dataSetPresets.Tables["tMixer"].Rows.Remove(txmrRow[0]);
+                    };
+
+                    tMixr.Nodes.Remove(tMixr.Nodes[i]);
                 };
+            };
 
-                trView.Nodes.Remove(tctr);
-            }
-
-            foreach (TreeNode tdl in tDel.Nodes)
+            if (tMod.Nodes.Count > 1)
             {
-                DataRow[] tdlRow = GetARowStringByTag(tdl.Tag.ToString(), "tDelay");
-
-                if (tdlRow.Count() > 0)
+                for (int i = 0; i < tMod.Nodes.Count; i++)
                 {
-                    dataSetPresets.Tables["tDelay"].Rows.Remove(tdlRow[0]);
+                    DataRow[] tmRow = GetARowStringByTag(tMod.Nodes[i].Tag.ToString(), "tModulation");
+
+                    if (tmRow.Count() > 0)
+                    {
+                        dataSetPresets.Tables["tModulation"].Rows.Remove(tmRow[0]);
+                    };
+
+                    tMod.Nodes.Remove(tMod.Nodes[i]);
                 };
+            };
 
-                dataSetPresets.Tables["tDelay"].Rows.Remove(tdlRow[0]);
-
-                trView.Nodes.Remove(tdl);
-            }
-
-            foreach (TreeNode tds in tDistr.Nodes)
+            if (tVo.Nodes.Count > 1)
             {
-                DataRow[] tctrRow = GetARowStringByTag(tds.Tag.ToString(), "tDistortion");
-
-                if (tctrRow.Count() > 0)
+                for (int i = 0; i < tVo.Nodes.Count; i++)
                 {
-                    dataSetPresets.Tables["tDistortion"].Rows.Remove(tctrRow[0]);
-                };
+                    DataRow[] tvRow = GetARowStringByTag(tVo.Nodes[i].Tag.ToString(), "tVoice");
 
-                trView.Nodes.Remove(tds);
-            }
+                    if (tvRow.Count() > 0)
+                    {
+                        dataSetPresets.Tables["tVoice"].Rows.Remove(tvRow[0]);
+                    };
 
-            foreach (TreeNode txmr in tMixr.Nodes)
-            {
-                DataRow[] txmrRow = GetARowStringByTag(txmr.Tag.ToString(), "tMixer");
-
-                if (txmrRow.Count() > 0)
-                {
-                    dataSetPresets.Tables["tMixer"].Rows.Remove(txmrRow[0]);
-                };
-
-                trView.Nodes.Remove(txmr);
-            }
-
-            foreach (TreeNode tm in tMod.Nodes)
-            {
-                DataRow[] tmRow = GetARowStringByTag(tm.Tag.ToString(), "tModulation");
-
-                if (tmRow.Count() > 0)
-                {
-                    dataSetPresets.Tables["tModulation"].Rows.Remove(tmRow[0]);
-                };
-
-                trView.Nodes.Remove(tm);
-            }
-
-            foreach (TreeNode tv in tVo.Nodes)
-            {
-                DataRow[] tvRow = GetARowStringByTag(tv.Tag.ToString(), "tVoice");
-
-                if (tvRow.Count() > 0)
-                {
-                    dataSetPresets.Tables["tVoice"].Rows.Remove(tvRow[0]);
-                };
-
-                trView.Nodes.Remove(tv);
-            }
-
-        }
-
-        //adding node by xml node
-        private void AddNode(XmlNode inXmlNode, TreeNode inTreeNode)
-        {
-            XmlNode xNode;
-            TreeNode tNode;
-            XmlNodeList nodeList;
-            int i;
-
-            // Loop through the XML nodes until the leaf is reached.
-            // Add the nodes to the TreeView during the looping process.
-            if (inXmlNode.HasChildNodes)
-            {
-                nodeList = inXmlNode.ChildNodes;
-
-                for (i = 0; i <= nodeList.Count - 1; i++)
-                {
-                    xNode = inXmlNode.ChildNodes[i];
-                    inTreeNode.Nodes.Add(new TreeNode(xNode.Name));
-                    tNode = inTreeNode.Nodes[i];
-                    this.AddNode(xNode, tNode);
+                    tVo.Nodes.Remove(tVo.Nodes[i]);
                 }
-            }
-            else
-            {
-                // Here you need to pull the data from the XmlNode based on the
-                // type of node, whether attribute values are required, and so forth.
-                inTreeNode.Text = (inXmlNode.OuterXml).Trim();
-            }
+            };
         }
-
+              
         private void UpdateTextHighLight(RichTextBox m_rtb) 
         {
             // Calculate the starting position of the current line.
@@ -889,6 +881,7 @@ namespace KitaraPresetsCreator
             m_rtb.SelectionLength = selectionLength;
         }
 
+        //adding node by xml node
         //we have to add some node 
         private void AddNodeByType(string NodeType, string nodeParentName, string tableName, XmlNode xmlPar = null) {
             TreeNode tns = treeViewXML.Nodes.Find(NodeType, true).FirstOrDefault();
@@ -926,28 +919,40 @@ namespace KitaraPresetsCreator
             switch (pType)
             {      
                 case "t1":
+                    rNewRow["value"] = Convert.ToDecimal(xmlParam.Attributes["value"].Value);
                     break;
-                case "t2":                  
+                case "t2":
+                    rNewRow["value"] = Convert.ToDecimal(xmlParam.Attributes["value"].Value);
                     break;
-                case "t3":               
+                case "t3":
+                    rNewRow["value"] = Convert.ToDecimal(xmlParam.Attributes["value"].Value);
                     break;
-                case "t4":     
+                case "t4":
+                    rNewRow["value"] = Convert.ToDecimal(xmlParam.Attributes["value"].Value);
                     break;
-                case "t5":  
+                case "t5":
+                    rNewRow["value"] = Convert.ToDecimal(xmlParam.Attributes["value"].Value);
                     break;
                 case "t6":
+                    rNewRow["value"] = Convert.ToDecimal(xmlParam.Attributes["value"].Value);
                     break;
                 case "ch1":
+                    rNewRow["value"] = Convert.ToDecimal(xmlParam.Attributes["value"].Value);
                     break;
                 case "ch2":
+                    rNewRow["value"] = Convert.ToDecimal(xmlParam.Attributes["value"].Value);
                     break;
                 case "ch3":
+                    rNewRow["value"] = Convert.ToDecimal(xmlParam.Attributes["value"].Value);
                     break;
-                case "ch4": 
+                case "ch4":
+                    rNewRow["value"] = Convert.ToDecimal(xmlParam.Attributes["value"].Value);
                     break;
-                case "ch5":               
+                case "ch5":
+                    rNewRow["value"] = Convert.ToDecimal(xmlParam.Attributes["value"].Value);
                     break;
                 case "ch6":
+                    //rNewRow["value"] = Convert.ToDecimal(xmlParam.Attributes["value"].Value);
                     break;
                 case "Master":
                     break;
@@ -963,16 +968,150 @@ namespace KitaraPresetsCreator
                     rNewRow["pRreDelayTime"]        = Convert.ToDecimal(xmlParam.Attributes["pre_delay_time"].Value);
                     break;
                 case "Delay":
+                    rNewRow["fxblock"]    = Convert.ToDecimal(xmlParam.Attributes["fxblock"].Value);
+                    rNewRow["mode"]       = Convert.ToDecimal(xmlParam.Attributes["mode"].Value);
+
+                    if (xmlParam.Attributes["on"].Value == "0")
+                    {
+                        rNewRow["on"] = false;
+                    }
+                    else
+                    {
+                        rNewRow["on"] = true;
+                    };
+
+                    rNewRow["pre_lp"]               = Convert.ToDecimal(xmlParam.Attributes["pre_lp"].Value);
+                    rNewRow["level"]                = Convert.ToDecimal(xmlParam.Attributes["level"].Value);
+                    rNewRow["time"]                 = Convert.ToDecimal(xmlParam.Attributes["time"].Value);
+                    rNewRow["feedback"]             = Convert.ToDecimal(xmlParam.Attributes["feedback"].Value);
+                    rNewRow["feedback_filter"]      = Convert.ToDecimal(xmlParam.Attributes["feedback_filter"].Value);
                     break;
                 case "Mixer":
+                    rNewRow["fxblock"]                       = Convert.ToDecimal(xmlParam.Attributes["fxblock"].Value);
+                    rNewRow["low_cut_filter_frequency"]      = Convert.ToDecimal(xmlParam.Attributes["low_cut_filter_frequency"].Value);
+                    rNewRow["high_cut_filter_frequency"]     = Convert.ToDecimal(xmlParam.Attributes["high_cut_filter_frequency"].Value);
+                    rNewRow["input_gain"]                    = Convert.ToDecimal(xmlParam.Attributes["input_gain"].Value);
+                    rNewRow["output_level"]                  = Convert.ToDecimal(xmlParam.Attributes["output_level"].Value);
+                    rNewRow["pan"]                           = Convert.ToDecimal(xmlParam.Attributes["pan"].Value);
+                    rNewRow["reverb_send"]                   = Convert.ToDecimal(xmlParam.Attributes["reverb_send"].Value);
                     break;
                 case "Control":
+                    rNewRow["type"]                     = Convert.ToDecimal(xmlParam.Attributes["type"].Value);
+                    rNewRow["name"]                     = Convert.ToDecimal(xmlParam.Attributes["name"].Value);
+                    rNewRow["string"]                   = Convert.ToDecimal(xmlParam.Attributes["string"].Value);
+                    rNewRow["index"]                    = Convert.ToDecimal(xmlParam.Attributes["index"].Value);
+                    rNewRow["output"]                   = Convert.ToDecimal(xmlParam.Attributes["output"].Value);
+                    rNewRow["channel"]                  = Convert.ToDecimal(xmlParam.Attributes["channel"].Value);
+                    rNewRow["cc"]                       = Convert.ToDecimal(xmlParam.Attributes["cc"].Value);
+                    rNewRow["inverse"]                  = Convert.ToDecimal(xmlParam.Attributes["inverse"].Value);
+                    rNewRow["variation_start"]          = Convert.ToDecimal(xmlParam.Attributes["variation_start"].Value);
+                    rNewRow["variation_end"]            = Convert.ToDecimal(xmlParam.Attributes["variation_end"].Value);
+                    rNewRow["fxb"]                      = Convert.ToDecimal(xmlParam.Attributes["fxb"].Value);
+                    rNewRow["drag_center"]              = Convert.ToDecimal(xmlParam.Attributes["drag_center"].Value);
                     break;
                 case "Voice":
+                    rNewRow["string"]                   = Convert.ToDecimal(xmlParam.Attributes["string"].Value);
+                    rNewRow["wave_id"]                  = Convert.ToString(xmlParam.Attributes["wave_id"].Value);
+                    rNewRow["amplitude_attack"]         = Convert.ToDecimal(xmlParam.Attributes["amplitude_attack"].Value);
+                    rNewRow["amplitude_decay"]          = Convert.ToDecimal(xmlParam.Attributes["amplitude_decay"].Value);
+                    rNewRow["amplitude_release"]        = Convert.ToDecimal(xmlParam.Attributes["amplitude_release"].Value);
+                    rNewRow["detune_course"]            = Convert.ToDecimal(xmlParam.Attributes["detune_course"].Value);
+                    rNewRow["detune_fine"]              = Convert.ToDecimal(xmlParam.Attributes["detune_fine"].Value);
+                    rNewRow["vibrate_rate"]             = Convert.ToDecimal(xmlParam.Attributes["vibrate_rate"].Value);
+                    rNewRow["vibrate_depth"]            = Convert.ToDecimal(xmlParam.Attributes["vibrate_depth"].Value);
+                    rNewRow["vibrate_delay"]            = Convert.ToDecimal(xmlParam.Attributes["vibrate_delay"].Value);
+                    rNewRow["channel_volume"]           = Convert.ToDecimal(xmlParam.Attributes["channel_volume"].Value);
+                    rNewRow["portamento_time"]          = Convert.ToDecimal(xmlParam.Attributes["portamento_time"].Value);
+                    rNewRow["pan"]                      = Convert.ToDecimal(xmlParam.Attributes["pan"].Value);
+                    rNewRow["pitch_bend_semitones"]     = Convert.ToDecimal(xmlParam.Attributes["pitch_bend_semitones"].Value);
+                    rNewRow["pitch_wheel"]              = Convert.ToDecimal(xmlParam.Attributes["pitch_wheel"].Value);
+                    rNewRow["velocity"]                 = Convert.ToDecimal(xmlParam.Attributes["velocity"].Value);
+                    rNewRow["string"]                   = Convert.ToDecimal(xmlParam.Attributes["string"].Value);
+
+                    if (xmlParam.Attributes["fxb0_on"].Value == "0")
+                    {
+                        rNewRow["fxb0_on"] = false;
+                    }
+                    else
+                    {
+                        rNewRow["fxb0_on"] = true;
+                    };
+
+                    if (xmlParam.Attributes["fxb1_on"].Value == "0")
+                    {
+                        rNewRow["fxb1_on"] = false;
+                    }
+                    else
+                    {
+                        rNewRow["fxb1_on"] = true;
+                    };
+
+                    rNewRow["reverb_send"]              = Convert.ToDecimal(xmlParam.Attributes["reverb_send"].Value);
+                    rNewRow["filter_frequency"]         = Convert.ToDecimal(xmlParam.Attributes["filter_frequency"].Value);
+                    rNewRow["filter_resonance"]         = Convert.ToDecimal(xmlParam.Attributes["filter_resonance"].Value);
+                    rNewRow["filter_type"]              = Convert.ToDecimal(xmlParam.Attributes["filter_type"].Value);
+                    rNewRow["filter_attack"]            = Convert.ToDecimal(xmlParam.Attributes["filter_attack"].Value);
+                    rNewRow["filter_decay"]             = Convert.ToDecimal(xmlParam.Attributes["filter_decay"].Value);
+                    rNewRow["filter_release"]           = Convert.ToDecimal(xmlParam.Attributes["filter_release"].Value);
                     break;
                 case "Modulation":
+                    rNewRow["fxblock"]  = Convert.ToDecimal(xmlParam.Attributes["fxblock"].Value);
+
+                    if (xmlParam.Attributes["on"].Value == "0")
+                    {
+                        rNewRow["on"] = false;
+                    }
+                    else
+                    {
+                        rNewRow["on"] = true;
+                    };
+
+                    rNewRow["type"]                             = Convert.ToDecimal(xmlParam.Attributes["type"].Value);
+                    rNewRow["level"]                            = Convert.ToDecimal(xmlParam.Attributes["level"].Value);
+                    rNewRow["chorus_delay_time"]                = Convert.ToDecimal(xmlParam.Attributes["chorus_delay_time"].Value);
+                    rNewRow["chorus_feedback"]                  = Convert.ToDecimal(xmlParam.Attributes["chorus_feedback"].Value);
+                    rNewRow["chorus_hpf"]                       = Convert.ToDecimal(xmlParam.Attributes["chorus_hpf"].Value);
+                    rNewRow["delay_feedback_filter"]            = Convert.ToDecimal(xmlParam.Attributes["delay_feedback_filter"].Value);
+                    rNewRow["rate"]                             = Convert.ToDecimal(xmlParam.Attributes["rate"].Value);
+                    rNewRow["depth"]                            = Convert.ToDecimal(xmlParam.Attributes["depth"].Value);
+                    rNewRow["tremolo"]                          = Convert.ToDecimal(xmlParam.Attributes["tremolo"].Value);
+                    break;
+                case "Distortion":
+                    rNewRow["fxblock"]  = Convert.ToDecimal(xmlParam.Attributes["fxblock"].Value);
+
+                    if (xmlParam.Attributes["on"].Value == "0")
+                    {
+                        rNewRow["on"] = false;
+                    }
+                    else
+                    {
+                        rNewRow["on"] = true;
+                    };
+
+                    rNewRow["type"]     = Convert.ToDecimal(xmlParam.Attributes["type"].Value);
+                    rNewRow["level"]    = Convert.ToDecimal(xmlParam.Attributes["level"].Value);
+                    rNewRow["drive"]    = Convert.ToDecimal(xmlParam.Attributes["drive"].Value);
+                    rNewRow["tone"]     = Convert.ToDecimal(xmlParam.Attributes["tone"].Value);
+                    rNewRow["booster"]  = Convert.ToDecimal(xmlParam.Attributes["booster"].Value);
                     break;
                 case "Compression":
+                    rNewRow["fxblock"] = Convert.ToDecimal(xmlParam.Attributes["fxblock"].Value);
+
+                    if (xmlParam.Attributes["on"].Value == "0")
+                    {
+                        rNewRow["on"] = false;
+                    }
+                    else
+                    {
+                        rNewRow["on"] = true;
+                    };
+
+                    rNewRow["attack"]       = Convert.ToDecimal(xmlParam.Attributes["attack"].Value);
+                    rNewRow["release"]      = Convert.ToDecimal(xmlParam.Attributes["release"].Value);
+                    rNewRow["threshold"]    = Convert.ToDecimal(xmlParam.Attributes["threshold"].Value);
+                    rNewRow["ratio"]        = Convert.ToDecimal(xmlParam.Attributes["ratio"].Value);
+                    rNewRow["boost"]        = Convert.ToDecimal(xmlParam.Attributes["boost"].Value);
+                    rNewRow["knee"]         = Convert.ToDecimal(xmlParam.Attributes["knee"].Value);
                     break;
                 case "MidiOutChannel":
                     break;
@@ -989,19 +1128,19 @@ namespace KitaraPresetsCreator
                     rNewRow["low_mid_q"]    = Convert.ToDecimal(xmlParam.Attributes["low_mid_q"].Value);
                     rNewRow["high_mid_q"]   = Convert.ToDecimal(xmlParam.Attributes["high_mid_q"].Value);              
                     break;
-                case "Lowest":       
+                case "lowest":       
                     rNewRow["gain"]         = Convert.ToDecimal(xmlParam.Attributes["gain"].Value);
                     rNewRow["frequency"]    = Convert.ToDecimal(xmlParam.Attributes["frequency"].Value);
                     break;
-                case "Lower":
+                case "lower":
                     rNewRow["gain"]         = Convert.ToDecimal(xmlParam.Attributes["gain"].Value);
                     rNewRow["frequency"]    = Convert.ToDecimal(xmlParam.Attributes["frequency"].Value);
                     break;
-                case "Higher":
+                case "higher":
                     rNewRow["gain"]         = Convert.ToDecimal(xmlParam.Attributes["gain"].Value);
                     rNewRow["frequency"]    = Convert.ToDecimal(xmlParam.Attributes["frequency"].Value);
                     break;
-                case "Highest":
+                case "highest":
                     rNewRow["gain"]         = Convert.ToDecimal(xmlParam.Attributes["gain"].Value);
                     rNewRow["frequency"]    = Convert.ToDecimal(xmlParam.Attributes["frequency"].Value);
                     break;
