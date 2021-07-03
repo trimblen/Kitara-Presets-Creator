@@ -1815,6 +1815,7 @@
             this.treeViewXML.Size = new System.Drawing.Size(236, 425);
             this.treeViewXML.TabIndex = 0;
             this.treeViewXML.BeforeLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.treeViewXML_BeforeLabelEdit);
+            this.treeViewXML.AfterLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.treeViewXML_AfterLabelEdit);
             // 
             // tabPreset
             // 

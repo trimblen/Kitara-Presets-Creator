@@ -39,32 +39,16 @@ namespace KitaraPresetsCreator
 
             if (this.file_Path != null)
             {
+                String[] fileName = file_Path.Split('\\');
+                this.Text = fileName[fileName.Length - 1];
+
+                XMLTextBox.LoadFile(file_Path, RichTextBoxStreamType.PlainText);
+
                 BuildXMLTree();
 
-                AddMasterVolumeData();
-
-                AddBasicEqualizerData();
-
-                AddEqualizerData("lowest");
-                AddEqualizerData("lower");
-                AddEqualizerData("higher");
-                AddEqualizerData("highest");
-
-                AddMidiOutChannel("ch0");
-                AddMidiOutChannel("ch1");
-                AddMidiOutChannel("ch2");
-                AddMidiOutChannel("ch3");
-                AddMidiOutChannel("ch4");
-                AddMidiOutChannel("ch5");
-
-                AddTuning("t0");
-                AddTuning("t1");
-                AddTuning("t2");
-                AddTuning("t3");
-                AddTuning("t4");
-                AddTuning("t5");
-
-                GenerateXMLFilePreset(XMLTextBox, treeViewXML);
+                this.IsChanged = false;
+    
+                //GenerateXMLFilePreset(XMLTextBox, treeViewXML);
 
                 //UpdateTextHighLight(XMLTextBox);
             }
@@ -137,16 +121,20 @@ namespace KitaraPresetsCreator
 
             XMLTextBox.Clear();
 
-            if (file_Path != null)
-            {
-                System.IO.StreamReader mzReader;
+            //if (file_Path != null)
+            //{
+            //    System.IO.StreamReader mzReader;
 
-                mzReader = new System.IO.StreamReader(file_Path);
-            }
+            //    mzReader = new System.IO.StreamReader(file_Path);
 
-            String[] fileName = file_Path.Split('\\');
-            this.Text = fileName[fileName.Length - 1];
-            XMLTextBox.LoadFile(file_Path, RichTextBoxStreamType.RichText);
+            //}
+
+            String[] fileName   = file_Path.Split('\\');
+            this.Text           = fileName[fileName.Length - 1];
+            
+            XMLTextBox.LoadFile(file_Path, RichTextBoxStreamType.PlainText);
+
+            BuildXMLTree();
 
             this.IsChanged = false;
         }
@@ -168,8 +156,10 @@ namespace KitaraPresetsCreator
                 this.file_Path      = sfd_SaveFile.FileName;
                 String[] fileName   = file_Path.Split('\\');
                 this.Text           = fileName[fileName.Length - 1];
-            
-                XMLTextBox.SaveFile(this.file_Path, RichTextBoxStreamType.RichText);
+
+                GenerateXMLFilePreset(XMLTextBox, treeViewXML);
+
+                XMLTextBox.SaveFile(this.file_Path, RichTextBoxStreamType.PlainText);
 
                 this.IsChanged = false;
             }          
@@ -221,9 +211,35 @@ namespace KitaraPresetsCreator
                 XmlNodeList tunings              = dom.GetElementsByTagName("tuning");
                 XmlNodeList master               = dom.GetElementsByTagName("master");
                 XmlNodeList midi_out_channels    = dom.GetElementsByTagName("midi_out_channel");
-                XmlNodeList gqualizer            = dom.GetElementsByTagName("equalizer");
-                XmlNodeList eq_bands             = dom.GetElementsByTagName("eq_band");
+                XmlNodeList equalizer            = dom.GetElementsByTagName("equalizer");
+                XmlNodeList equaBands            = equalizer[0].SelectNodes("eq_band");
 
+
+                //now we have to check the availability of main settings, if they are not, then we generate an exception
+                if (tunings.Count == 0 | master.Count == 0 | midi_out_channels.Count == 0 | equalizer.Count == 0) {
+
+                    throw new XmlException("Invalid or corrupted preset file!");
+                };
+
+                AddMasterVolumeData(0, master[0]);
+
+                AddBasicEqualizerData(equalizer[0]);       
+
+                AddEqualizerData("lowest"   , equaBands[0]);
+                AddEqualizerData("lower"    , equaBands[1]);
+                AddEqualizerData("higher"   , equaBands[2]);
+                AddEqualizerData("highest"  , equaBands[3]);
+
+                for (var i = 0; i<=5 ; i++) {
+                    AddMidiOutChannel("ch"+i.ToString(), midi_out_channels[i]);
+                };
+
+                for (var i = 0; i <= 5; i++)
+                {
+                    AddTuning("t" + i.ToString(), tunings[i]);
+                };
+
+                //getting and setting elements from xml preset...
                 // Get elements of presets
                 XmlNodeList reverbs              = dom.GetElementsByTagName("reverb");
                 XmlNodeList distortions          = dom.GetElementsByTagName("distortion");
@@ -234,6 +250,44 @@ namespace KitaraPresetsCreator
                 XmlNodeList voices               = dom.GetElementsByTagName("voice");
                 XmlNodeList controls             = dom.GetElementsByTagName("control");
 
+                foreach (XmlNode xmlRev in reverbs) {
+                    this.AddNodeByType("nodeReverb", "Reverberation", "tReverberation", xmlRev);
+                };
+
+                foreach (XmlNode xmlDist in distortions)
+                {
+                    this.AddNodeByType("nodeDistortion", "Distortion", "tDistortion", xmlDist);
+                };
+
+                foreach (XmlNode xmlCom in compressions)
+                {
+                    this.AddNodeByType("nodeCompression", "Compression", "tCompression", xmlCom);
+                };
+
+                foreach (XmlNode xmlMod in modulations)
+                {
+                    this.AddNodeByType("nodeModulation", "Modulation", "tModulation", xmlMod);
+                };
+
+                foreach (XmlNode xmlDel in delays)
+                {
+                    this.AddNodeByType("nodeDelay", "Delay", "tDelay", xmlDel);
+                };
+
+                foreach (XmlNode xmlMx in mixers)
+                {
+                    this.AddNodeByType("nodeMixer", "Mixer", "tMixer", xmlMx);
+                };
+
+                foreach (XmlNode xmlV in voices)
+                {
+                    this.AddNodeByType("nodeVoice", "Voice", "tVoice", xmlV);
+                };
+
+                foreach (XmlNode xmlC in controls)
+                {
+                    this.AddNodeByType("nodeControl", "Control", "tControl", xmlC);
+                };
             }
             catch (XmlException xmlEx)
             {
@@ -241,7 +295,7 @@ namespace KitaraPresetsCreator
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Incorrect or corrupted preset file! " +  ex.Message);
             }
         }
 
@@ -508,7 +562,7 @@ namespace KitaraPresetsCreator
 
                 XMLString += "  <voice string=" + "\""+ tvRow[0].Field<Decimal>("string").ToString() + "\""
                                                 +"  prid="+"\"" + tv.Text + "\""
-                                                +"  wave_id=" + "\"" + tvRow[0].Field<String>("wave_id").ToString() + "\""
+                                                +"  wave_id=" + "\"" + tvRow[0].Field<String>("wave_id") + "\""
                                                 +"  amplitude_attack=" + "\"" + tvRow[0].Field<Decimal>("amplitude_attack").ToString() + "\""
                                                 +"  amplitude_decay=" + "\"" + tvRow[0].Field<Decimal>("amplitude_decay").ToString() + "\""
                                                 +"  amplitude_release=" + "\"" + tvRow[0].Field<Decimal>("amplitude_release").ToString() + "\""
@@ -540,24 +594,143 @@ namespace KitaraPresetsCreator
 
             this.IsChanged = true;
 
-           // var nodes = treeViewXML.Nodes;
-           // foreach (TreeNode node in nodes)
-           // {
-           //   WalkUpTreeViewRecursively(node);            
-           //}
         }
 
-        //private void WalkUpTreeViewRecursively(TreeNode trNode) {
-        //    var nodes = trNode.Nodes;
+        private void ClearTreeNodes(TreeView trView) {
+                   
 
-        //    foreach (var node in nodes)
-        //    {
-        //        WalkUpTreeViewRecursively(trNode);
-        //    }
-        //}
+            DataRow[] maRow = GetARowStringByTag("Volume", "tMaster");
 
-        private void ClearTreeNodes(TreeView trView) { 
-        
+            //let's think that if we don't have a main parameter, then everything is empty too
+            if (maRow.Count() == 0) {
+                return;
+            }
+
+            dataSetPresets.Tables["tMaster"].Rows.Remove(maRow[0]);
+
+            DataRow[] t0Row = GetARowStringByTag("t0", "tTuning");
+            DataRow[] t1Row = GetARowStringByTag("t1", "tTuning");
+            DataRow[] t2Row = GetARowStringByTag("t2", "tTuning");
+            DataRow[] t3Row = GetARowStringByTag("t3", "tTuning");
+            DataRow[] t4Row = GetARowStringByTag("t4", "tTuning");
+            DataRow[] t5Row = GetARowStringByTag("t5", "tTuning");
+
+            dataSetPresets.Tables["tTuning"].Rows.Remove(t0Row[0]);
+            dataSetPresets.Tables["tTuning"].Rows.Remove(t1Row[0]);
+            dataSetPresets.Tables["tTuning"].Rows.Remove(t2Row[0]);
+            dataSetPresets.Tables["tTuning"].Rows.Remove(t3Row[0]);
+            dataSetPresets.Tables["tTuning"].Rows.Remove(t4Row[0]);
+            dataSetPresets.Tables["tTuning"].Rows.Remove(t5Row[0]);
+
+            DataRow[] ch0Row = GetARowStringByTag("ch0", "tMidiOutChannel");
+            DataRow[] ch1Row = GetARowStringByTag("ch1", "tMidiOutChannel");
+            DataRow[] ch2Row = GetARowStringByTag("ch2", "tMidiOutChannel");
+            DataRow[] ch3Row = GetARowStringByTag("ch3", "tMidiOutChannel");
+            DataRow[] ch4Row = GetARowStringByTag("ch4", "tMidiOutChannel");
+            DataRow[] ch5Row = GetARowStringByTag("ch5", "tMidiOutChannel");
+
+            dataSetPresets.Tables["tMidiOutChannel"].Rows.Remove(ch0Row[0]);
+            dataSetPresets.Tables["tMidiOutChannel"].Rows.Remove(ch1Row[0]);
+            dataSetPresets.Tables["tMidiOutChannel"].Rows.Remove(ch2Row[0]);
+            dataSetPresets.Tables["tMidiOutChannel"].Rows.Remove(ch3Row[0]);
+            dataSetPresets.Tables["tMidiOutChannel"].Rows.Remove(ch4Row[0]);
+            dataSetPresets.Tables["tMidiOutChannel"].Rows.Remove(ch5Row[0]);
+
+            DataRow[] beqRow        = GetARowStringByTag("Equalizer", "tEqualizerMain");
+
+            DataRow[] lowerRow      = GetARowStringByTag("Lowest", "tEqualizer");
+            DataRow[] lowRow        = GetARowStringByTag("Lower", "tEqualizer");
+            DataRow[] highRow       = GetARowStringByTag("Higher", "tEqualizer");
+            DataRow[] highestRow    = GetARowStringByTag("Highest", "tEqualizer");
+
+            dataSetPresets.Tables["tEqualizerMain"].Rows.Remove(beqRow[0]);
+            dataSetPresets.Tables["tEqualizer"].Rows.Remove(lowerRow[0]);
+            dataSetPresets.Tables["tEqualizer"].Rows.Remove(lowRow[0]);
+            dataSetPresets.Tables["tEqualizer"].Rows.Remove(highRow[0]);
+            dataSetPresets.Tables["tEqualizer"].Rows.Remove(highestRow[0]);
+
+            //getting and setting presets parameters
+            TreeNode tRev = GetParentNode("nodeReverb");
+            TreeNode tCom = GetParentNode("nodeCompression");
+            TreeNode tContr = GetParentNode("nodeControl");
+            TreeNode tDel = GetParentNode("nodeDelay");
+            TreeNode tDistr = GetParentNode("nodeDistortion");
+            TreeNode tMixr = GetParentNode("nodeMixer");
+            TreeNode tMod = GetParentNode("nodeModulation");
+            TreeNode tVo = GetParentNode("nodeVoice");
+
+            foreach (TreeNode trn in tRev.Nodes)
+            {
+                DataRow[] revRow = GetARowStringByTag(trn.Tag.ToString(), "tReverberation");
+
+                dataSetPresets.Tables["tReverberation"].Rows.Remove(revRow[0]);
+
+                trView.Nodes.Remove(trn);
+            }
+
+            foreach (TreeNode tcm in tCom.Nodes)
+            {
+                DataRow[] tcmRow = GetARowStringByTag(tcm.Tag.ToString(), "tCompression");
+
+                dataSetPresets.Tables["tCompression"].Rows.Remove(tcmRow[0]);
+
+                trView.Nodes.Remove(tcm);
+            }
+
+            foreach (TreeNode tctr in tContr.Nodes)
+            {
+                DataRow[] tctrRow = GetARowStringByTag(tctr.Tag.ToString(), "tControl");
+
+                dataSetPresets.Tables["tCompression"].Rows.Remove(tctrRow[0]);
+
+                trView.Nodes.Remove(tctr);
+            }
+
+            foreach (TreeNode tdl in tDel.Nodes)
+            {
+                DataRow[] tdlRow = GetARowStringByTag(tdl.Tag.ToString(), "tDelay");
+
+                dataSetPresets.Tables["tDelay"].Rows.Remove(tdlRow[0]);
+
+                trView.Nodes.Remove(tdl);
+            }
+
+            foreach (TreeNode tds in tDistr.Nodes)
+            {
+                DataRow[] tctrRow = GetARowStringByTag(tds.Tag.ToString(), "tDistortion");
+
+                dataSetPresets.Tables["tDistortion"].Rows.Remove(tctrRow[0]);
+
+                trView.Nodes.Remove(tds);
+            }
+
+            foreach (TreeNode txmr in tMixr.Nodes)
+            {
+                DataRow[] txmrRow = GetARowStringByTag(txmr.Tag.ToString(), "tMixer");
+
+                dataSetPresets.Tables["tMixer"].Rows.Remove(txmrRow[0]);
+
+                trView.Nodes.Remove(txmr);
+            }
+
+            foreach (TreeNode tm in tMod.Nodes)
+            {
+                DataRow[] tmRow = GetARowStringByTag(tm.Tag.ToString(), "tModulation");
+
+                dataSetPresets.Tables["tModulation"].Rows.Remove(tmRow[0]);
+
+                trView.Nodes.Remove(tm);
+            }
+
+            foreach (TreeNode tv in tVo.Nodes)
+            {
+                DataRow[] tvRow = GetARowStringByTag(tv.Tag.ToString(), "tVoice");
+
+                dataSetPresets.Tables["tVoice"].Rows.Remove(tvRow[0]);
+
+                trView.Nodes.Remove(tv);
+            }
+
         }
 
         //adding node by xml node
@@ -658,7 +831,7 @@ namespace KitaraPresetsCreator
         }
 
         //we have to add some node 
-        private void AddNodeByType(string NodeType, string nodeParentName, string tableName) {
+        private void AddNodeByType(string NodeType, string nodeParentName, string tableName, XmlNode xmlPar = null) {
             TreeNode tns = treeViewXML.Nodes.Find(NodeType, true).FirstOrDefault();
 
             treeViewXML.SelectedNode = tns;
@@ -668,13 +841,114 @@ namespace KitaraPresetsCreator
             TreeNode tNewNode   = new TreeNode(nodeParentName + namePrefix);
             tNewNode.Tag        = NodeType + namePrefix;
 
-            treeViewXML.SelectedNode.Nodes.Add(tNewNode);
+            
 
             DataRow rNewRow = dataSetPresets.Tables[tableName].NewRow();
+            rNewRow["tag"]  = NodeType + namePrefix;
 
-            rNewRow["tag"] = NodeType + namePrefix;
+            if (xmlPar!= null)            
+            {
+                //set value if exists
+                if (xmlPar.Attributes.GetNamedItem("prid") != null) {
+                    tNewNode.Name   = xmlPar.Attributes["prid"].Value;
+                    tNewNode.Text   = xmlPar.Attributes["prid"].Value;
+                };
+
+                setPresetsParamsFromXML(xmlPar, rNewRow, nodeParentName);
+            }
+
+            treeViewXML.SelectedNode.Nodes.Add(tNewNode);
 
             dataSetPresets.Tables[tableName].Rows.Add(rNewRow);
+        }
+
+        private void setPresetsParamsFromXML(XmlNode xmlParam, DataRow rNewRow, string pType) {
+
+            switch (pType)
+            {      
+                case "t1":
+                    break;
+                case "t2":                  
+                    break;
+                case "t3":               
+                    break;
+                case "t4":     
+                    break;
+                case "t5":  
+                    break;
+                case "t6":
+                    break;
+                case "ch1":
+                    break;
+                case "ch2":
+                    break;
+                case "ch3":
+                    break;
+                case "ch4": 
+                    break;
+                case "ch5":               
+                    break;
+                case "ch6":
+                    break;
+                case "Master":
+                    break;
+                case "Volume":
+                    rNewRow["masterVolume"] = Convert.ToDecimal(xmlParam.Attributes["volume"].Value);
+                    break;
+                case "Reverberation":
+                    rNewRow["rType"]                = Convert.ToDecimal(xmlParam.Attributes["type"].Value);
+                    rNewRow["rPre_lpf"]             = Convert.ToDecimal(xmlParam.Attributes["pre_lpf"].Value);
+                    rNewRow["rLevel"]               = Convert.ToDecimal(xmlParam.Attributes["level"].Value);
+                    rNewRow["rTime"]                = Convert.ToDecimal(xmlParam.Attributes["time"].Value);
+                    rNewRow["rDelayFeedback"]       = Convert.ToDecimal(xmlParam.Attributes["delay_feedback"].Value);
+                    rNewRow["pRreDelayTime"]        = Convert.ToDecimal(xmlParam.Attributes["pre_delay_time"].Value);
+                    break;
+                case "Delay":
+                    break;
+                case "Mixer":
+                    break;
+                case "Control":
+                    break;
+                case "Voice":
+                    break;
+                case "Modulation":
+                    break;
+                case "Compression":
+                    break;
+                case "MidiOutChannel":
+                    break;
+                case "Equalizer":
+                    if (xmlParam.Attributes["on"].Value == "0")
+                    {
+                        rNewRow["on"] = false;
+                    }
+                    else 
+                    {
+                        rNewRow["on"] = true;
+                    };
+
+                    rNewRow["low_mid_q"]    = Convert.ToDecimal(xmlParam.Attributes["low_mid_q"].Value);
+                    rNewRow["high_mid_q"]   = Convert.ToDecimal(xmlParam.Attributes["high_mid_q"].Value);              
+                    break;
+                case "Lowest":       
+                    rNewRow["gain"]         = Convert.ToDecimal(xmlParam.Attributes["gain"].Value);
+                    rNewRow["frequency"]    = Convert.ToDecimal(xmlParam.Attributes["frequency"].Value);
+                    break;
+                case "Lower":
+                    rNewRow["gain"]         = Convert.ToDecimal(xmlParam.Attributes["gain"].Value);
+                    rNewRow["frequency"]    = Convert.ToDecimal(xmlParam.Attributes["frequency"].Value);
+                    break;
+                case "Higher":
+                    rNewRow["gain"]         = Convert.ToDecimal(xmlParam.Attributes["gain"].Value);
+                    rNewRow["frequency"]    = Convert.ToDecimal(xmlParam.Attributes["frequency"].Value);
+                    break;
+                case "Highest":
+                    rNewRow["gain"]         = Convert.ToDecimal(xmlParam.Attributes["gain"].Value);
+                    rNewRow["frequency"]    = Convert.ToDecimal(xmlParam.Attributes["frequency"].Value);
+                    break;
+                default:
+                    break;
+            }
         }
 
         private TreeNode GetParentNode(string NodeType) {
@@ -928,43 +1202,67 @@ namespace KitaraPresetsCreator
             };
         }
 
-        private void AddMasterVolumeData(byte Volume=127)
+        private void AddMasterVolumeData(byte Volume=127, XmlNode xmlPar = null)
         {
             DataRow rNewRow             = dataSetPresets.Tables["tMaster"].NewRow();
             rNewRow["tag"]              = "Volume";
             rNewRow["MasterVolume"]     = Volume;
 
+            if (xmlPar!= null) {
+                setPresetsParamsFromXML(xmlPar, rNewRow, "Volume");
+            };            
+
             dataSetPresets.Tables["tMaster"].Rows.Add(rNewRow);
         }
 
-        private void AddBasicEqualizerData()
+        private void AddBasicEqualizerData(XmlNode xmlPar = null)
         {
             DataRow rNewRow = dataSetPresets.Tables["tEqualizerMain"].NewRow();
             rNewRow["tag"]  = "Equalizer";
 
+            if (xmlPar != null)
+            {
+                setPresetsParamsFromXML(xmlPar, rNewRow, "Equalizer");
+            };
+
             dataSetPresets.Tables["tEqualizerMain"].Rows.Add(rNewRow);
         }
 
-        private void AddEqualizerData(string equalizerVolume)
+        private void AddEqualizerData(string equalizerVolume, XmlNode xmlPar = null)
         {
             DataRow rNewRow = dataSetPresets.Tables["tEqualizer"].NewRow();
             rNewRow["tag"]  = equalizerVolume;
 
+            if (xmlPar != null)
+            {
+                setPresetsParamsFromXML(xmlPar, rNewRow, equalizerVolume);
+            };
+
             dataSetPresets.Tables["tEqualizer"].Rows.Add(rNewRow);
         }
 
-        private void AddMidiOutChannel(string midiChannel)
+        private void AddMidiOutChannel(string midiChannel, XmlNode xmlPar = null)
         {
             DataRow rNewRow = dataSetPresets.Tables["tMidiOutChannel"].NewRow();
             rNewRow["tag"]  = midiChannel;
 
+            if (xmlPar != null)
+            {
+                setPresetsParamsFromXML(xmlPar, rNewRow, midiChannel);
+            };
+
             dataSetPresets.Tables["tMidiOutChannel"].Rows.Add(rNewRow);
         }
 
-        private void AddTuning(string tuningChannel)
+        private void AddTuning(string tuningChannel, XmlNode xmlPar = null)
         {
             DataRow rNewRow = dataSetPresets.Tables["tTuning"].NewRow();
             rNewRow["tag"]  = tuningChannel;
+
+            if (xmlPar != null)
+            {
+                setPresetsParamsFromXML(xmlPar, rNewRow, tuningChannel);
+            };
 
             dataSetPresets.Tables["tTuning"].Rows.Add(rNewRow);
         }
@@ -1307,6 +1605,13 @@ namespace KitaraPresetsCreator
         private void addVoiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.AddNodeByType("nodeVoice", "Voice", "tVoice");
+        }
+
+        private void treeViewXML_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
+        {
+            if (e.Label == "") {
+                e.CancelEdit = true;
+            }
         }
     }
 }
